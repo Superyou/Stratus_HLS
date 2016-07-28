@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<lib_catalogue>
+	<name>dummymemlib</name>
+	<lib_type>MEMORY</lib_type>
+	<param_table>
+	</param_table>
+</lib_catalogue>
