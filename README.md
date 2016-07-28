@@ -1,14 +1,39 @@
-## Digit Recognition with Stratus HLS
+## Implement Digitrec in SystemC using the ROCC interface
 
-This directory illustrates how to synthesize and simulate our Digit Recognition design written in SystemC into Verilog RTL using Stratus HLS. Stratus is an HLS tool that synthesizes SystemC into C++-style RTL and then converts the C++ RTL into Verilog RTL. In this tutorial, we are mainly concerned with the following optimizations available in Stratus:
+This directory is a derivative of the Digit Recongnition Project imlemented in stratus `<WORKING_DIR>/craft-xcel/digit_recognition/stratus`. This project is written in SystemC, and using Stratus HLS as the HLS tool to synthesizes SystemC into C++-style RTL and then converts the C++ RTL into Verilog RTL. Different with the former one, this project is based on te ROCC interface in order to connect the digitrec module with the rocket chip. In this project we designed the interface such as control, register and memory mode signals in the digitrec module in order to pass the 'custom' cmd from the rochet chip to the digitrec module.
 
-* Loop Optimization: Stratus provides directives for loop unrolling and loop pipelining similar to Vivado HLS. For pipelining, user can specify hard stall for freezing the entire pipeline under input/output stall, or soft stall for flushing the later stages of the pipeline when it experiences input stall. User can also deal with memory aliasing by definitning a maximum distance between memory reads and writes to prevent read-after-write data hazards.
-* Memory Optimization: Stratus offers array partitioning to partition memory inferred by multidimensional arrays. Partitioning a single dimensional array is equivalent to inferring a register for each element. Stratus also provides array flattening to infer a register for each element of the array.
-* Datapath Optimization: By default, Stratus synthesizes operators into standard functional modules. However, these functional modules are not pre-characterized. Instead, Stratus uses the target technology library to synthesize these modules on-the-fly using RTL compiler and convey their timing and area estimates back to Stratus. User can further optimize the datapath by allowing Stratus to perform pattern matching and create customized parts on-the-fly during HLS that are also characterized using RTL compiler. Characterized parts are cached in a library for the specific project.
+To see the basic introduction of the Stratus HLS and the digit recognition project,please go through the README.md file in the repository `<WORKING_DIR>/craft-xcel/digit_recognition/stratus` . It clearly shows the overview of the Stratus HLS tool and how it uses the knn algotithm to implement the digitrec design. In this document, I just introduce the main difference part between these two projects and how I implement the ROCC interface.
 
-To get started, clone this repository from GitHub, source your special setup script (specific to your machine and not included in this repository), and change into the Stratus-specific directory for Digit Recognition `<WORKING_DIR>/craft-xcel/digit_recognition/stratus`.
+### Basically about the design 
 
-Note that some of the following information are taken from the Stratus HLS User Guide.
+The digit recognition design takes in a binary string representing a handwritten digit (i.e. the testing instance) and classify it to a particular digit (0-9) by computing which digit's training set contains the binary string (i.e. the training instance) that is closest to the testing instance. The training set with the training instance that is closest in distance to the testing instance determines the digit that is most likely represented by the testing instance. In our implementation, we define the distance between two instances as the number of corresponding bits that are different in the two binary strings. For example, 0b1011 and 0b0111 differ in the two most signicant bits and therefore have a distance of 2. 0b1011 and 0b1010 differ only in the least significant bit and have a distance of 1. As a result, 0b1011 is closer to 0b1010 than to 0b0111.
+
+### About modification according to the normal design
+
+There are two versions to implement the digitrec design based on ROCC interface. First is just implement the control and register mode signals without memory interfaces. Second is using the ROCC memory interface to read the parameters for the training from an outside cache. 
+
+
+
+In order to implement the ROCC interface, we have to adjust in 3 files: `system.cc` `digitrec.cc` and `tb.cc`.
+
+
+*Modification in the `digitrec.cc`
+
+As same as the normal project, we divided the implementation into three parts. The first part is inside the main loop of `digitrec::DigitrecThread()`. The nested for loop repeated executes the `update_knn` function to compare the testing instance with all the training data to find the minimum distance to each of the 10 training sets. The `knn_vote` function looks at the minimum distances from the 10 training sets and determine the smallest among these minimum distances. This smallest distance corresponds to the digit that is recognized and outputted. 
+
+Since we are using the ROCC interface, we don't change anything in the `update_knn` and `knn_vote` function. We just rewrite the main loop in the ``digitrec::DigitrecThread()`. Instead of using the `cynw_p2p` interface `din` and `dout` to read and write 49 bits digit value, this design use the self-defined `HLS_DEFINE_PROTOCOL` `Read from Rocket_chip` to get a cmd from the rocket chip, the cmd include the input 49 bits valued in a register and pass both the data value and the register ID to the digitrec module. Whenever the digitrec module received a cmd from the Rochet chip, it set the `cc_busy_o` signal to 1, representing the accelerator is busy working now, and tell the rocket chip do not sent the other cmd for now. 
+
+After successfully reading the cmd from the rocket chip, we read the input value and store it in a digit varriable `sample` and pass it to the mainly working algorithm part to calculate the output value `result` using the training parameters and `update_knn` and `knn_vote` functions. Then we use another `HLS_DEFINE_PROTOCOL` `Write to the Rocket_chip`to pass the destination register ID and result data back to the rocket chip. Also, set `cc_busy_o` signal to 0 to let the rocket chip to pass the next cmd to the accelerator.
+
+*Modification in the `tb.cc`
+
+
+
+
+
+W
+
+
 
 ### Overview
 
