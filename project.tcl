@@ -63,7 +63,7 @@ define_system_module tb tb.cc
 ######################################################################
 # Synthesis Module Configurations
 ######################################################################
-define_hls_module digitrec digitrec_rocc_multimem.cc
+define_hls_module digitrec digitrec.cc
 
 define_io_config * PIN
 
