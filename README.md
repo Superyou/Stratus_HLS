@@ -18,7 +18,49 @@ In order to implement the ROCC interface, we have to adjust in 3 files: `system.
 
 #### Modification in the `system.h`
 
-Add signals to control the digitrec module. We connect
+Add signals to control the digitrec module. Here are some interface port I added in the system module: 
+
+    sc_signal <bool> cc_busy_chan;             
+
+    sc_signal <bool> core_cmd_ready_chan;
+    sc_signal <bool> core_cmd_valid_chan;
+    sc_signal <sc_uint<7> > core_cmd_inst_funct_chan;
+    sc_signal <sc_uint<5> > core_cmd_inst_rs1_chan;
+    sc_signal <sc_uint<5> > core_cmd_inst_rs2_chan;
+
+    sc_signal <bool> core_cmd_inst_xd_chan;     //set if destination reg exist
+    sc_signal <bool> core_cmd_inst_xs1_chan;    //set if resource rs1 reg exist
+    sc_signal <bool> core_cmd_inst_xs2_chan;    //set if resource rs2 reg exist
+    sc_signal <sc_uint<5> >   core_cmd_inst_rd_chan;
+    sc_signal <sc_uint<7> >  core_cmd_inst_opcode_chan;     //custom instruction opcode may be used for several accerlerations
+    sc_signal <sc_uint<64> >  core_cmd_rs1_chan;
+    sc_signal <sc_uint<64> >  core_cmd_rs2_chan;
+
+    sc_signal <bool> core_resp_ready_chan;
+    sc_signal <bool> core_resp_valid_chan;
+    sc_signal <sc_uint<5> >   core_resp_rd_chan;
+    sc_signal <sc_uint<64> >  core_resp_data_chan;
+
+    //memory mode
+    //for reqest
+    sc_signal <bool> mem_req_ready_chan;
+    sc_signal <bool> mem_req_valid_chan;
+    sc_signal <sc_uint<40> > mem_req_addr_chan;
+    sc_signal <sc_uint<10> >  mem_req_tag_chan;
+    sc_signal <sc_uint<5> >   mem_req_cmd_chan; //0x000 store 0x001 load
+    sc_signal <sc_uint<3> >   mem_req_typ_chan; //width of response 0x000---8bits 0x001---16bits 0x010---32bits 0x011---64bits
+    sc_signal <bool> mem_req_phys_chan;
+    sc_signal <sc_uint<64> >  mem_req_data_chan; //store data
+
+    //for response  can be read from the memory at any time
+
+    sc_signal <bool> mem_resp_valid_chan;
+    sc_signal <sc_uint<40> >  mem_resp_addr_chan;
+    sc_signal <sc_uint<10> >   mem_resp_tag_chan;
+    sc_signal <sc_uint<5> >  mem_resp_cmd_chan; //0x000 store 0x001 load
+    sc_signal <sc_uint<3> >   mem_resp_typ_chan; //width of response 0x000---8bits 0x001---16bits 0x010---32bits 0x011---64bits
+    sc_signal <sc_uint<64> >  mem_resp_data_chan; //the data loaded from the em
+
 
 #### Modification in the `digitrec.cc`
 
