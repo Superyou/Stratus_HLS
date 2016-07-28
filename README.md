@@ -16,10 +16,11 @@ There are two versions to implement the digitrec design based on ROCC interface.
 
 In order to implement the ROCC interface, we have to adjust in 3 files: `system.h` `digitrec.h` `digitrec.cc` `tb.h` and `tb.cc`.
 
-#### Modification in the `system.h`
+#### Modification in the `system.h` 
 
 Add signals to control the digitrec module. Here are some interface port I added in the system module: 
 
+    //control mode signals
     sc_signal <bool> cc_busy_chan;             
 
     sc_signal <bool> core_cmd_ready_chan;
@@ -61,6 +62,7 @@ Add signals to control the digitrec module. Here are some interface port I added
     sc_signal <sc_uint<3> >   mem_resp_typ_chan; //width of response 0x000---8bits 0x001---16bits 0x010---32bits 0x011---64bits
     sc_signal <sc_uint<64> >  mem_resp_data_chan; //the data loaded from the em
 
+Also, these `sc_signal` should be instanced in both the `digitrec.h` and `tb.h` as `sc_in` and `sc_out`.  
 
 #### Modification in the `digitrec.cc`
 
@@ -72,5 +74,7 @@ After successfully reading the cmd from the rocket chip, we read the input value
 
 #### Modification in the `tb.cc`
 
-W
+We use to the tb module to pretend a rocket core to read test digit from the `stimulus.dat` file and send the cmd including these digit to the digitrec module. Remember that the `source` thread should be wait() if the `cc_busy_o` signal sent from digitrec module is set 1. And the `sink` thread is going to receive response sent back from the accelerator and write them in the `response.dat`.
+
+
 
