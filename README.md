@@ -17,20 +17,14 @@ There are two versions to implement the digitrec design based on ROCC interface.
 In order to implement the ROCC interface, we have to adjust in 3 files: `system.cc` `digitrec.cc` and `tb.cc`.
 
 
-*Modification in the `digitrec.cc`
-
+* `Modification in the digitrec.cc`:
 As same as the normal project, we divided the implementation into three parts. The first part is inside the main loop of `digitrec::DigitrecThread()`. The nested for loop repeated executes the `update_knn` function to compare the testing instance with all the training data to find the minimum distance to each of the 10 training sets. The `knn_vote` function looks at the minimum distances from the 10 training sets and determine the smallest among these minimum distances. This smallest distance corresponds to the digit that is recognized and outputted. 
 
 Since we are using the ROCC interface, we don't change anything in the `update_knn` and `knn_vote` function. We just rewrite the main loop in the ``digitrec::DigitrecThread()`. Instead of using the `cynw_p2p` interface `din` and `dout` to read and write 49 bits digit value, this design use the self-defined `HLS_DEFINE_PROTOCOL` `Read from Rocket_chip` to get a cmd from the rocket chip, the cmd include the input 49 bits valued in a register and pass both the data value and the register ID to the digitrec module. Whenever the digitrec module received a cmd from the Rochet chip, it set the `cc_busy_o` signal to 1, representing the accelerator is busy working now, and tell the rocket chip do not sent the other cmd for now. 
 
 After successfully reading the cmd from the rocket chip, we read the input value and store it in a digit varriable `sample` and pass it to the mainly working algorithm part to calculate the output value `result` using the training parameters and `update_knn` and `knn_vote` functions. Then we use another `HLS_DEFINE_PROTOCOL` `Write to the Rocket_chip`to pass the destination register ID and result data back to the rocket chip. Also, set `cc_busy_o` signal to 0 to let the rocket chip to pass the next cmd to the accelerator.
 
-*Modification in the `tb.cc`
-
-
-
-
-
+*`Modification in the tb.cc`:
 W
 
 
