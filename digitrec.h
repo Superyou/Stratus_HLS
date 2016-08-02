@@ -10,7 +10,7 @@
 #include <cynw_p2p.h>
 #include "defines.h"
 
-#include "training_data.h"
+//#include "training_data.h"
 
 // The K_CONST value: number of nearest neighbors
 #ifndef K_CONST
@@ -18,7 +18,7 @@
 #endif
 
 //#ifndef TRAINING_SIZE
-//#define TRAINING_SIZE 18
+#define TRAINING_SIZE 1800
 //#endif
 
 SC_MODULE(digitrec)
@@ -151,10 +151,10 @@ public:
 
 protected:
   void DigitrecThread();           // the thread function
-
+  digit training_set[10][TRAINING_SIZE];
   void update_knn(input_t test_inst, input_t train_inst, bit6 min_distances[K_CONST]);
   output_t knn_vote(bit6 knn_set[10][K_CONST]);
-  digit training_set[10][TRAINING_SIZE];
+
 
 
 };

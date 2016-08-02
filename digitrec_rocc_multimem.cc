@@ -27,7 +27,6 @@ void digitrec::DigitrecThread(){
   bool xd;
 
 
-
   // reset logic
   { HLS_DEFINE_PROTOCOL("Reset");
     // single-cycle reset behavior
@@ -91,19 +90,33 @@ void digitrec::DigitrecThread(){
           //wait();
 
     }
-      //cout <<" build training_set"<<endl;
 
-    //HLS_SEPARATE_ARRAY(training_set);
-
-    //cout <<" build knn_set"<<endl;
-    bit6 knn_set[10][K_CONST];
-    //HLS_SEPARATE_ARRAY(knn_set);
+    cout <<" build training_set"<<endl;
 
 
+    HLS_SEPARATE_ARRAY(training_set);
+    //HLS_MAP_TO_REG_BANK(training_set);
+    /*
+    cout <<" finish build train_set"<<endl;
+    for (int j=0;j<TRAINING_SIZE;++j){
+        for (int i=0;i<10;++i){
+            HLS_UNROLL_LOOP(ON,"no loop");
+            training_set[i][j]=0;
+        }
+    }
+    cout <<" build knn_set"<<endl;
 
 
-    //HLS_SEPARATE_ARRAY(training_set);
+
+
+
+
     cout<<"opcode = "<<opcode<<endl;
+
+*/
+
+
+
 
     switch (opcode)
     {
@@ -111,35 +124,43 @@ void digitrec::DigitrecThread(){
 
         case 1: {
 
-        //cout<<"It is case 1 : opcode ="<<opcode<<endl;
+        cout<<"It is case 1 : opcode ="<<opcode<<endl;
         sample = (digit) din_64;
             // FIX: TO DO
 
             // unscheduled computation here
+        /*
+        int sum =0 ;
 
-
+         *for (int i=0;i<10;++i)
+            for(int j=0;j<TRAINING_SIZE;++j)
+                if (training_set[i][j]!=training_data[i][j]) {
+                    cout<<"for i="<<i<<"j="<<j<< "training_set="<<training_set[i][j]<<" vs trining_data="<<training_data[i][j]<<endl;
+                    sum=sum+1;}
+        cout << "********************************  SUM = "<<sum<<" ***************************************"<<endl;
+        */
 
             // This array stores K minimum distances per training set
-            //bit6 knn_set[10][K_CONST];
+        bit6 knn_set[10][K_CONST];
 
-            //HLS_SEPARATE_ARRAY(knn_set);
+        HLS_SEPARATE_ARRAY(knn_set);
 
-            // Initialize the knn set
-            for ( int i = 0; i < 10; ++i )
-              for ( int k = 0; k < K_CONST; ++k )
-                // Note that the max distance is 49
-                knn_set[i][k] = 50;
+         // Initialize the knn set
+         for ( int i = 0; i < 10; ++i )
+           for ( int k = 0; k < K_CONST; ++k )
+              //Note that the max distance is 49
+               knn_set[i][k] = 50;
 
             //sample = din;
             //cout << "sample value = " << sample << endl;
             for ( int i = 0; i < TRAINING_SIZE; ++i ) {
-              //HLS_PIPELINE_LOOP(HARD_STALL, 1, "pipeline_image_input");
+              HLS_PIPELINE_LOOP(HARD_STALL, 1, "pipeline_image_input");
               for ( int j = 0; j < 10; j++ ) {
 
                   //cout<<"IN THE LOOP"<<endl;
                  // cout<<"i = "<<i<<" & j = "<<j<<endl;
                 // UNROLL pragma with user-defined macro
-                //HLS_UNROLL_LOOP(COMPLETE, UNROLL_FACTOR, "unroll_digits");
+                HLS_UNROLL_LOOP(COMPLETE, UNROLL_FACTOR, "unroll_digits");
 
 
 
@@ -147,6 +168,7 @@ void digitrec::DigitrecThread(){
                 //const digit training_instance = training_data[j][i];
                 //cout << "training instance[" << std::dec << j << "][" << i << "] = 0x" << std::hex << training_data[j][i] << endl;
                 digit training_instance = training_set[j][i];
+                //cout<<"for trainging_set "<<j<<" "<<i<<" "<<training_instance <<"vs"<<training_set[j][i]<< endl;
                 // Update the KNN set
                 update_knn(sample, training_instance, knn_set[j]);
               }
@@ -155,60 +177,79 @@ void digitrec::DigitrecThread(){
             // Compute the final output
             result = knn_vote( knn_set );
             result_64 = (sc_uint<64>) result;
+            cout<<"result ="<<result<<" vs "<<result_64<<endl;
 
             break;
         }
 
         case 2: {
+            HLS_UNROLL_LOOP(OFF, "no unroll");
 
             cout<<"It is case 2 : opcode ="<<opcode<<endl;
                 Addr = (sc_uint<40>) din_64;
+                sc_uint<40> now_Addr;
 
-                HLS_DEFINE_PROTOCOL("Send request & Load data from the Cache for 1800*10 times");
-                {
-
-
-                    for (int j=0; j < 10; ++j) {
+                    for (int i=0; i < TRAINING_SIZE; ++i) {
                         //HLS_UNROLL_LOOP(OFF, "no unroll");
-                        for (int i=0; i < TRAINING_SIZE ;++i)
+                        digit tmp[10];
+                        HLS_MAP_TO_REG_BANK(tmp);
+                        HLS_SEPARATE_ARRAY(tmp);
+
+                        //cout<< "for now i = "<<i<<endl;
+                        for (int j=0; j < 10 ;++j)
                         {
+                            digit instance;
                             sc_uint<10> jj=j;
-                            //read param from the memory using
-                            //cout<<"Addr = "<<Addr<<endl;
-                            mem_req_addr_o.write(Addr);
-                            mem_req_valid_o.write(1);
-                            mem_req_cmd_o.write(0x0000);
-                            mem_req_typ_o.write(0x011);
-                            mem_req_tag_o.write(j);
-                            Addr = Addr + 1;
-                            //cout<<"have sent the requst, and waiting for the response"<<endl;
+                            now_Addr = Addr + j*TRAINING_SIZE +i;
 
-                            do {
-                                wait();
-                            }while(!mem_req_ready_i);
-
-                            mem_req_valid_o.write(0);
-
-
-                            //cout<<"waiting for the response !"<<endl;
-                            while(!mem_resp_valid_i || !(mem_resp_tag_i == jj))
+                            HLS_DEFINE_PROTOCOL("Send request & Load data from the Cache for 1800*10 times");
                             {
+
+                                //read param from the memory using
+                                //cout<<"Addr = "<<now_Addr<<endl;
+                                mem_req_addr_o.write(now_Addr);
+                                mem_req_valid_o.write(1);
+                                mem_req_cmd_o.write(0x0000);
+                                mem_req_typ_o.write(0x011);
+                                mem_req_tag_o.write(j);
+
+                                //cout<<"have sent the requst, and waiting for the response"<<endl;
+
+                                do {
+                                    wait();
+                                }while(!mem_req_ready_i);
+
+                                mem_req_valid_o.write(0);
+
+
+                                //cout<<"waiting for the response !"<<endl;
+                                while(!mem_resp_valid_i || !(mem_resp_tag_i == jj))
+                                {
+                                    wait();
+                                }
+
+                                //Addr = mem_resp_addr_i.read();
+                                //if load
+                                //cout<<"successfully read from the response"<<endl;
+                                instance = mem_resp_data_i.read();
+
                                 wait();
+
+                                //cout << "training_set["<<j<<"]["<<i<<"] = "<<instance<<endl;
+
                             }
 
-                            //Addr = mem_resp_addr_i.read();
-                            //if load
-                            //cout<<"successfully read from the response"<<endl;
-                            digit instance = mem_resp_data_i.read();
-
-                            wait();
-                            training_set[j][i] = instance;
-                            //cout << "training_set["<<j<<"]["<<i<<"] = "<<training_set[j][i]<<endl;
-
-                        }
+                            tmp[j] = instance;
                     }
+                        for (int ii=0;ii<10;++ii)
+                        {
+                            HLS_UNROLL_LOOP(ON,"ii LOOP");
+                            training_set[ii][i]=tmp[ii];
+                        }
+
                 }
-                //cout<<"end of case 2"<<endl;
+                cout<<"end of case 2"<<endl;
+
                 break;
             }
 
@@ -353,4 +394,5 @@ bit4 digitrec::knn_vote(bit6 knn_set[10][K_CONST])
 
   return min_index;
 }
+
 
