@@ -76,5 +76,6 @@ After successfully reading the cmd from the rocket chip, we read the input value
 
 We use to the tb module to pretend a rocket core to read test digit from the `stimulus.dat` file and send the cmd including these digit to the digitrec module. Remember that the `source` thread should be wait() if the `cc_busy_o` signal sent from digitrec module is set 1. And the `sink` thread is going to receive response sent back from the accelerator and write them in the `response.dat`.
 
+### Using memory interface
 
-
+In this version we add the rocc mem interfaces into the design. We define 2 different cmd in the tb.cc file. If opcode equals 2, the accelerator first load training data parameters from the memory (using mem thread to get from the `training_data`) and save these parameters to the array `training_set`. If opcode equals 1, then the accelerator will do the knn training using the parameters stored in `trainging_set`. 
