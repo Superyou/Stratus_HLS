@@ -17,11 +17,16 @@
 
 void digitrec::DigitrecThread(){
 
+  sc_uint <64> din_64;
   input_t sample;
   output_t result;
   sc_uint <40> Addr;
   sc_uint <5> ds;
-  digit training_instance;
+  sc_uint <7>  opcode;
+  sc_uint <64> result_64;
+  bool xd;
+
+
 
   // reset logic
   { HLS_DEFINE_PROTOCOL("Reset");
@@ -34,6 +39,7 @@ void digitrec::DigitrecThread(){
     core_resp_valid_o.write(0);
     core_resp_rd_o.write(core_cmd_inst_rd_i); // reset the response ID into cmd_inst_rd_i
     core_resp_data_o.write(0); // reset the response data into 0
+
 
     mem_req_valid_o.write(0);
     mem_req_addr_o.write(0);
@@ -69,111 +75,159 @@ void digitrec::DigitrecThread(){
           //assert(core_cmd_inst_opcode_i == 0x1);
           //assert(core_cmd_inst_funct_i==0x1);  //to be defined
 
-          sample = core_cmd_rs1_i.read();
+          din_64 = core_cmd_rs1_i.read();
 
-          Addr = core_cmd_rs2_i.read();
-
+          xd = core_cmd_inst_xd_i.read();
           ds = core_cmd_inst_rd_i.read();
+
+          opcode = core_cmd_inst_opcode_i.read();
 
           cc_busy_o.write(1);
 
-          //cout<<"digitrec has read the input:"<<sample<<"   core_cmd_ready_o = "<<core_cmd_ready_o<< "   valid = " <<core_cmd_valid_i <<endl;
+          cout<<"digitrec has read the input:"<< din_64 <<"   core_cmd_ready_o = "<< core_cmd_ready_o<< "   valid = " <<core_cmd_valid_i <<endl;
           wait();
           //cout<<"2 in the digit part::::valid = "<<core_cmd_valid_i <<"  ready = "<<core_cmd_ready_o<< endl;
           core_cmd_ready_o.write(0);
           //wait();
 
     }
+      //cout <<" build training_set"<<endl;
 
+    //HLS_SEPARATE_ARRAY(training_set);
 
-    // FIX: TO DO
-
-    // unscheduled computation here
-
-    HLS_SEPARATE_ARRAY(training_data);
-  
-    // This array stores K minimum distances per training set
+    //cout <<" build knn_set"<<endl;
     bit6 knn_set[10][K_CONST];
-
-    HLS_SEPARATE_ARRAY(knn_set);
-
-    // Initialize the knn set
-    for ( int i = 0; i < 10; ++i )
-      for ( int k = 0; k < K_CONST; ++k )
-        // Note that the max distance is 49
-        knn_set[i][k] = 50; 
-  
-    //sample = din;
-    //cout << "sample value = " << sample << endl;
-    for ( int i = 0; i < TRAINING_SIZE; ++i ) {
-      HLS_PIPELINE_LOOP(HARD_STALL, 1, "pipeline_image_input");
-      for ( int j = 0; j < 10; j++ ) {
-
-          //cout<<"IN THE LOOP"<<endl;
-         // cout<<"i = "<<i<<" & j = "<<j<<endl;
-        // UNROLL pragma with user-defined macro
-        //HLS_UNROLL_LOOP(COMPLETE, UNROLL_FACTOR, "unroll_digits");
-
-        {
-            HLS_DEFINE_PROTOCOL("Send request to the Cache");
-
-            //read param from the memory using
-            //cout<<"Addr = "<<Addr<<endl;
-            sc_uint <40> newAddr = Addr + j*TRAINING_SIZE + i;
-            wait();
-            mem_req_addr_o.write( newAddr);
-            mem_req_valid_o.write(1);
-            mem_req_cmd_o.write(0x0000);
-            mem_req_typ_o.write(0x011);
-            mem_req_tag_o.write(j);
-
-            //cout<<"have sent the requst, and waiting for the response"<<endl;
-
-            do {
-                wait();
-            }while(!mem_req_ready_i);
-
-            mem_req_valid_o.write(0);
-        }
+    //HLS_SEPARATE_ARRAY(knn_set);
 
 
-        {   HLS_DEFINE_PROTOCOL("Load response from the Cache");
-            sc_uint<10> jj=j;
-            //cout<<"waiting for the response !"<<endl;
-            while(!mem_resp_valid_i || !(mem_resp_tag_i == jj))
-            {
-                wait();
+
+
+    //HLS_SEPARATE_ARRAY(training_set);
+    cout<<"opcode = "<<opcode<<endl;
+
+    switch (opcode)
+    {
+
+
+        case 1: {
+
+        //cout<<"It is case 1 : opcode ="<<opcode<<endl;
+        sample = (digit) din_64;
+            // FIX: TO DO
+
+            // unscheduled computation here
+
+
+
+            // This array stores K minimum distances per training set
+            //bit6 knn_set[10][K_CONST];
+
+            //HLS_SEPARATE_ARRAY(knn_set);
+
+            // Initialize the knn set
+            for ( int i = 0; i < 10; ++i )
+              for ( int k = 0; k < K_CONST; ++k )
+                // Note that the max distance is 49
+                knn_set[i][k] = 50;
+
+            //sample = din;
+            //cout << "sample value = " << sample << endl;
+            for ( int i = 0; i < TRAINING_SIZE; ++i ) {
+              //HLS_PIPELINE_LOOP(HARD_STALL, 1, "pipeline_image_input");
+              for ( int j = 0; j < 10; j++ ) {
+
+                  //cout<<"IN THE LOOP"<<endl;
+                 // cout<<"i = "<<i<<" & j = "<<j<<endl;
+                // UNROLL pragma with user-defined macro
+                //HLS_UNROLL_LOOP(COMPLETE, UNROLL_FACTOR, "unroll_digits");
+
+
+
+                // Read a new instance from the training set
+                //const digit training_instance = training_data[j][i];
+                //cout << "training instance[" << std::dec << j << "][" << i << "] = 0x" << std::hex << training_data[j][i] << endl;
+                digit training_instance = training_set[j][i];
+                // Update the KNN set
+                update_knn(sample, training_instance, knn_set[j]);
+              }
             }
 
-            //Addr = mem_resp_addr_i.read();
-            //if load
-            //cout<<"successfully read from the response"<<endl;
-            training_instance = mem_resp_data_i.read();
+            // Compute the final output
+            result = knn_vote( knn_set );
+            result_64 = (sc_uint<64>) result;
+
+            break;
         }
 
-        // Read a new instance from the training set
-        //const digit training_instance = training_data[j][i];
-        //cout << "training instance[" << std::dec << j << "][" << i << "] = 0x" << std::hex << training_data[j][i] << endl;
+        case 2: {
 
-        // Update the KNN set
-        update_knn(sample, training_instance, knn_set[j]);
-      }
-    } 
-  
-    // Compute the final output
-    result = knn_vote( knn_set ); 
+            cout<<"It is case 2 : opcode ="<<opcode<<endl;
+                Addr = (sc_uint<40>) din_64;
+
+                HLS_DEFINE_PROTOCOL("Send request & Load data from the Cache for 1800*10 times");
+                {
+
+
+                    for (int j=0; j < 10; ++j) {
+                        //HLS_UNROLL_LOOP(OFF, "no unroll");
+                        for (int i=0; i < TRAINING_SIZE ;++i)
+                        {
+                            sc_uint<10> jj=j;
+                            //read param from the memory using
+                            //cout<<"Addr = "<<Addr<<endl;
+                            mem_req_addr_o.write(Addr);
+                            mem_req_valid_o.write(1);
+                            mem_req_cmd_o.write(0x0000);
+                            mem_req_typ_o.write(0x011);
+                            mem_req_tag_o.write(j);
+                            Addr = Addr + 1;
+                            //cout<<"have sent the requst, and waiting for the response"<<endl;
+
+                            do {
+                                wait();
+                            }while(!mem_req_ready_i);
+
+                            mem_req_valid_o.write(0);
+
+
+                            //cout<<"waiting for the response !"<<endl;
+                            while(!mem_resp_valid_i || !(mem_resp_tag_i == jj))
+                            {
+                                wait();
+                            }
+
+                            //Addr = mem_resp_addr_i.read();
+                            //if load
+                            //cout<<"successfully read from the response"<<endl;
+                            digit instance = mem_resp_data_i.read();
+
+                            wait();
+                            training_set[j][i] = instance;
+                            //cout << "training_set["<<j<<"]["<<i<<"] = "<<training_set[j][i]<<endl;
+
+                        }
+                    }
+                }
+                //cout<<"end of case 2"<<endl;
+                break;
+            }
+
+    }
+
 
 
 
     {
           HLS_DEFINE_PROTOCOL("Write to the Rocket_chip");
-          core_resp_valid_o = 1;
-          core_resp_rd_o.write(ds);
-          core_resp_data_o.write(result);
+          if (xd) {
+              core_resp_valid_o = 1;
+              core_resp_rd_o.write(ds);
+              core_resp_data_o.write(result_64);
 
-          do {
-              wait();
-          }while(!core_resp_ready_i);
+              do {
+                  wait();
+              }while(!core_resp_ready_i);
+          }
           cc_busy_o.write(0);
           core_resp_valid_o = 0;
           wait(2);
@@ -253,7 +307,6 @@ void digitrec::update_knn(digit test_inst, digit train_inst,
 //
 // @param[in] : knn_set - 10xK_CONST min distance values
 // @return : the recognized digit
-// 
 
 bit4 digitrec::knn_vote(bit6 knn_set[10][K_CONST])
 {

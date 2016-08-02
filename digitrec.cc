@@ -21,7 +21,7 @@ void digitrec::DigitrecThread(){
   output_t result;
   sc_uint <40> Addr;
   sc_uint <5> ds;
-  digit training_instance;
+
 
   // reset logic
   { HLS_DEFINE_PROTOCOL("Reset");
@@ -47,7 +47,7 @@ void digitrec::DigitrecThread(){
   }
 
   // multi-cycle initialization behavior here
-  
+
   // main loop
   while(1){
 
@@ -91,7 +91,10 @@ void digitrec::DigitrecThread(){
     // unscheduled computation here
 
     HLS_SEPARATE_ARRAY(training_data);
-  
+
+
+
+
     // This array stores K minimum distances per training set
     bit6 knn_set[10][K_CONST];
 
@@ -101,12 +104,12 @@ void digitrec::DigitrecThread(){
     for ( int i = 0; i < 10; ++i )
       for ( int k = 0; k < K_CONST; ++k )
         // Note that the max distance is 49
-        knn_set[i][k] = 50; 
-  
+        knn_set[i][k] = 50;
+
     //sample = din;
     //cout << "sample value = " << sample << endl;
     for ( int i = 0; i < TRAINING_SIZE; ++i ) {
-      HLS_PIPELINE_LOOP(HARD_STALL, 1, "pipeline_image_input");
+      HLS_PIPELINE_LOOP(HARD_STALL, 2, "pipeline_image_input");
       for ( int j = 0; j < 10; j++ ) {
 
           //cout<<"IN THE LOOP"<<endl;
@@ -155,14 +158,15 @@ void digitrec::DigitrecThread(){
         //const digit training_instance = training_data[j][i];
         //cout << "training instance[" << std::dec << j << "][" << i << "] = 0x" << std::hex << training_data[j][i] << endl;
 
-        const digit training_instance = training_data[j][i];
+        //const digit training_instance = training_data[j][i];
+        const instance=training_data[j][i];
         // Update the KNN set
-        update_knn(sample, training_instance, knn_set[j]);
+        update_knn(sample, instance, knn_set[j]);
       }
-    } 
-  
+    }
+
     // Compute the final output
-    result = knn_vote( knn_set ); 
+    result = knn_vote( knn_set );
 
 
 
@@ -197,9 +201,9 @@ void digitrec::DigitrecThread(){
 // @param[in/out] : min_distances[K_CONST] - the array that stores the current
 //                  K_CONST minimum distance values per training set
 
-void digitrec::update_knn(digit test_inst, digit train_inst, 
+void digitrec::update_knn(digit test_inst, digit train_inst,
     bit6 min_distances[K_CONST]){
-  
+
   // added
   //HLS_FLATTEN_ARRAY(min_distances);
   HLS_MAP_TO_REG_BANK(min_distances);
@@ -214,7 +218,7 @@ void digitrec::update_knn(digit test_inst, digit train_inst,
   // added
   //digit mask = 1;
   // Count the number of set bits
-  for (int i=0; i<49; ++i){ 
+  for (int i=0; i<49; ++i){
     // UNROLL pragma with user-defined macro
     HLS_UNROLL_LOOP(ON);
 
@@ -226,7 +230,7 @@ void digitrec::update_knn(digit test_inst, digit train_inst,
   }
 
   bit6 max_dist = 0;
-  int max_dist_id = K_CONST+1; 
+  int max_dist_id = K_CONST+1;
 
   // Find the max distance
   for (int k=0; k<K_CONST; ++k){
@@ -238,7 +242,7 @@ void digitrec::update_knn(digit test_inst, digit train_inst,
       max_dist_id = k;
     }
   }
-  
+
   // Replace the entry with the max distance
   if (dist<max_dist)
     min_distances[max_dist_id] = dist;
@@ -247,14 +251,14 @@ void digitrec::update_knn(digit test_inst, digit train_inst,
 //-----------------------------------------------------------------------
 // knn_vote function
 //-----------------------------------------------------------------------
-// Given 10xK minimum distance values, this function 
+// Given 10xK minimum distance values, this function
 // finds the actual K nearest neighbors and determines the
-// final output based on the most common digit represented by 
-// these nearest neighbors (i.e., a vote among KNNs). 
+// final output based on the most common digit represented by
+// these nearest neighbors (i.e., a vote among KNNs).
 //
 // @param[in] : knn_set - 10xK_CONST min distance values
 // @return : the recognized digit
-// 
+//
 
 bit4 digitrec::knn_vote(bit6 knn_set[10][K_CONST])
 {
@@ -262,15 +266,15 @@ bit4 digitrec::knn_vote(bit6 knn_set[10][K_CONST])
 
   // This array keeps keeps of the occurences
   // of each digit in the knn_set
-  
-  int score[10]; 
 
-  // Initialize score array  
+  int score[10];
+
+  // Initialize score array
   for (int i=0; i<10; ++i)
-      score[i] = 0; 
+      score[i] = 0;
 
   // Find KNNs
-  for (int k=0; k<K_CONST; ++k){ 
+  for (int k=0; k<K_CONST; ++k){
     bit6 min_dist = 50;
     bit4 min_dist_id = 10;
     int  min_dist_record = K_CONST+1;
@@ -284,14 +288,14 @@ bit4 digitrec::knn_vote(bit6 knn_set[10][K_CONST])
         }
       }
     }
-    
+
     score[min_dist_id]++;
     // Erase the minimum difference entry once it's recorded
     knn_set[min_dist_id][min_dist_record] = 50;
   }
 
   // Calculate the maximum score
-  int max_score = 0; 
+  int max_score = 0;
   for (int i=0; i<10; ++i){
     if (score[i]>max_score){
       max_score = score[i];

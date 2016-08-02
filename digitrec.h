@@ -17,6 +17,10 @@
 #define K_CONST 1
 #endif
 
+//#ifndef TRAINING_SIZE
+//#define TRAINING_SIZE 18
+//#endif
+
 SC_MODULE(digitrec)
 {
 public:
@@ -80,7 +84,6 @@ public:
 
   sc_in<bool> mem_resp_nack_i;  //unknow
   sc_in<bool> mem_resp_replay_i; //unknow
-
 
 
   // Declare the input port and the output port.
@@ -148,8 +151,11 @@ public:
 
 protected:
   void DigitrecThread();           // the thread function
+
   void update_knn(input_t test_inst, input_t train_inst, bit6 min_distances[K_CONST]);
   output_t knn_vote(bit6 knn_set[10][K_CONST]);
+  digit training_set[10][TRAINING_SIZE];
+
 
 };
 

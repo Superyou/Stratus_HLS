@@ -10,6 +10,7 @@
 #include <iostream>
 #include "training_data.h"
 
+#define address0 0x35
 ////
 // The source thread reads data from a file and sends it to the design
 ////
@@ -56,8 +57,8 @@ void tb::mem()
 
 
         }
-        int i =(int)Addr / TRAINING_SIZE;
-        int j= (int)Addr - i* TRAINING_SIZE;
+        int i =(int)(Addr-address0) / TRAINING_SIZE;
+        int j= (int)(Addr-address0) - i* TRAINING_SIZE;
         sc_uint<64> value = training_data[i][j];
         {
             HLS_DEFINE_PROTOCOL("mem response");
@@ -114,6 +115,40 @@ void tb::source()
     // store the time the first value was sent
     sample_sent_time = sc_time_stamp();
 
+
+
+    {
+        HLS_DEFINE_PROTOCOL("First pass the Addr to the Addr");
+        while(cc_busy_o){
+            //cout<<"We are busy = "<<cc_busy_o<<endl;
+            wait();
+        }
+        core_cmd_valid_i.write(1);
+        core_cmd_inst_funct_i.write(0x1);
+        core_cmd_inst_rs1_i.write(0x5);
+
+
+        core_cmd_inst_xd_i.write(0);     //set if destination reg exist
+        core_cmd_inst_xs1_i.write(1);    //set if resource rs1 reg exist
+        core_cmd_inst_xs2_i.write(0);    //set if resource rs2 reg exist
+
+        core_cmd_inst_opcode_i.write(0x2);     //custom instruction opcode may be used for several accerlerations
+        core_cmd_rs1_i.write(address0);
+
+        //cout<<"For Addr --- wait for cmd_rdy to be 1"<<endl;
+        do{
+
+            wait();
+            //cout<<"For Addr ---  core_cmd_rdy = "<<core_cmd_ready_o<<"   cmd_valid = "<<core_cmd_valid_i<<endl;
+
+        }while(!core_cmd_ready_o);
+        core_cmd_valid_i.write(0);
+        wait();
+    }
+
+
+    cout<<"finish Addr"<<endl;
+
     // Write a set of values to the fir
     open_stimulus_file();       // Open the input data file
     bool eof = false;
@@ -121,7 +156,7 @@ void tb::source()
     {
         input_t value = read_stimulus_value(eof);
         sc_uint <64> vv = (sc_uint<64>) value;
-        cout << "source value = " << value << endl;
+        //cout << "source value = " << value << endl;
         if (!eof)
         {
             {
@@ -132,21 +167,21 @@ void tb::source()
                 }
                 core_cmd_valid_i.write(1);
                 core_cmd_inst_funct_i.write(0x1);
-                core_cmd_inst_rs1_i.write(1);
-                core_cmd_inst_rs2_i.write(1);
+                core_cmd_inst_rs1_i.write(0x55);
+
 
                 core_cmd_inst_xd_i.write(1);     //set if destination reg exist
                 core_cmd_inst_xs1_i.write(1);    //set if resource rs1 reg exist
-                core_cmd_inst_xs2_i.write(1);    //set if resource rs2 reg exist
+                core_cmd_inst_xs2_i.write(0);    //set if resource rs2 reg exist
                 core_cmd_inst_rd_i.write(0x9);
                 core_cmd_inst_opcode_i.write(0x1);     //custom instruction opcode may be used for several accerlerations
                 core_cmd_rs1_i.write(vv);
-                core_cmd_rs2_i.write(0x0);
-                cout<<"wait for cmd_rdy to be 1"<<endl;
+
+                //cout<<"wait for cmd_rdy to be 1"<<endl;
                 do{
 
                     wait();
-                    cout<<"core_cmd_rdy = "<<core_cmd_ready_o<<"   cmd_valid = "<<core_cmd_valid_i<<endl;
+                    //cout<<"core_cmd_rdy = "<<core_cmd_ready_o<<"   cmd_valid = "<<core_cmd_valid_i<<endl;
 
                 }while(!core_cmd_ready_o);
                 core_cmd_valid_i.write(0);
@@ -186,7 +221,7 @@ void tb::sink()
         {
             HLS_DEFINE_PROTOCOL("read response");
             core_resp_ready_i.write(1);
-            cout<<"core_resp_rdy is going to be set 1"<<endl;
+            //cout<<"core_resp_rdy is going to be set 1"<<endl;
             while(!core_resp_valid_o)
             {
                 wait();
