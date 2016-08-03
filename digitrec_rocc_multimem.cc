@@ -17,14 +17,15 @@
 
 void digitrec::DigitrecThread(){
 
-  sc_uint <64> din_64;
+  //variable for storing the address of training_data[0][0], assuming that the array are saved continuously in the cache
+  sc_uint <64> din_64; //the data read from the rocket chip
   input_t sample;
   output_t result;
   sc_uint <40> Addr;
   sc_uint <5> ds;
   sc_uint <7>  opcode;
-  sc_uint <64> result_64;
-  bool xd;
+  sc_uint <64> result_64; // the response gonna to send back to cocket chip
+  bool xd; //set 1 if the destination reg exist
 
 
   // reset logic
@@ -62,8 +63,6 @@ void digitrec::DigitrecThread(){
           HLS_DEFINE_PROTOCOL("Read from Rocket_chip");
           core_cmd_ready_o.write(1);
 
-          //cout<<"in the digit part::::valid = "<<core_cmd_valid_i <<"  ready = "<<core_cmd_ready_o<< endl;
-
           while (!core_cmd_valid_i)
           {
               wait();
@@ -74,62 +73,37 @@ void digitrec::DigitrecThread(){
           //assert(core_cmd_inst_opcode_i == 0x1);
           //assert(core_cmd_inst_funct_i==0x1);  //to be defined
 
-          din_64 = core_cmd_rs1_i.read();
-
-          xd = core_cmd_inst_xd_i.read();
-          ds = core_cmd_inst_rd_i.read();
-
+          // store the num of the opcode
           opcode = core_cmd_inst_opcode_i.read();
-
+          //read the input data from the register rs1
+          din_64 = core_cmd_rs1_i.read();
+          // store the destination register id if exist
+          ds = core_cmd_inst_rd_i.read();
+          // store whether destination teg exist
+          xd = core_cmd_inst_xd_i.read();
+          // set cc_busy to 1 to prevent sending other cmd from rocket chip
           cc_busy_o.write(1);
 
-          cout<<"digitrec has read the input:"<< din_64 <<"   core_cmd_ready_o = "<< core_cmd_ready_o<< "   valid = " <<core_cmd_valid_i <<endl;
           wait();
-          //cout<<"2 in the digit part::::valid = "<<core_cmd_valid_i <<"  ready = "<<core_cmd_ready_o<< endl;
+
           core_cmd_ready_o.write(0);
-          //wait();
 
     }
 
-    cout <<" build training_set"<<endl;
+    //cout <<"start building training_set"<<endl;
 
-
+    // defined in the digitrec.h
     HLS_SEPARATE_ARRAY(training_set);
-    //HLS_MAP_TO_REG_BANK(training_set);
-    /*
-    cout <<" finish build train_set"<<endl;
-    for (int j=0;j<TRAINING_SIZE;++j){
-        for (int i=0;i<10;++i){
-            HLS_UNROLL_LOOP(ON,"no loop");
-            training_set[i][j]=0;
-        }
-    }
-    cout <<" build knn_set"<<endl;
-
-
-
-
-
-
-    cout<<"opcode = "<<opcode<<endl;
-
-*/
-
-
-
 
     switch (opcode)
     {
-
-
+        // to do the knn training using training_set
         case 1: {
 
-        cout<<"It is case 1 : opcode ="<<opcode<<endl;
+        //cout<<"It is case 1 : opcode ="<<opcode<<endl;
         sample = (digit) din_64;
-            // FIX: TO DO
-
-            // unscheduled computation here
         /*
+        // check whether training_set is equals to training_data: For debug
         int sum =0 ;
 
          *for (int i=0;i<10;++i)
@@ -140,7 +114,7 @@ void digitrec::DigitrecThread(){
         cout << "********************************  SUM = "<<sum<<" ***************************************"<<endl;
         */
 
-            // This array stores K minimum distances per training set
+        // This array stores K minimum distances per training set
         bit6 knn_set[10][K_CONST];
 
         HLS_SEPARATE_ARRAY(knn_set);
@@ -151,24 +125,18 @@ void digitrec::DigitrecThread(){
               //Note that the max distance is 49
                knn_set[i][k] = 50;
 
-            //sample = din;
-            //cout << "sample value = " << sample << endl;
             for ( int i = 0; i < TRAINING_SIZE; ++i ) {
               HLS_PIPELINE_LOOP(HARD_STALL, 1, "pipeline_image_input");
               for ( int j = 0; j < 10; j++ ) {
 
-                  //cout<<"IN THE LOOP"<<endl;
-                 // cout<<"i = "<<i<<" & j = "<<j<<endl;
                 // UNROLL pragma with user-defined macro
                 HLS_UNROLL_LOOP(COMPLETE, UNROLL_FACTOR, "unroll_digits");
 
 
 
                 // Read a new instance from the training set
-                //const digit training_instance = training_data[j][i];
-                //cout << "training instance[" << std::dec << j << "][" << i << "] = 0x" << std::hex << training_data[j][i] << endl;
                 digit training_instance = training_set[j][i];
-                //cout<<"for trainging_set "<<j<<" "<<i<<" "<<training_instance <<"vs"<<training_set[j][i]<< endl;
+
                 // Update the KNN set
                 update_knn(sample, training_instance, knn_set[j]);
               }
@@ -177,81 +145,79 @@ void digitrec::DigitrecThread(){
             // Compute the final output
             result = knn_vote( knn_set );
             result_64 = (sc_uint<64>) result;
-            cout<<"result ="<<result<<" vs "<<result_64<<endl;
+
+            //cout<<"result ="<<result<<" vs "<<result_64<<endl;
 
             break;
         }
 
+        // To prefetch the parameters
         case 2: {
+            // to prefetch sequentially
             HLS_UNROLL_LOOP(OFF, "no unroll");
 
-            cout<<"It is case 2 : opcode ="<<opcode<<endl;
-                Addr = (sc_uint<40>) din_64;
-                sc_uint<40> now_Addr;
+            //cout<<"It is case 2 : opcode ="<<opcode<<endl;
 
-                    for (int i=0; i < TRAINING_SIZE; ++i) {
-                        //HLS_UNROLL_LOOP(OFF, "no unroll");
-                        digit tmp[10];
-                        HLS_MAP_TO_REG_BANK(tmp);
-                        HLS_SEPARATE_ARRAY(tmp);
+            Addr = (sc_uint<40>) din_64;
+            sc_uint<40> now_Addr;
 
-                        //cout<< "for now i = "<<i<<endl;
-                        for (int j=0; j < 10 ;++j)
+            for (int i=0; i < TRAINING_SIZE; ++i)
+            {
+                // to use tmp to save the num i instance of each data_set_j and pase the 10-set data to training_set at the same time
+                digit tmp[10];
+                // map to reg bank and separated
+                HLS_MAP_TO_REG_BANK(tmp);
+                HLS_SEPARATE_ARRAY(tmp);
+
+                for (int j=0; j < 10 ;++j)
+                {
+                    digit instance;
+                    sc_uint <10> jj=j;
+                    // culcate the addr for training_data[j][i]
+                    now_Addr = Addr + j*TRAINING_SIZE +i;
+
+                    HLS_DEFINE_PROTOCOL("Send request & Load data from the Cache for 1800*10 times");
+                    {
+                        //read param from the memory using mem interface
+                        mem_req_addr_o.write(now_Addr);
+                        mem_req_valid_o.write(1);
+                        mem_req_cmd_o.write(0x0000);
+                        mem_req_typ_o.write(0x011);
+                        mem_req_tag_o.write(jj);
+
+                        do {
+                            wait();
+                        }while(!mem_req_ready_i);
+
+                        mem_req_valid_o.write(0);
+
+                        // check whether the tag is correct
+                        while(!mem_resp_valid_i || !(mem_resp_tag_i == jj))
                         {
-                            digit instance;
-                            sc_uint<10> jj=j;
-                            now_Addr = Addr + j*TRAINING_SIZE +i;
-
-                            HLS_DEFINE_PROTOCOL("Send request & Load data from the Cache for 1800*10 times");
-                            {
-
-                                //read param from the memory using
-                                //cout<<"Addr = "<<now_Addr<<endl;
-                                mem_req_addr_o.write(now_Addr);
-                                mem_req_valid_o.write(1);
-                                mem_req_cmd_o.write(0x0000);
-                                mem_req_typ_o.write(0x011);
-                                mem_req_tag_o.write(j);
-
-                                //cout<<"have sent the requst, and waiting for the response"<<endl;
-
-                                do {
-                                    wait();
-                                }while(!mem_req_ready_i);
-
-                                mem_req_valid_o.write(0);
-
-
-                                //cout<<"waiting for the response !"<<endl;
-                                while(!mem_resp_valid_i || !(mem_resp_tag_i == jj))
-                                {
-                                    wait();
-                                }
-
-                                //Addr = mem_resp_addr_i.read();
-                                //if load
-                                //cout<<"successfully read from the response"<<endl;
-                                instance = mem_resp_data_i.read();
-
-                                wait();
-
-                                //cout << "training_set["<<j<<"]["<<i<<"] = "<<instance<<endl;
-
-                            }
-
-                            tmp[j] = instance;
-                    }
-                        for (int ii=0;ii<10;++ii)
-                        {
-                            HLS_UNROLL_LOOP(ON,"ii LOOP");
-                            training_set[ii][i]=tmp[ii];
+                            wait();
                         }
 
-                }
-                cout<<"end of case 2"<<endl;
+                        instance = mem_resp_data_i.read();
 
-                break;
+                        wait();
+                        //cout << "training_set["<<j<<"]["<<i<<"] = "<<instance<<endl;
+
+                    }
+                   //store instance into tmp array first
+                    tmp[j] = instance;
+                }
+                for (int ii=0;ii<10;++ii)
+                {
+                    HLS_UNROLL_LOOP(ON,"ii LOOP");
+                    // using unroll loop to pass tmp datas to training_set at same time
+                    training_set[ii][i]=tmp[ii];
+                }
+
             }
+            //cout<<"end of case 2"<<endl;
+
+            break;
+        }
 
     }
 
@@ -261,7 +227,9 @@ void digitrec::DigitrecThread(){
     {
           HLS_DEFINE_PROTOCOL("Write to the Rocket_chip");
           if (xd) {
+              // send resp_valid to 1
               core_resp_valid_o = 1;
+              // send result back to the destination reg
               core_resp_rd_o.write(ds);
               core_resp_data_o.write(result_64);
 
@@ -269,6 +237,7 @@ void digitrec::DigitrecThread(){
                   wait();
               }while(!core_resp_ready_i);
           }
+          // set cc_busy to 0 to start the next cmd
           cc_busy_o.write(0);
           core_resp_valid_o = 0;
           wait(2);

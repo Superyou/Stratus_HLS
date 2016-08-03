@@ -4,6 +4,7 @@
 // @brief: A k-nearest-neighbor implementation for digit recognition
 
 #include "digitrec.h"
+#include "training_data.h"
 
 #ifndef UNROLL_FACTOR
 #define UNROLL_FACTOR 10
@@ -19,6 +20,7 @@ void digitrec::DigitrecThread(){
 
   input_t sample;
   output_t result;
+  //variable for storing the address of training_data[0][0], assuming that the array are saved continuously in the cache
   sc_uint <40> Addr;
   sc_uint <5> ds;
 
@@ -26,6 +28,7 @@ void digitrec::DigitrecThread(){
   // reset logic
   { HLS_DEFINE_PROTOCOL("Reset");
     // single-cycle reset behavior
+    // to reset all the output ports to 0 or 1
     cc_busy_o.write(0);
     cc_interrupt_o.write(0);
 
@@ -57,7 +60,6 @@ void digitrec::DigitrecThread(){
           HLS_DEFINE_PROTOCOL("Read from Rocket_chip");
           core_cmd_ready_o.write(1);
 
-          //cout<<"in the digit part::::valid = "<<core_cmd_valid_i <<"  ready = "<<core_cmd_ready_o<< endl;
 
           while (!core_cmd_valid_i)
           {
@@ -69,19 +71,16 @@ void digitrec::DigitrecThread(){
           //assert(core_cmd_inst_opcode_i == 0x1);
           //assert(core_cmd_inst_funct_i==0x1);  //to be defined
 
+          //read the input data from the register rs1
           sample = core_cmd_rs1_i.read();
-
-          Addr = core_cmd_rs2_i.read();
-
+          // store the destination register id if exist
           ds = core_cmd_inst_rd_i.read();
-
+          // set cc_busy to 1 to prevent sending other cmd from rocket chip
           cc_busy_o.write(1);
 
-          //cout<<"digitrec has read the input:"<<sample<<"   core_cmd_ready_o = "<<core_cmd_ready_o<< "   valid = " <<core_cmd_valid_i <<endl;
           wait();
-          //cout<<"2 in the digit part::::valid = "<<core_cmd_valid_i <<"  ready = "<<core_cmd_ready_o<< endl;
           core_cmd_ready_o.write(0);
-          //wait();
+
 
     }
 
@@ -106,60 +105,17 @@ void digitrec::DigitrecThread(){
         // Note that the max distance is 49
         knn_set[i][k] = 50;
 
-    //sample = din;
-    //cout << "sample value = " << sample << endl;
+
     for ( int i = 0; i < TRAINING_SIZE; ++i ) {
       HLS_PIPELINE_LOOP(HARD_STALL, 2, "pipeline_image_input");
       for ( int j = 0; j < 10; j++ ) {
 
-          //cout<<"IN THE LOOP"<<endl;
-         // cout<<"i = "<<i<<" & j = "<<j<<endl;
         // UNROLL pragma with user-defined macro
         HLS_UNROLL_LOOP(COMPLETE, UNROLL_FACTOR, "unroll_digits");
-        /*
-        {
-            HLS_DEFINE_PROTOCOL("Send request to the Cache");
 
-            //read param from the memory using
-            //cout<<"Addr = "<<Addr<<endl;
-            sc_uint <40> newAddr = Addr + j*TRAINING_SIZE + i;
-            wait();
-            mem_req_addr_o.write( newAddr);
-            mem_req_valid_o.write(1);
-            mem_req_cmd_o.write(0x0000);
-            mem_req_typ_o.write(0x011);
-            mem_req_tag_o.write(j);
-
-            //cout<<"have sent the requst, and waiting for the response"<<endl;
-
-            do {
-                wait();
-            }while(!mem_req_ready_i);
-
-            mem_req_valid_o.write(0);
-        }
-
-
-        {   HLS_DEFINE_PROTOCOL("Load response from the Cache");
-            sc_uint<10> jj=j;
-            //cout<<"waiting for the response !"<<endl;
-            while(!mem_resp_valid_i || !(mem_resp_tag_i == jj))
-            {
-                wait();
-            }
-
-            //Addr = mem_resp_addr_i.read();
-            //if load
-            //cout<<"successfully read from the response"<<endl;
-            training_instance = mem_resp_data_i.read();
-        }
-*/
-        // Read a new instance from the training set
-        //const digit training_instance = training_data[j][i];
-        //cout << "training instance[" << std::dec << j << "][" << i << "] = 0x" << std::hex << training_data[j][i] << endl;
-
-        //const digit training_instance = training_data[j][i];
-        const instance=training_data[j][i];
+        // Read a new instance from the training data
+        // NOTE that we didn't use memory port to read the parameters
+        const digit instance = training_data[j][i];
         // Update the KNN set
         update_knn(sample, instance, knn_set[j]);
       }
@@ -169,7 +125,7 @@ void digitrec::DigitrecThread(){
     result = knn_vote( knn_set );
 
 
-
+    //write back to the rocket chip
     {
           HLS_DEFINE_PROTOCOL("Write to the Rocket_chip");
           core_resp_valid_o = 1;

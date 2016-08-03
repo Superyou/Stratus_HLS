@@ -10,16 +10,22 @@
 #include <iostream>
 #include "training_data.h"
 
+//we assume that the array training_set is stroed in the cache at the begining of address0 (here is 0x35)
 #define address0 0x35
+
 ////
-// The source thread reads data from a file and sends it to the design
+// The mem thread pretend to be a cache part in the rocket V, it receive a request from the accelerator and send back the response to the accelerator, include data from training_data[10][TRAINING_SIZE]
 ////
+
 void tb::mem()
 {
+    //define some internal variables to be used
     sc_uint<40> Addr;
     sc_uint<10> tag;
     sc_uint<5> cmd;
     sc_uint<3> type;
+    sc_uint<64> value;
+    //reset logic
     {
         HLS_DEFINE_PROTOCOL("mem reset");
         mem_req_ready_i.write(0);
@@ -38,10 +44,10 @@ void tb::mem()
     }
     while(1)
     {
+        //recieve req from accelerator
         {
             HLS_DEFINE_PROTOCOL("mem request");
             mem_req_ready_i.write(1);
-            //cout<<"wait req to be valid in the mem!"<<endl;
 
             while(!mem_req_valid_o)
             {
@@ -51,15 +57,18 @@ void tb::mem()
             cmd = mem_req_cmd_o.read();
             tag = mem_req_tag_o.read();
             type = mem_req_typ_o.read();
-            //cout<<"read req from the dut!"<<endl;
+
             wait();
             mem_req_ready_i.write(0);
 
 
         }
+        // get data from the training_data array
         int i =(int)(Addr-address0) / TRAINING_SIZE;
         int j= (int)(Addr-address0) - i* TRAINING_SIZE;
-        sc_uint<64> value = training_data[i][j];
+        value = training_data[i][j];
+
+        //send resp back
         {
             HLS_DEFINE_PROTOCOL("mem response");
             mem_resp_addr_i.write(Addr);
@@ -68,19 +77,22 @@ void tb::mem()
             mem_resp_typ_i.write(type);
             mem_resp_data_i.write(value);
             mem_resp_valid_i.write(1);
-            //cout<<"write response back to the dut with i = "<<i<< "and j = "<<j<<endl;
+
             wait();
         }
     }
 
 }
 
+////
+// The source thread reads data from a file and sends it to the design
+////
+
 void tb::source()
 {
 
 
-    //control mode
-
+    //reset logic
     {
         HLS_DEFINE_PROTOCOL("reset");
 
@@ -89,8 +101,6 @@ void tb::source()
         cc_status_i.write(0);
         cc_exception_i.write(0);
         cc_host_id_i.write(0);
-
-        //Register mode
 
         core_cmd_valid_i.write(0);
         core_cmd_inst_funct_i.write(0);
@@ -115,31 +125,36 @@ void tb::source()
     // store the time the first value was sent
     sample_sent_time = sc_time_stamp();
 
-
-
+    // only use this protocol if running the using memory interface version
+    /*
+    //set opcode =2  to let the accelerator store those parameter from training_data to training_set first
     {
-        HLS_DEFINE_PROTOCOL("First pass the Addr to the Addr");
+        HLS_DEFINE_PROTOCOL("First pass the Addr to the Accelerator");
+
+        // have to wait until the cc_busy turn to be 0
         while(cc_busy_o){
-            //cout<<"We are busy = "<<cc_busy_o<<endl;
             wait();
         }
+        //set cmd valid to 1
         core_cmd_valid_i.write(1);
+        // set cmd funct to 0x1 (defined myself)
         core_cmd_inst_funct_i.write(0x1);
+        //set register id (defined myself)
         core_cmd_inst_rs1_i.write(0x5);
 
 
         core_cmd_inst_xd_i.write(0);     //set if destination reg exist
-        core_cmd_inst_xs1_i.write(1);    //set if resource rs1 reg exist
+        core_cmd_inst_xs1_i.write(1);    //set if resource rs1 reg exist, only use rs1 this time
         core_cmd_inst_xs2_i.write(0);    //set if resource rs2 reg exist
 
+        //set opcode to 0x2 to prefetch the parameters
         core_cmd_inst_opcode_i.write(0x2);     //custom instruction opcode may be used for several accerlerations
         core_cmd_rs1_i.write(address0);
 
-        //cout<<"For Addr --- wait for cmd_rdy to be 1"<<endl;
+
         do{
 
             wait();
-            //cout<<"For Addr ---  core_cmd_rdy = "<<core_cmd_ready_o<<"   cmd_valid = "<<core_cmd_valid_i<<endl;
 
         }while(!core_cmd_ready_o);
         core_cmd_valid_i.write(0);
@@ -148,6 +163,8 @@ void tb::source()
 
 
     cout<<"finish Addr"<<endl;
+
+    */
 
     // Write a set of values to the fir
     open_stimulus_file();       // Open the input data file
@@ -161,27 +178,29 @@ void tb::source()
         {
             {
                 HLS_DEFINE_PROTOCOL("Input");
+                // have to wait until the cc_busy turn to be 0
                 while(cc_busy_o){
-                    //cout<<"We are busy = "<<cc_busy_o<<endl;
+
                     wait();
                 }
+                //set cmd valid to 1
                 core_cmd_valid_i.write(1);
+                // set cmd funct to 0x1 (defined myself)
                 core_cmd_inst_funct_i.write(0x1);
+                //set register id (defined myself)
                 core_cmd_inst_rs1_i.write(0x55);
 
 
                 core_cmd_inst_xd_i.write(1);     //set if destination reg exist
-                core_cmd_inst_xs1_i.write(1);    //set if resource rs1 reg exist
+                core_cmd_inst_xs1_i.write(1);    //set if resource rs1 reg exist, only use rs1 this time
                 core_cmd_inst_xs2_i.write(0);    //set if resource rs2 reg exist
                 core_cmd_inst_rd_i.write(0x9);
                 core_cmd_inst_opcode_i.write(0x1);     //custom instruction opcode may be used for several accerlerations
                 core_cmd_rs1_i.write(vv);
 
-                //cout<<"wait for cmd_rdy to be 1"<<endl;
                 do{
 
                     wait();
-                    //cout<<"core_cmd_rdy = "<<core_cmd_ready_o<<"   cmd_valid = "<<core_cmd_valid_i<<endl;
 
                 }while(!core_cmd_ready_o);
                 core_cmd_valid_i.write(0);
@@ -202,10 +221,12 @@ void tb::source()
 ////
 // The sink thread reads all the expected values from the design
 ////
+
 void tb::sink()
 {
     output_t result;
-  cout << "Sink reading all expected values from the design." << endl;
+    cout << "Sink reading all expected values from the design." << endl;
+    //reset for the output
     core_resp_ready_i.write(0);
     wait();                     // to synchronize with reset
 
@@ -217,11 +238,11 @@ void tb::sink()
     cout << "There are " << n_samples << " samples" << endl;
     for (unsigned long i = 0; i < n_samples; i++)
     {
-
+        // wait to receive the response values
         {
             HLS_DEFINE_PROTOCOL("read response");
             core_resp_ready_i.write(1);
-            //cout<<"core_resp_rdy is going to be set 1"<<endl;
+
             while(!core_resp_valid_o)
             {
                 wait();

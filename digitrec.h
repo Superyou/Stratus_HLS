@@ -17,9 +17,9 @@
 #define K_CONST 1
 #endif
 
-//#ifndef TRAINING_SIZE
+#ifndef TRAINING_SIZE
 #define TRAINING_SIZE 1800
-//#endif
+#endif
 
 SC_MODULE(digitrec)
 {
@@ -151,7 +151,10 @@ public:
 
 protected:
   void DigitrecThread();           // the thread function
-  digit training_set[10][TRAINING_SIZE];
+  
+  // define the internal array to store the training parameters
+  //digit training_set[10][TRAINING_SIZE];
+  
   void update_knn(input_t test_inst, input_t train_inst, bit6 min_distances[K_CONST]);
   output_t knn_vote(bit6 knn_set[10][K_CONST]);
 
