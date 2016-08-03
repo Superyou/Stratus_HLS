@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<lib_catalogue>
+	<tool_log>
+		<tool_name>Memory Model Generator</tool_name>
+		<tool_kind>ModelGenerator</tool_kind>
+		<tool_tech>NONE</tool_tech>
+		<version>15.21-p100</version>
+		<user>yw777</user>
+		<hostname>en-ec-zhang-01.coecis.cornell.edu</hostname>
+		<cwd></cwd>
+		<output_dir></output_dir>
+		<exit_status>-1</exit_status>
+	</tool_log>
+	<name>dummymemlib</name>
+	<version>15.21-p100</version>
+	<lib_type>MEMORY</lib_type>
+	<param_table>
+	</param_table>
+	<source_file>
+		<path>c_parts/MY_RAM.cc</path>
+		<file_kind>RTL_C</file_kind>
+		<module_name>MY_RAM</module_name>
+	</source_file>
+	<source_file>
+		<path>c_parts/MY_RAM.h</path>
+		<file_kind>RTL_H</file_kind>
+		<module_name>MY_RAM</module_name>
+	</source_file>
+	<source_file>
+		<path>MY_RAM.bdm</path>
+		<file_kind>MEM_WRAP</file_kind>
+		<module_name>MY_RAM</module_name>
+	</source_file>
+	<module>
+		<name>MY_RAM</name>
+		<source_path>c_parts/MY_RAM.cc</source_path>
+		<crc>0</crc>
+		<resource_kind>RAM</resource_kind>
+		<area>0</area>
+		<delay>0.01</delay>
+		<setup_time>0.01</setup_time>
+		<slack>0</slack>
+		<latency>1</latency>
+		<pipelined>1</pipelined>
+		<stallable>0</stallable>
+		<word_count>1024</word_count>
+		<port>
+			<name>CLK</name>
+			<datatype W="1">bool</datatype>
+			<direction>in</direction>
+			<clock>pos</clock>
+		</port>
+		<port>
+			<name>WE0</name>
+			<datatype W="1">bool</datatype>
+			<direction>in</direction>
+		</port>
+		<port>
+			<name>DIN0</name>
+			<datatype W="16">sc_uint</datatype>
+			<direction>in</direction>
+		</port>
+		<port>
+			<name>A0</name>
+			<datatype W="10">sc_uint</datatype>
+			<direction>in</direction>
+		</port>
+		<port>
+			<name>DOUT0</name>
+			<datatype W="16">sc_uint</datatype>
+			<direction>out</direction>
+		</port>
+	</module>
+</lib_catalogue>

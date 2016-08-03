@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<lib_catalogue>
+        <tool_log>
+            <tool_name>Interface Generator</tool_name>
+            <tool_kind>ModelGenerator</tool_kind>
+            <user>Unknown</user>
+            <hostname>Unknown</hostname>
+            <cwd></cwd>
+            <output_dir></output_dir>
+            <exit_status>1</exit_status>
+        </tool_log>
+        <name>iflib</name>
+        <lib_type>INTERFACE</lib_type>
+        <param_table>
+        </param_table>
+</lib_catalogue>
