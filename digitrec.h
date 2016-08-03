@@ -153,7 +153,7 @@ protected:
   void DigitrecThread();           // the thread function
   
   // define the internal array to store the training parameters
-  //digit training_set[10][TRAINING_SIZE];
+  digit training_set[10][TRAINING_SIZE];
   
   void update_knn(input_t test_inst, input_t train_inst, bit6 min_distances[K_CONST]);
   output_t knn_vote(bit6 knn_set[10][K_CONST]);

@@ -21,7 +21,7 @@ IFLIBS =
 # automatically run at the end of each simulation. (See the
 # endOfSimCommand definition in the project.tcl file.)
 
-GOLD_FILE = .golden.dat
+GOLD_FILE = golden.dat
 RESULTS_FILE = $(BDW_SIM_CONFIG_DIR)/response.dat
 
 cmp_result:

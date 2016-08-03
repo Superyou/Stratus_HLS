@@ -126,7 +126,7 @@ void tb::source()
     sample_sent_time = sc_time_stamp();
 
     // only use this protocol if running the using memory interface version
-    /*
+
     //set opcode =2  to let the accelerator store those parameter from training_data to training_set first
     {
         HLS_DEFINE_PROTOCOL("First pass the Addr to the Accelerator");
@@ -164,7 +164,7 @@ void tb::source()
 
     cout<<"finish Addr"<<endl;
 
-    */
+
 
     // Write a set of values to the fir
     open_stimulus_file();       // Open the input data file
@@ -269,7 +269,7 @@ void tb::sink()
 ////
 void tb::open_stimulus_file(const char *_name)
 {
-    const char *name = (_name == NULL ? ".stimulus.dat" : _name);
+    const char *name = (_name == NULL ? "stimulus.dat" : _name);
 
     stim_file.open(name);
     if (stim_file.fail())
@@ -344,7 +344,7 @@ void tb::close_response_file()
 ////
 int tb::count_golden_file(const char *_name)
 {
-    const char *name = (_name == NULL ? ".golden.dat" : _name);
+    const char *name = (_name == NULL ? "golden.dat" : _name);
     ifstream golden_file;       // File stream containing expected values
     unsigned long i;
     output_t value;
