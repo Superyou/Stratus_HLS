@@ -14,7 +14,8 @@ There are two versions to implement the digitrec design based on ROCC interface.
 
 ### Without memory interface
 
-In order to implement the ROCC interface, we have to adjust in 3 files: `system.h` `digitrec.h` `digitrec.cc` `tb.h` and `tb.cc`.
+>   In order to implement the ROCC interface, we have to adjust in 3 files: `system.h` `digitrec.h` `digitrec.cc` `tb.h` and `tb.cc`.
+In order to run this version, you should use the `digitrec.cc` as the source file for digitrec module. And comment the line of `digit training_set[10][TRAINING_SIZE]` in the `digitrec.h` file as well as the whole protocol of `First pass the Addr to the accelerator`.
 
 #### Modification in the `system.h` 
 
@@ -78,4 +79,6 @@ We use to the tb module to pretend a rocket core to read test digit from the `st
 
 ### Using memory interface
 
-In this version we add the rocc mem interfaces into the design. We define 2 different cmd in the tb.cc file. If opcode equals 2, the accelerator first load training data parameters from the memory (using mem thread to get from the `training_data`) and save these parameters to the array `training_set`. If opcode equals 1, then the accelerator will do the knn training using the parameters stored in `trainging_set`. 
+>   The using memory interface version is modified in the `digitrec_rocc_multimem.cc` file. If you want to run this version, you have to add the `digit training_set[10][TRAINING_SIZE` back to the `digitrec.h` file. And also remove the comments in the `tb.cc` file.
+
+In this version we add the rocc mem interfaces into the design. We define 2 different cmd in the tb.cc file. If opcode equals 2, the accelerator first load training data parameters from the memory (using mem thread to get from the `training_data`) and save these parameters to the array `training_set`, which is defined in the `digitrec.h` file. If opcode equals 1, then the accelerator will do the knn training using the parameters stored in `trainging_set`. 
