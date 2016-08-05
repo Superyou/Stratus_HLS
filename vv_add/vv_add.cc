@@ -91,7 +91,7 @@ void vv_add::vv_addThread(){
           core_cmd_ready_o.write(0);
 
     }
-
+      cout<<"din1_= "<<din1_64<<" din2 = "<<din2_64<<endl;
 
     sc_uint<7> funct_7 = (sc_uint<7> )funct;
 
@@ -100,14 +100,14 @@ void vv_add::vv_addThread(){
         // to do the knn training using training_set
 
     case 1: { //for add option
-
+        cout<<"case 1"<<endl;
         result_64 = din1_64 + din2_64;
         cout<<"din1 ="<<din1_64<< " +  din2 = "<<din2_64<<"  =  result = "<<result_64<<endl;
         break;
     }
 
     case 2: { //For store option
-
+        cout<<"case 2"<<endl;
         HLS_DEFINE_PROTOCOL("Send request to store data to the Cache");
         {
             //read param from the memory using mem interface
@@ -120,7 +120,7 @@ void vv_add::vv_addThread(){
             do {
                 wait();
             }while(!mem_req_ready_i);
-
+            cout <<"send store req with "<<din1_64<<endl;
             mem_req_valid_o.write(0);
 
             // check whether the tag is correct
@@ -130,6 +130,7 @@ void vv_add::vv_addThread(){
             }
 
             result_64 = mem_resp_store_data_i.read();
+            cout<<"store result ="<<result_64<<endl;
             wait();
 
         }
@@ -138,7 +139,7 @@ void vv_add::vv_addThread(){
 
 
     case 3: { //For load option
-
+        cout<<"case 3"<<endl;
         HLS_DEFINE_PROTOCOL("Send request & Load data from the Cache");
         {
             //read param from the memory using mem interface
@@ -151,7 +152,7 @@ void vv_add::vv_addThread(){
             do {
                 wait();
             }while(!mem_req_ready_i);
-
+            cout <<"send load req"<<endl;
             mem_req_valid_o.write(0);
 
             // check whether the tag is correct
@@ -161,7 +162,7 @@ void vv_add::vv_addThread(){
             }
 
             result_64 = mem_resp_data_i.read();
-
+            cout<<"load result ="<<result_64<<endl;
             wait();
             //cout << "training_set["<<j<<"]["<<i<<"] = "<<instance<<endl;
 

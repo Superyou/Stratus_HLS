@@ -41,7 +41,7 @@ void tb::mem()
         mem_resp_store_data_i.write(0);
         mem_resp_nack_i.write(0);
         mem_resp_replay_i.write(0);
-        wait(2);
+        wait();
     }
     while(1)
     {
@@ -73,7 +73,7 @@ void tb::mem()
 
         switch (cmd)
         {
-        case 0:
+        case 1:
         {
             memory[Addr]=din;
             cout<< "store mem[ "<<Addr<<"] = "<<din<<endl;
@@ -90,7 +90,7 @@ void tb::mem()
                 wait();
             }
         }
-        case 1:
+        case 0:
         {
             value = memory[Addr];
             cout<< "load mem[ "<<Addr<<"] = "<<value<<endl;
@@ -231,6 +231,7 @@ void tb::source()
                 core_cmd_inst_opcode_i.write(0x1);     //custom instruction opcode may be used for several accerlerations
                 core_cmd_rs1_i.write( store3 );
                 core_cmd_rs2_i.write( address0 );
+                cout<<"IN tb,send store= "<<store3<<" in address "<<address0<<endl;
 
                 do{
 
