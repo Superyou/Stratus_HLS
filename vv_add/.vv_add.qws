@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorSession>
-<!-- Written by Qt Creator 2.5.1, 2016-08-04T21:28:27. -->
+<!-- Written by Qt Creator 2.5.1, 2016-08-04T21:31:31. -->
 <qtcreator>
  <data>
   <variable>EditorSettings</variable>
@@ -8,7 +8,7 @@
  </data>
  <data>
   <variable>OpenEditors</variable>
-  <value type="int">5</value>
+  <value type="int">1</value>
  </data>
  <data>
   <variable>ProjectDependencies</variable>
@@ -26,7 +26,7 @@
  </data>
  <data>
   <variable>value-ActiveMode</variable>
-  <value type="QString">Edit</value>
+  <value type="QString">Mode.CynthAnalysis</value>
  </data>
  <data>
   <variable>value-Breakpoints</variable>
@@ -45,7 +45,6 @@
   <valuelist type="QVariantList">
    <value type="QString">session</value>
    <value type="QString">/home/staff/yw777/Stratus_HLS/vv_add/vv_add.pro</value>
-   <value type="QString">/home/staff/yw777/Stratus_HLS/vv_add/#0Headers</value>
    <value type="QString">/home/staff/yw777/Stratus_HLS/vv_add/#1Sources</value>
   </valuelist>
  </data>

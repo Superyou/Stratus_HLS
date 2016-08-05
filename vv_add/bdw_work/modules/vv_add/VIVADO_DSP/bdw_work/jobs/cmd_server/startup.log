@@ -1,0 +1,24 @@
+ Starting Cynthesizer DPOpt (Linux)
+  Time: August 04, 2016. 21:30:54
+  Host: zhang-01.ece.cornell.edu
+  User: yw777
+  Args: --dofile /opt/cadence/STRATUS152/share/stratus/tcl/bdw_cmd_shell.tcl -x bdw_server_start
+
+               Cynthesizer DpOpt
+               =================
+              Version: 2015.1.01 
+
+  Copyright (c) 2014-2015 Cadence Design Systems.  All rights reserved worldwide.
+  
+  Warning: This computer program is protected by copyright law and 
+  international treaties.  Unauthorized reproduction, modification, 
+  or distribution of this program, or any portion of it, may result 
+  in severe civil and criminal penalties.
+INFO: Using installation at: /opt/cadence/STRATUS152/tools.lnx86/cellmath/ (DPEAPI-3)
+  
+  Info: Script "/opt/cadence/STRATUS152/share/stratus/tcl/bdw_cmd_shell.tcl" run successfully
+
+##########################################################################
+# Starting in server mode with port 53466
+#   client pid = 11752
+##########################################################################
