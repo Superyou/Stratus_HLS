@@ -164,6 +164,8 @@ private:
   void sink();
   void mem();
 
+  sc_uint<64> memory[5000];
+
   ifstream stim_file;         // File stream for reading the stimulus
   ofstream resp_file;         // File stream for writing the responses
 

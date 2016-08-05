@@ -2,7 +2,7 @@
 <tool_log>
 	<tool_kind>BehavioralSynthesis</tool_kind>
 	<tool_name>stratus_hls</tool_name>
-	<gen_time>Thu Aug  4 21:30:46 2016</gen_time>
+	<gen_time>Thu Aug  4 23:01:53 2016</gen_time>
 	<version>15.21-p100  (11111647)</version>
 	<hostname>zhang-01.ece.cornell.edu</hostname>
 	<uname>Linux zhang-01.ece.cornell.edu 2.6.32-573.22.1.el6.x86_64 #1 SMP Wed Mar 23 03:35:39 UTC 2016 x86_64</uname>
@@ -199,7 +199,7 @@
 	<message>
 		<code_num>1763</code_num>
 		<severity>NOTE</severity>
-		<message_text>Using VIVADO(XILINX) FPGA Tool version 2014.2.</message_text>
+		<message_text>Using VIVADO(XILINX) FPGA Tool version 2015.4.</message_text>
 	</message>
 	<message>
 		<code_num>251</code_num>
@@ -234,7 +234,7 @@
 		<path>vv_add.cc</path>
 		<file_kind>CYNTH_BEH_C</file_kind>
 		<file_id>1</file_id>
-		<mod_time>Thu Aug  4 20:44:22 2016</mod_time>
+		<mod_time>Thu Aug  4 23:01:09 2016</mod_time>
 		<file_kind>CYNTH_BEH_C</file_kind>
 		<module>
 			<name>vv_add</name>
@@ -1032,12 +1032,12 @@
 			<label>operator=</label>
 			<file_id>1</file_id>
 			<line>78</line>
-			<col>18</col>
+			<col>17</col>
 		</source_loc>
 		<source_loc>
 			<id>2291</id>
 			<loc_kind>DECL</loc_kind>
-			<label>opcode</label>
+			<label>funct</label>
 			<file_id>1</file_id>
 			<line>26</line>
 			<col>16</col>
@@ -1229,16 +1229,16 @@
 			<sub_loc>2367</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2368</id>
+			<id>2365</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
-			<line>98</line>
-			<col>13</col>
+			<line>96</line>
+			<col>39</col>
 		</source_loc>
 		<source_loc>
-			<id>7343</id>
+			<id>7342</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>2291,2368</sub_loc>
+			<sub_loc>2291,2365</sub_loc>
 		</source_loc>
 		<source_loc>
 			<id>2370</id>
@@ -1444,7 +1444,7 @@
 			<col>32</col>
 		</source_loc>
 		<source_loc>
-			<id>7567</id>
+			<id>7564</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -1459,7 +1459,7 @@
 			<col>33</col>
 		</source_loc>
 		<source_loc>
-			<id>7568</id>
+			<id>7565</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -1475,7 +1475,7 @@
 			<col>32</col>
 		</source_loc>
 		<source_loc>
-			<id>7570</id>
+			<id>7567</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -1490,7 +1490,7 @@
 			<col>33</col>
 		</source_loc>
 		<source_loc>
-			<id>7571</id>
+			<id>7568</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -1506,32 +1506,12 @@
 			<col>32</col>
 		</source_loc>
 		<source_loc>
-			<id>7573</id>
+			<id>7570</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>7</opcode>
 			<bits_trimmed_kind>lead_zeros</bits_trimmed_kind>
 			<sub_loc>2542</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>2365</id>
-			<loc_kind>OP</loc_kind>
-			<file_id>1</file_id>
-			<line>96</line>
-			<col>39</col>
-		</source_loc>
-		<source_loc>
-			<id>7342</id>
-			<loc_kind>HIER</loc_kind>
-			<sub_loc>2291,2365</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>7574</id>
-			<loc_kind>MAPPED</loc_kind>
-			<loc_map_kind>trimmed</loc_map_kind>
-			<opcode>7</opcode>
-			<bits_trimmed_kind>lead_zeros</bits_trimmed_kind>
-			<sub_loc>7342</sub_loc>
 		</source_loc>
 		<source_loc>
 			<id>2543</id>
@@ -1799,7 +1779,7 @@
 			<col>32</col>
 		</source_loc>
 		<source_loc>
-			<id>7576</id>
+			<id>7573</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -1814,7 +1794,7 @@
 			<col>33</col>
 		</source_loc>
 		<source_loc>
-			<id>7577</id>
+			<id>7574</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -1830,7 +1810,7 @@
 			<col>32</col>
 		</source_loc>
 		<source_loc>
-			<id>7579</id>
+			<id>7576</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -1845,7 +1825,7 @@
 			<col>33</col>
 		</source_loc>
 		<source_loc>
-			<id>7580</id>
+			<id>7577</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -1861,20 +1841,12 @@
 			<col>32</col>
 		</source_loc>
 		<source_loc>
-			<id>7582</id>
+			<id>7579</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>7</opcode>
 			<bits_trimmed_kind>lead_zeros</bits_trimmed_kind>
 			<sub_loc>2551</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>7583</id>
-			<loc_kind>MAPPED</loc_kind>
-			<loc_map_kind>trimmed</loc_map_kind>
-			<opcode>7</opcode>
-			<bits_trimmed_kind>lead_zeros</bits_trimmed_kind>
-			<sub_loc>7342</sub_loc>
 		</source_loc>
 		<source_loc>
 			<id>2451</id>
@@ -2777,7 +2749,7 @@
 					</ns_node>
 					<ns_node>
 						<kind>behavior_io</kind>
-						<name>core_cmd_inst_opcode_i</name>
+						<name>core_cmd_inst_funct_i</name>
 						<ns_attrib>
 							<name>width</name>
 							<value>7</value>
@@ -3478,12 +3450,12 @@
 		<col>24</col>
 	</source_loc>
 	<source_loc>
-		<id>515</id>
+		<id>487</id>
 		<loc_kind>DECL</loc_kind>
-		<label>core_cmd_inst_opcode_i</label>
+		<label>core_cmd_inst_funct_i</label>
 		<file_id>2</file_id>
-		<line>38</line>
-		<col>23</col>
+		<line>30</line>
+		<col>24</col>
 	</source_loc>
 	<source_loc>
 		<id>452</id>
@@ -3636,8 +3608,8 @@
 			<datatype>64,0</datatype>
 		</in_sig>
 		<in_sig>
-			<name>core_cmd_inst_opcode_i</name>
-			<source_loc>515</source_loc>
+			<name>core_cmd_inst_funct_i</name>
+			<source_loc>487</source_loc>
 			<datatype>7,0</datatype>
 		</in_sig>
 		<in_sig>
@@ -3747,7 +3719,7 @@
 	<pm_ops>
 		<thread>vv_addThread</thread>
 		<op>
-			<id>3143</id>
+			<id>3138</id>
 			<opcode>3</opcode>
 			<source_loc>2372</source_loc>
 			<port>
@@ -3764,82 +3736,82 @@
 			</port>
 		</op>
 		<source_loc>
+			<id>3139</id>
+			<loc_kind>ARRAY</loc_kind>
+			<sub_loc>2545,7342</sub_loc>
+		</source_loc>
+		<op>
+			<id>3140</id>
+			<opcode>1</opcode>
+			<source_loc>2545,7342</source_loc>
+			<port>
+				<name>in1</name>
+				<datatype W="10">sc_uint</datatype>
+			</port>
+			<port>
+				<name>out1</name>
+				<datatype W="1">sc_uint</datatype>
+			</port>
+		</op>
+		<op>
+			<id>3141</id>
+			<opcode>6</opcode>
+			<source_loc>2419</source_loc>
+			<port>
+				<name>in2</name>
+				<datatype W="1">sc_uint</datatype>
+			</port>
+			<port>
+				<name>in1</name>
+				<datatype W="1">bool</datatype>
+			</port>
+			<port>
+				<name>out1</name>
+				<datatype W="1">sc_uint</datatype>
+			</port>
+		</op>
+		<source_loc>
+			<id>3142</id>
+			<loc_kind>ARRAY</loc_kind>
+			<sub_loc>2545,7342</sub_loc>
+		</source_loc>
+		<op>
+			<id>3143</id>
+			<opcode>1</opcode>
+			<source_loc>2545,7342</source_loc>
+			<port>
+				<name>in1</name>
+				<datatype W="10">sc_uint</datatype>
+			</port>
+			<port>
+				<name>out1</name>
+				<datatype W="1">sc_uint</datatype>
+			</port>
+		</op>
+		<op>
 			<id>3144</id>
-			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>2545,7342</sub_loc>
-		</source_loc>
-		<op>
+			<opcode>6</opcode>
+			<source_loc>2419</source_loc>
+			<port>
+				<name>in2</name>
+				<datatype W="1">sc_uint</datatype>
+			</port>
+			<port>
+				<name>in1</name>
+				<datatype W="1">bool</datatype>
+			</port>
+			<port>
+				<name>out1</name>
+				<datatype W="1">sc_uint</datatype>
+			</port>
+		</op>
+		<source_loc>
 			<id>3145</id>
-			<opcode>1</opcode>
-			<source_loc>2545,7342</source_loc>
-			<port>
-				<name>in1</name>
-				<datatype W="10">sc_uint</datatype>
-			</port>
-			<port>
-				<name>out1</name>
-				<datatype W="1">sc_uint</datatype>
-			</port>
-		</op>
-		<op>
-			<id>3146</id>
-			<opcode>6</opcode>
-			<source_loc>2419</source_loc>
-			<port>
-				<name>in2</name>
-				<datatype W="1">sc_uint</datatype>
-			</port>
-			<port>
-				<name>in1</name>
-				<datatype W="1">bool</datatype>
-			</port>
-			<port>
-				<name>out1</name>
-				<datatype W="1">sc_uint</datatype>
-			</port>
-		</op>
-		<source_loc>
-			<id>3147</id>
-			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>2545,7342</sub_loc>
-		</source_loc>
-		<op>
-			<id>3148</id>
-			<opcode>1</opcode>
-			<source_loc>2545,7342</source_loc>
-			<port>
-				<name>in1</name>
-				<datatype W="10">sc_uint</datatype>
-			</port>
-			<port>
-				<name>out1</name>
-				<datatype W="1">sc_uint</datatype>
-			</port>
-		</op>
-		<op>
-			<id>3149</id>
-			<opcode>6</opcode>
-			<source_loc>2419</source_loc>
-			<port>
-				<name>in2</name>
-				<datatype W="1">sc_uint</datatype>
-			</port>
-			<port>
-				<name>in1</name>
-				<datatype W="1">bool</datatype>
-			</port>
-			<port>
-				<name>out1</name>
-				<datatype W="1">sc_uint</datatype>
-			</port>
-		</op>
-		<source_loc>
-			<id>3150</id>
 			<loc_kind>ARRAY</loc_kind>
 			<sub_loc>2553,7342</sub_loc>
 		</source_loc>
 		<op>
-			<id>3151</id>
+			<id>3146</id>
 			<opcode>2</opcode>
 			<source_loc>2553,7342</source_loc>
 			<port>
@@ -3852,7 +3824,7 @@
 			</port>
 		</op>
 		<op>
-			<id>3152</id>
+			<id>3147</id>
 			<opcode>6</opcode>
 			<source_loc>2459</source_loc>
 			<port>
@@ -3869,12 +3841,12 @@
 			</port>
 		</op>
 		<source_loc>
-			<id>3153</id>
+			<id>3148</id>
 			<loc_kind>ARRAY</loc_kind>
 			<sub_loc>2553,7342</sub_loc>
 		</source_loc>
 		<op>
-			<id>3154</id>
+			<id>3149</id>
 			<opcode>2</opcode>
 			<source_loc>2553,7342</source_loc>
 			<port>
@@ -3887,7 +3859,7 @@
 			</port>
 		</op>
 		<op>
-			<id>3155</id>
+			<id>3150</id>
 			<opcode>6</opcode>
 			<source_loc>2459</source_loc>
 			<port>
@@ -3923,34 +3895,34 @@
 			<col>19</col>
 		</source_loc>
 		<source_loc>
-			<id>2113</id>
+			<id>2112</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>122</line>
 			<col>21</col>
 		</source_loc>
 		<source_loc>
-			<id>2143</id>
+			<id>2142</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>153</line>
 			<col>21</col>
 		</source_loc>
 		<source_loc>
-			<id>2167</id>
+			<id>2166</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>187</line>
 			<col>23</col>
 		</source_loc>
 		<source_loc>
-			<id>3180</id>
+			<id>3175</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>7544</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3182</id>
+			<id>3177</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>2305</sub_loc>
@@ -3963,12 +3935,12 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3101</id>
+			<id>3096</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>446,2031</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3183</id>
+			<id>3178</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>2307</sub_loc>
@@ -3981,12 +3953,12 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3102</id>
+			<id>3097</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>447,2033</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3184</id>
+			<id>3179</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>2309</sub_loc>
@@ -3999,12 +3971,12 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3103</id>
+			<id>3098</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>451,2035</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3185</id>
+			<id>3180</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>2311</sub_loc>
@@ -4017,7 +3989,7 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3104</id>
+			<id>3099</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>540,2037</sub_loc>
 		</source_loc>
@@ -4029,7 +4001,7 @@
 			<col>26</col>
 		</source_loc>
 		<source_loc>
-			<id>3089</id>
+			<id>3084</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>514,2040</sub_loc>
 		</source_loc>
@@ -4041,12 +4013,12 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3105</id>
+			<id>3100</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>579,2039</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3186</id>
+			<id>3181</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>7547</sub_loc>
@@ -4059,7 +4031,7 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3004</id>
+			<id>3001</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -4067,12 +4039,12 @@
 			<sub_loc>2041</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3106</id>
+			<id>3101</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>615,3004</sub_loc>
+			<sub_loc>615,3001</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3187</id>
+			<id>3182</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>2317</sub_loc>
@@ -4085,12 +4057,12 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3107</id>
+			<id>3102</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>617,2043</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3188</id>
+			<id>3183</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>7550</sub_loc>
@@ -4103,7 +4075,7 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3007</id>
+			<id>3004</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -4111,12 +4083,12 @@
 			<sub_loc>2045</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3108</id>
+			<id>3103</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>659,3007</sub_loc>
+			<sub_loc>659,3004</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3189</id>
+			<id>3184</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>7553</sub_loc>
@@ -4129,7 +4101,7 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3010</id>
+			<id>3007</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -4137,12 +4109,12 @@
 			<sub_loc>2047</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3109</id>
+			<id>3104</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>701,3010</sub_loc>
+			<sub_loc>701,3007</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3190</id>
+			<id>3185</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>7556</sub_loc>
@@ -4155,7 +4127,7 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3013</id>
+			<id>3010</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -4163,12 +4135,12 @@
 			<sub_loc>2049</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3110</id>
+			<id>3105</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>702,3013</sub_loc>
+			<sub_loc>702,3010</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3191</id>
+			<id>3186</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>7559</sub_loc>
@@ -4181,7 +4153,7 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3016</id>
+			<id>3013</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -4189,12 +4161,12 @@
 			<sub_loc>2051</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3111</id>
+			<id>3106</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>744,3016</sub_loc>
+			<sub_loc>744,3013</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3192</id>
+			<id>3187</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>1</value>
 			<sub_loc>2327</sub_loc>
@@ -4207,12 +4179,12 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3112</id>
+			<id>3107</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>745,2053</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3193</id>
+			<id>3188</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>7562</sub_loc>
@@ -4225,7 +4197,7 @@
 			<col>5</col>
 		</source_loc>
 		<source_loc>
-			<id>3019</id>
+			<id>3016</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
@@ -4233,17 +4205,17 @@
 			<sub_loc>2055</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3113</id>
+			<id>3108</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>746,3019</sub_loc>
+			<sub_loc>746,3016</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3160</id>
+			<id>3155</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>2292,2486</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3197</id>
+			<id>3192</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>1</value>
 			<sub_loc>2339</sub_loc>
@@ -4256,27 +4228,27 @@
 			<col>11</col>
 		</source_loc>
 		<source_loc>
-			<id>3114</id>
+			<id>3109</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>451,2062</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3090</id>
+			<id>3085</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>452,2064</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3161</id>
+			<id>3156</id>
 			<loc_kind>ARRAY</loc_kind>
 			<sub_loc>2064,7461</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3162</id>
+			<id>3157</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>452,3161</sub_loc>
+			<sub_loc>452,3156</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3163</id>
+			<id>3158</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>pm</loc_map_kind>
 			<opcode>0</opcode>
@@ -4287,12 +4259,12 @@
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>78</line>
-			<col>20</col>
+			<col>19</col>
 		</source_loc>
 		<source_loc>
-			<id>3091</id>
+			<id>3086</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>515,2069</sub_loc>
+			<sub_loc>487,2069</sub_loc>
 		</source_loc>
 		<source_loc>
 			<id>2071</id>
@@ -4302,7 +4274,7 @@
 			<col>21</col>
 		</source_loc>
 		<source_loc>
-			<id>3092</id>
+			<id>3087</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>537,2071</sub_loc>
 		</source_loc>
@@ -4314,7 +4286,7 @@
 			<col>21</col>
 		</source_loc>
 		<source_loc>
-			<id>3093</id>
+			<id>3088</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>538,2073</sub_loc>
 		</source_loc>
@@ -4326,7 +4298,7 @@
 			<col>16</col>
 		</source_loc>
 		<source_loc>
-			<id>3115</id>
+			<id>3110</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>514,2075</sub_loc>
 		</source_loc>
@@ -4338,12 +4310,12 @@
 			<col>16</col>
 		</source_loc>
 		<source_loc>
-			<id>3094</id>
+			<id>3089</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>511,2077</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3206</id>
+			<id>3201</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>1</value>
 			<sub_loc>2357</sub_loc>
@@ -4356,12 +4328,12 @@
 			<col>11</col>
 		</source_loc>
 		<source_loc>
-			<id>3116</id>
+			<id>3111</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>446,2078</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3208</id>
+			<id>3203</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>2362</sub_loc>
@@ -4374,51 +4346,77 @@
 			<col>11</col>
 		</source_loc>
 		<source_loc>
-			<id>3117</id>
+			<id>3112</id>
 			<loc_kind>HIER</loc_kind>
 			<sub_loc>451,2082</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2100</id>
+			<id>2099</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>114</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
-			<id>3118</id>
+			<id>3113</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>659,2100</sub_loc>
+			<sub_loc>659,2099</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3210</id>
+			<id>3205</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>1</value>
 			<sub_loc>2397</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2102</id>
+			<id>2101</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>115</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
-			<id>3119</id>
+			<id>3114</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>617,2102</sub_loc>
+			<sub_loc>617,2101</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3211</id>
+			<id>3206</id>
+			<loc_kind>CONST_REF</loc_kind>
+			<value>1</value>
+			<sub_loc>7565</sub_loc>
+		</source_loc>
+		<source_loc>
+			<id>2103</id>
+			<loc_kind>OP</loc_kind>
+			<file_id>1</file_id>
+			<line>116</line>
+			<col>13</col>
+		</source_loc>
+		<source_loc>
+			<id>3019</id>
+			<loc_kind>MAPPED</loc_kind>
+			<loc_map_kind>trimmed</loc_map_kind>
+			<opcode>1</opcode>
+			<bits_trimmed_kind>lead_zeros</bits_trimmed_kind>
+			<sub_loc>2103</sub_loc>
+		</source_loc>
+		<source_loc>
+			<id>3115</id>
+			<loc_kind>HIER</loc_kind>
+			<sub_loc>702,3019</sub_loc>
+		</source_loc>
+		<source_loc>
+			<id>3207</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>1</value>
 			<sub_loc>7568</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2104</id>
+			<id>2105</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
-			<line>116</line>
+			<line>117</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
@@ -4427,41 +4425,15 @@
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
 			<bits_trimmed_kind>lead_zeros</bits_trimmed_kind>
-			<sub_loc>2104</sub_loc>
+			<sub_loc>2105</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3120</id>
+			<id>3116</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>702,3022</sub_loc>
+			<sub_loc>744,3022</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3212</id>
-			<loc_kind>CONST_REF</loc_kind>
-			<value>1</value>
-			<sub_loc>7571</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>2106</id>
-			<loc_kind>OP</loc_kind>
-			<file_id>1</file_id>
-			<line>117</line>
-			<col>13</col>
-		</source_loc>
-		<source_loc>
-			<id>3025</id>
-			<loc_kind>MAPPED</loc_kind>
-			<loc_map_kind>trimmed</loc_map_kind>
-			<opcode>1</opcode>
-			<bits_trimmed_kind>lead_zeros</bits_trimmed_kind>
-			<sub_loc>2106</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>3121</id>
-			<loc_kind>HIER</loc_kind>
-			<sub_loc>744,3025</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>3037</id>
+			<id>3032</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>2</opcode>
@@ -4469,92 +4441,92 @@
 			<sub_loc>7342</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3213</id>
+			<id>3208</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>2</value>
-			<sub_loc>3037</sub_loc>
+			<sub_loc>3032</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2108</id>
+			<id>2107</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>118</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
-			<id>3038</id>
+			<id>3033</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>2</opcode>
 			<bits_trimmed_kind>lead_zeros</bits_trimmed_kind>
-			<sub_loc>2108</sub_loc>
+			<sub_loc>2107</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3122</id>
+			<id>3117</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>701,3038</sub_loc>
+			<sub_loc>701,3033</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2109</id>
+			<id>2108</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>119</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
-			<id>3123</id>
+			<id>3118</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>746,2109</sub_loc>
+			<sub_loc>746,2108</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3095</id>
+			<id>3090</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>616,2113</sub_loc>
+			<sub_loc>616,2112</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3219</id>
+			<id>3214</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>2413</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2115</id>
+			<id>2114</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>124</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
-			<id>3124</id>
+			<id>3119</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>617,2115</sub_loc>
+			<sub_loc>617,2114</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2117</id>
+			<id>2116</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>127</line>
 			<col>21</col>
 		</source_loc>
 		<source_loc>
-			<id>3096</id>
+			<id>3091</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>747,2117</sub_loc>
+			<sub_loc>747,2116</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2118</id>
+			<id>2117</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>127</line>
 			<col>43</col>
 		</source_loc>
 		<source_loc>
-			<id>3097</id>
+			<id>3092</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>779,2118</sub_loc>
+			<sub_loc>779,2117</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3156</id>
+			<id>3151</id>
 			<loc_kind>DECL</loc_kind>
 			<label>CynTemp_1</label>
 			<file_id>1</file_id>
@@ -4562,41 +4534,41 @@
 			<col>58</col>
 		</source_loc>
 		<source_loc>
-			<id>3164</id>
+			<id>3159</id>
+			<loc_kind>ARRAY</loc_kind>
+			<sub_loc>2116,7482</sub_loc>
+		</source_loc>
+		<source_loc>
+			<id>3160</id>
+			<loc_kind>HIER</loc_kind>
+			<sub_loc>747,3159</sub_loc>
+		</source_loc>
+		<source_loc>
+			<id>3161</id>
+			<loc_kind>MAPPED</loc_kind>
+			<loc_map_kind>pm</loc_map_kind>
+			<opcode>0</opcode>
+			<sub_loc>2116</sub_loc>
+		</source_loc>
+		<source_loc>
+			<id>3162</id>
 			<loc_kind>ARRAY</loc_kind>
 			<sub_loc>2117,7482</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3165</id>
+			<id>3163</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>747,3164</sub_loc>
+			<sub_loc>779,3162</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3166</id>
+			<id>3164</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>pm</loc_map_kind>
 			<opcode>0</opcode>
 			<sub_loc>2117</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3167</id>
-			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>2118,7482</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>3168</id>
-			<loc_kind>HIER</loc_kind>
-			<sub_loc>779,3167</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>3169</id>
-			<loc_kind>MAPPED</loc_kind>
-			<loc_map_kind>pm</loc_map_kind>
-			<opcode>0</opcode>
-			<sub_loc>2118</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>3157</id>
+			<id>3152</id>
 			<loc_kind>DECL</loc_kind>
 			<label>CynTemp_2</label>
 			<file_id>1</file_id>
@@ -4604,108 +4576,108 @@
 			<col>58</col>
 		</source_loc>
 		<source_loc>
-			<id>3170</id>
+			<id>3165</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>pm</loc_map_kind>
 			<opcode>0</opcode>
 			<sub_loc>2419</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2124</id>
+			<id>2123</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>132</line>
 			<col>25</col>
 		</source_loc>
 		<source_loc>
-			<id>3098</id>
+			<id>3093</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>800,2124</sub_loc>
+			<sub_loc>800,2123</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2132</id>
+			<id>2131</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>145</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
-			<id>3125</id>
+			<id>3120</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>659,2132</sub_loc>
+			<sub_loc>659,2131</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3230</id>
+			<id>3225</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>1</value>
 			<sub_loc>2439</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2134</id>
+			<id>2133</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>146</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
-			<id>3126</id>
+			<id>3121</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>617,2134</sub_loc>
+			<sub_loc>617,2133</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3231</id>
+			<id>3226</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
-			<sub_loc>7577</sub_loc>
+			<sub_loc>7574</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2136</id>
+			<id>2135</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>147</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
-			<id>3030</id>
+			<id>3026</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
 			<bits_trimmed_kind>lead_zeros</bits_trimmed_kind>
-			<sub_loc>2136</sub_loc>
+			<sub_loc>2135</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3127</id>
+			<id>3122</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>702,3030</sub_loc>
+			<sub_loc>702,3026</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3232</id>
+			<id>3227</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>1</value>
-			<sub_loc>7580</sub_loc>
+			<sub_loc>7577</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2138</id>
+			<id>2137</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>148</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
-			<id>3033</id>
+			<id>3029</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
 			<bits_trimmed_kind>lead_zeros</bits_trimmed_kind>
-			<sub_loc>2138</sub_loc>
+			<sub_loc>2137</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3128</id>
+			<id>3123</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>744,3033</sub_loc>
+			<sub_loc>744,3029</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3040</id>
+			<id>3035</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>2</opcode>
@@ -4713,80 +4685,80 @@
 			<sub_loc>7342</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3233</id>
+			<id>3228</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>3</value>
-			<sub_loc>3040</sub_loc>
+			<sub_loc>3035</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2140</id>
+			<id>2139</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>149</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
-			<id>3041</id>
+			<id>3036</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>2</opcode>
 			<bits_trimmed_kind>lead_zeros</bits_trimmed_kind>
-			<sub_loc>2140</sub_loc>
+			<sub_loc>2139</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3129</id>
+			<id>3124</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>701,3041</sub_loc>
+			<sub_loc>701,3036</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3130</id>
+			<id>3125</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>616,2143</sub_loc>
+			<sub_loc>616,2142</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3239</id>
+			<id>3234</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>2453</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2145</id>
+			<id>2144</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>155</line>
 			<col>13</col>
 		</source_loc>
 		<source_loc>
-			<id>3131</id>
+			<id>3126</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>617,2145</sub_loc>
+			<sub_loc>617,2144</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2147</id>
+			<id>2146</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>158</line>
 			<col>21</col>
 		</source_loc>
 		<source_loc>
-			<id>3132</id>
+			<id>3127</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>747,2147</sub_loc>
+			<sub_loc>747,2146</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2148</id>
+			<id>2147</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>158</line>
 			<col>43</col>
 		</source_loc>
 		<source_loc>
-			<id>3133</id>
+			<id>3128</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>779,2148</sub_loc>
+			<sub_loc>779,2147</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3158</id>
+			<id>3153</id>
 			<loc_kind>DECL</loc_kind>
 			<label>CynTemp_3</label>
 			<file_id>1</file_id>
@@ -4794,41 +4766,41 @@
 			<col>58</col>
 		</source_loc>
 		<source_loc>
-			<id>3171</id>
+			<id>3166</id>
+			<loc_kind>ARRAY</loc_kind>
+			<sub_loc>2146,7499</sub_loc>
+		</source_loc>
+		<source_loc>
+			<id>3167</id>
+			<loc_kind>HIER</loc_kind>
+			<sub_loc>747,3166</sub_loc>
+		</source_loc>
+		<source_loc>
+			<id>3168</id>
+			<loc_kind>MAPPED</loc_kind>
+			<loc_map_kind>pm</loc_map_kind>
+			<opcode>0</opcode>
+			<sub_loc>2146</sub_loc>
+		</source_loc>
+		<source_loc>
+			<id>3169</id>
 			<loc_kind>ARRAY</loc_kind>
 			<sub_loc>2147,7499</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3172</id>
+			<id>3170</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>747,3171</sub_loc>
+			<sub_loc>779,3169</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3173</id>
+			<id>3171</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>pm</loc_map_kind>
 			<opcode>0</opcode>
 			<sub_loc>2147</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3174</id>
-			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>2148,7499</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>3175</id>
-			<loc_kind>HIER</loc_kind>
-			<sub_loc>779,3174</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>3176</id>
-			<loc_kind>MAPPED</loc_kind>
-			<loc_map_kind>pm</loc_map_kind>
-			<opcode>0</opcode>
-			<sub_loc>2148</sub_loc>
-		</source_loc>
-		<source_loc>
-			<id>3159</id>
+			<id>3154</id>
 			<loc_kind>DECL</loc_kind>
 			<label>CynTemp_4</label>
 			<file_id>1</file_id>
@@ -4836,100 +4808,100 @@
 			<col>58</col>
 		</source_loc>
 		<source_loc>
-			<id>3177</id>
+			<id>3172</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>pm</loc_map_kind>
 			<opcode>0</opcode>
 			<sub_loc>2459</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2154</id>
+			<id>2153</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>163</line>
 			<col>25</col>
 		</source_loc>
 		<source_loc>
-			<id>3099</id>
+			<id>3094</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>797,2154</sub_loc>
+			<sub_loc>797,2153</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3250</id>
+			<id>3245</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>1</value>
 			<sub_loc>2482</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3042</id>
+			<id>3037</id>
 			<loc_kind>ARRAY</loc_kind>
 			<sub_loc>7515,2558</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3134</id>
+			<id>3129</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>540,3042</sub_loc>
+			<sub_loc>540,3037</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3043</id>
+			<id>3038</id>
 			<loc_kind>ARRAY</loc_kind>
 			<sub_loc>7515,2559</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3135</id>
+			<id>3130</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>579,3043</sub_loc>
+			<sub_loc>579,3038</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3044</id>
+			<id>3039</id>
 			<loc_kind>ARRAY</loc_kind>
 			<sub_loc>7515,2560</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3136</id>
+			<id>3131</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>615,3044</sub_loc>
+			<sub_loc>615,3039</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3100</id>
+			<id>3095</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>539,2167</sub_loc>
+			<sub_loc>539,2166</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3259</id>
+			<id>3254</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>2501</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2169</id>
+			<id>2168</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>190</line>
 			<col>11</col>
 		</source_loc>
 		<source_loc>
-			<id>3137</id>
+			<id>3132</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>446,2169</sub_loc>
+			<sub_loc>446,2168</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3260</id>
+			<id>3255</id>
 			<loc_kind>CONST_REF</loc_kind>
 			<value>0</value>
 			<sub_loc>2503</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>2171</id>
+			<id>2170</id>
 			<loc_kind>OP</loc_kind>
 			<file_id>1</file_id>
 			<line>191</line>
 			<col>11</col>
 		</source_loc>
 		<source_loc>
-			<id>3138</id>
+			<id>3133</id>
 			<loc_kind>HIER</loc_kind>
-			<sub_loc>540,2171</sub_loc>
+			<sub_loc>540,2170</sub_loc>
 		</source_loc>
 	</cdfg>
 	<sched_ops_fu>
@@ -4950,8 +4922,8 @@
 	<sched_ops>
 		<thread>vv_addThread</thread>
 		<io_op>
-			<id>3352</id>
-			<source_loc>3101</source_loc>
+			<id>3347</id>
+			<source_loc>3096</source_loc>
 			<order>1</order>
 			<sig_name>cc_busy_o</sig_name>
 			<label>cc_busy_o:write</label>
@@ -4963,8 +4935,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3353</id>
-			<source_loc>3102</source_loc>
+			<id>3348</id>
+			<source_loc>3097</source_loc>
 			<order>2</order>
 			<sig_name>cc_interrupt_o</sig_name>
 			<label>cc_interrupt_o:write</label>
@@ -4976,8 +4948,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3354</id>
-			<source_loc>3103</source_loc>
+			<id>3349</id>
+			<source_loc>3098</source_loc>
 			<order>3</order>
 			<sig_name>core_cmd_ready_o</sig_name>
 			<label>core_cmd_ready_o:write</label>
@@ -4989,8 +4961,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3355</id>
-			<source_loc>3104</source_loc>
+			<id>3350</id>
+			<source_loc>3099</source_loc>
 			<order>4</order>
 			<sig_name>core_resp_valid_o</sig_name>
 			<label>core_resp_valid_o:write</label>
@@ -5002,8 +4974,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3356</id>
-			<source_loc>3105</source_loc>
+			<id>3351</id>
+			<source_loc>3100</source_loc>
 			<order>5</order>
 			<sig_name>core_resp_rd_o</sig_name>
 			<label>core_resp_rd_o:write</label>
@@ -5014,8 +4986,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3357</id>
-			<source_loc>3106</source_loc>
+			<id>3352</id>
+			<source_loc>3101</source_loc>
 			<order>6</order>
 			<sig_name>core_resp_data_o</sig_name>
 			<label>core_resp_data_o:write</label>
@@ -5027,8 +4999,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3358</id>
-			<source_loc>3107</source_loc>
+			<id>3353</id>
+			<source_loc>3102</source_loc>
 			<order>7</order>
 			<sig_name>mem_req_valid_o</sig_name>
 			<label>mem_req_valid_o:write</label>
@@ -5040,8 +5012,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3359</id>
-			<source_loc>3108</source_loc>
+			<id>3354</id>
+			<source_loc>3103</source_loc>
 			<order>8</order>
 			<sig_name>mem_req_addr_o</sig_name>
 			<label>mem_req_addr_o:write</label>
@@ -5053,8 +5025,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3360</id>
-			<source_loc>3109</source_loc>
+			<id>3355</id>
+			<source_loc>3104</source_loc>
 			<order>9</order>
 			<sig_name>mem_req_tag_o</sig_name>
 			<label>mem_req_tag_o:write</label>
@@ -5066,8 +5038,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3361</id>
-			<source_loc>3110</source_loc>
+			<id>3356</id>
+			<source_loc>3105</source_loc>
 			<order>10</order>
 			<sig_name>mem_req_cmd_o</sig_name>
 			<label>mem_req_cmd_o:write</label>
@@ -5079,8 +5051,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3362</id>
-			<source_loc>3111</source_loc>
+			<id>3357</id>
+			<source_loc>3106</source_loc>
 			<order>11</order>
 			<sig_name>mem_req_typ_o</sig_name>
 			<label>mem_req_typ_o:write</label>
@@ -5092,8 +5064,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3363</id>
-			<source_loc>3112</source_loc>
+			<id>3358</id>
+			<source_loc>3107</source_loc>
 			<order>12</order>
 			<sig_name>mem_req_phys_o</sig_name>
 			<label>mem_req_phys_o:write</label>
@@ -5105,8 +5077,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3364</id>
-			<source_loc>3113</source_loc>
+			<id>3359</id>
+			<source_loc>3108</source_loc>
 			<order>13</order>
 			<sig_name>mem_req_data_o</sig_name>
 			<label>mem_req_data_o:write</label>
@@ -5118,7 +5090,7 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<wire_op>
-			<id>3351</id>
+			<id>3346</id>
 			<source_loc>7545</source_loc>
 			<order>14</order>
 			<sig_name>result_64</sig_name>
@@ -5128,19 +5100,19 @@
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3365</id>
-			<source_loc>3160</source_loc>
+			<id>3360</id>
+			<source_loc>3155</source_loc>
 			<order>15</order>
 			<sig_name>result_64</sig_name>
 			<label>result_64:wire</label>
 			<datatype W="64">sc_uint</datatype>
 			<cycle_id>1</cycle_id>
-			<chain_time>0.2490</chain_time>
+			<chain_time>0.7860</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<io_op>
-			<id>3367</id>
-			<source_loc>3090</source_loc>
+			<id>3362</id>
+			<source_loc>3085</source_loc>
 			<order>16</order>
 			<sig_name>core_cmd_valid_i</sig_name>
 			<label>core_cmd_valid_i:read</label>
@@ -5150,8 +5122,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3366</id>
-			<source_loc>3114</source_loc>
+			<id>3361</id>
+			<source_loc>3109</source_loc>
 			<order>17</order>
 			<sig_name>core_cmd_ready_o</sig_name>
 			<label>core_cmd_ready_o:write</label>
@@ -5162,8 +5134,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3369</id>
-			<source_loc>3162</source_loc>
+			<id>3364</id>
+			<source_loc>3157</source_loc>
 			<order>18</order>
 			<sig_name>core_cmd_valid_i</sig_name>
 			<label>core_cmd_valid_i:read</label>
@@ -5173,11 +5145,11 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3371</id>
-			<source_loc>3091</source_loc>
+			<id>3366</id>
+			<source_loc>3086</source_loc>
 			<order>19</order>
-			<sig_name>core_cmd_inst_opcode_i</sig_name>
-			<label>core_cmd_inst_opcode_i:read</label>
+			<sig_name>core_cmd_inst_funct_i</sig_name>
+			<label>core_cmd_inst_funct_i:read</label>
 			<datatype W="7">sc_uint</datatype>
 			<input_read/>
 			<cycle_id>1</cycle_id>
@@ -5185,8 +5157,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3375</id>
-			<source_loc>3094</source_loc>
+			<id>3370</id>
+			<source_loc>3089</source_loc>
 			<order>20</order>
 			<sig_name>core_cmd_inst_xd_i</sig_name>
 			<label>core_cmd_inst_xd_i:read</label>
@@ -5197,8 +5169,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3372</id>
-			<source_loc>3092</source_loc>
+			<id>3367</id>
+			<source_loc>3087</source_loc>
 			<order>21</order>
 			<sig_name>core_cmd_rs1_i</sig_name>
 			<label>core_cmd_rs1_i:read</label>
@@ -5209,8 +5181,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3373</id>
-			<source_loc>3093</source_loc>
+			<id>3368</id>
+			<source_loc>3088</source_loc>
 			<order>22</order>
 			<sig_name>core_cmd_rs2_i</sig_name>
 			<label>core_cmd_rs2_i:read</label>
@@ -5221,8 +5193,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3376</id>
-			<source_loc>3116</source_loc>
+			<id>3371</id>
+			<source_loc>3111</source_loc>
 			<order>23</order>
 			<sig_name>cc_busy_o</sig_name>
 			<label>cc_busy_o:write</label>
@@ -5234,8 +5206,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3374</id>
-			<source_loc>3115</source_loc>
+			<id>3369</id>
+			<source_loc>3110</source_loc>
 			<order>24</order>
 			<sig_name>core_cmd_inst_rd_i</sig_name>
 			<label>core_cmd_inst_rd_i:read</label>
@@ -5246,8 +5218,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3377</id>
-			<source_loc>3117</source_loc>
+			<id>3372</id>
+			<source_loc>3112</source_loc>
 			<order>25</order>
 			<sig_name>core_cmd_ready_o</sig_name>
 			<label>core_cmd_ready_o:write</label>
@@ -5258,8 +5230,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<op>
-			<id>3379</id>
-			<source_loc>3143</source_loc>
+			<id>3374</id>
+			<source_loc>3138</source_loc>
 			<order>26</order>
 			<instance_name>vv_add_Add_64U_3_4_1</instance_name>
 			<opcode>3</opcode>
@@ -5268,20 +5240,20 @@
 			<guard>TRUE</guard>
 		</op>
 		<io_op>
-			<id>3380</id>
-			<source_loc>3118</source_loc>
+			<id>3375</id>
+			<source_loc>3113</source_loc>
 			<order>27</order>
 			<sig_name>mem_req_addr_o</sig_name>
 			<label>mem_req_addr_o:write</label>
 			<datatype W="40">sc_uint</datatype>
 			<output_write/>
 			<cycle_id>3</cycle_id>
-			<chain_time>0.7860</chain_time>
+			<chain_time>1.3230</chain_time>
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3381</id>
-			<source_loc>3119</source_loc>
+			<id>3376</id>
+			<source_loc>3114</source_loc>
 			<order>28</order>
 			<sig_name>mem_req_valid_o</sig_name>
 			<label>mem_req_valid_o:write</label>
@@ -5292,8 +5264,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3382</id>
-			<source_loc>3120</source_loc>
+			<id>3377</id>
+			<source_loc>3115</source_loc>
 			<order>29</order>
 			<sig_name>mem_req_cmd_o</sig_name>
 			<label>mem_req_cmd_o:write</label>
@@ -5304,8 +5276,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3383</id>
-			<source_loc>3121</source_loc>
+			<id>3378</id>
+			<source_loc>3116</source_loc>
 			<order>30</order>
 			<sig_name>mem_req_typ_o</sig_name>
 			<label>mem_req_typ_o:write</label>
@@ -5316,8 +5288,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3384</id>
-			<source_loc>3122</source_loc>
+			<id>3379</id>
+			<source_loc>3117</source_loc>
 			<order>31</order>
 			<sig_name>mem_req_tag_o</sig_name>
 			<label>mem_req_tag_o:write</label>
@@ -5328,32 +5300,32 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3385</id>
-			<source_loc>3123</source_loc>
+			<id>3380</id>
+			<source_loc>3118</source_loc>
 			<order>32</order>
 			<sig_name>mem_req_data_o</sig_name>
 			<label>mem_req_data_o:write</label>
 			<datatype W="64">sc_uint</datatype>
 			<output_write/>
 			<cycle_id>3</cycle_id>
-			<chain_time>0.7860</chain_time>
+			<chain_time>1.3230</chain_time>
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3400</id>
-			<source_loc>3125</source_loc>
+			<id>3395</id>
+			<source_loc>3120</source_loc>
 			<order>33</order>
 			<sig_name>mem_req_addr_o</sig_name>
 			<label>mem_req_addr_o:write</label>
 			<datatype W="40">sc_uint</datatype>
 			<output_write/>
 			<cycle_id>3</cycle_id>
-			<chain_time>0.7860</chain_time>
+			<chain_time>1.3230</chain_time>
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3401</id>
-			<source_loc>3126</source_loc>
+			<id>3396</id>
+			<source_loc>3121</source_loc>
 			<order>34</order>
 			<sig_name>mem_req_valid_o</sig_name>
 			<label>mem_req_valid_o:write</label>
@@ -5364,8 +5336,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3402</id>
-			<source_loc>3127</source_loc>
+			<id>3397</id>
+			<source_loc>3122</source_loc>
 			<order>35</order>
 			<sig_name>mem_req_cmd_o</sig_name>
 			<label>mem_req_cmd_o:write</label>
@@ -5376,8 +5348,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3403</id>
-			<source_loc>3128</source_loc>
+			<id>3398</id>
+			<source_loc>3123</source_loc>
 			<order>36</order>
 			<sig_name>mem_req_typ_o</sig_name>
 			<label>mem_req_typ_o:write</label>
@@ -5388,8 +5360,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3404</id>
-			<source_loc>3129</source_loc>
+			<id>3399</id>
+			<source_loc>3124</source_loc>
 			<order>37</order>
 			<sig_name>mem_req_tag_o</sig_name>
 			<label>mem_req_tag_o:write</label>
@@ -5400,8 +5372,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3386</id>
-			<source_loc>3095</source_loc>
+			<id>3381</id>
+			<source_loc>3090</source_loc>
 			<order>38</order>
 			<sig_name>mem_req_ready_i</sig_name>
 			<label>mem_req_ready_i:read</label>
@@ -5411,8 +5383,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3405</id>
-			<source_loc>3130</source_loc>
+			<id>3400</id>
+			<source_loc>3125</source_loc>
 			<order>39</order>
 			<sig_name>mem_req_ready_i</sig_name>
 			<label>mem_req_ready_i:read</label>
@@ -5422,8 +5394,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3390</id>
-			<source_loc>3097</source_loc>
+			<id>3385</id>
+			<source_loc>3092</source_loc>
 			<order>40</order>
 			<sig_name>mem_resp_tag_i</sig_name>
 			<label>mem_resp_tag_i:read</label>
@@ -5433,8 +5405,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3389</id>
-			<source_loc>3096</source_loc>
+			<id>3384</id>
+			<source_loc>3091</source_loc>
 			<order>41</order>
 			<sig_name>mem_resp_valid_i</sig_name>
 			<label>mem_resp_valid_i:read</label>
@@ -5444,30 +5416,30 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<op>
-			<id>3391</id>
-			<source_loc>3145</source_loc>
+			<id>3386</id>
+			<source_loc>3140</source_loc>
 			<order>42</order>
 			<instance_name>vv_add_Eqi2u10_4_2</instance_name>
 			<opcode>1</opcode>
 			<label>==</label>
 			<cycle_id>4</cycle_id>
-			<chain_time>1.1420</chain_time>
+			<chain_time>2.2160</chain_time>
 			<guard>TRUE</guard>
 		</op>
 		<op>
-			<id>3392</id>
-			<source_loc>3146</source_loc>
+			<id>3387</id>
+			<source_loc>3141</source_loc>
 			<order>43</order>
 			<instance_name>vv_add_And_1U_0_4_3</instance_name>
 			<opcode>6</opcode>
 			<label>&amp;</label>
 			<cycle_id>4</cycle_id>
-			<chain_time>1.7220</chain_time>
+			<chain_time>3.3330</chain_time>
 			<guard>TRUE</guard>
 		</op>
 		<io_op>
-			<id>3388</id>
-			<source_loc>3124</source_loc>
+			<id>3383</id>
+			<source_loc>3119</source_loc>
 			<order>44</order>
 			<sig_name>mem_req_valid_o</sig_name>
 			<label>mem_req_valid_o:write</label>
@@ -5478,8 +5450,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3409</id>
-			<source_loc>3133</source_loc>
+			<id>3404</id>
+			<source_loc>3128</source_loc>
 			<order>45</order>
 			<sig_name>mem_resp_tag_i</sig_name>
 			<label>mem_resp_tag_i:read</label>
@@ -5489,8 +5461,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3408</id>
-			<source_loc>3132</source_loc>
+			<id>3403</id>
+			<source_loc>3127</source_loc>
 			<order>46</order>
 			<sig_name>mem_resp_valid_i</sig_name>
 			<label>mem_resp_valid_i:read</label>
@@ -5500,30 +5472,30 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<op>
-			<id>3410</id>
-			<source_loc>3151</source_loc>
+			<id>3405</id>
+			<source_loc>3146</source_loc>
 			<order>47</order>
 			<instance_name>vv_add_Eqi3u10_4_4</instance_name>
 			<opcode>2</opcode>
 			<label>==</label>
 			<cycle_id>5</cycle_id>
-			<chain_time>1.1420</chain_time>
+			<chain_time>2.2160</chain_time>
 			<guard>TRUE</guard>
 		</op>
 		<op>
-			<id>3411</id>
-			<source_loc>3152</source_loc>
+			<id>3406</id>
+			<source_loc>3147</source_loc>
 			<order>48</order>
 			<instance_name>vv_add_And_1U_0_4_5</instance_name>
 			<opcode>6</opcode>
 			<label>&amp;</label>
 			<cycle_id>5</cycle_id>
-			<chain_time>1.7220</chain_time>
+			<chain_time>3.3330</chain_time>
 			<guard>TRUE</guard>
 		</op>
 		<io_op>
-			<id>3407</id>
-			<source_loc>3131</source_loc>
+			<id>3402</id>
+			<source_loc>3126</source_loc>
 			<order>49</order>
 			<sig_name>mem_req_valid_o</sig_name>
 			<label>mem_req_valid_o:write</label>
@@ -5534,8 +5506,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3395</id>
-			<source_loc>3168</source_loc>
+			<id>3390</id>
+			<source_loc>3163</source_loc>
 			<order>50</order>
 			<sig_name>mem_resp_tag_i</sig_name>
 			<label>mem_resp_tag_i:read</label>
@@ -5545,8 +5517,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3394</id>
-			<source_loc>3165</source_loc>
+			<id>3389</id>
+			<source_loc>3160</source_loc>
 			<order>51</order>
 			<sig_name>mem_resp_valid_i</sig_name>
 			<label>mem_resp_valid_i:read</label>
@@ -5556,30 +5528,30 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<op>
-			<id>3396</id>
-			<source_loc>3148</source_loc>
+			<id>3391</id>
+			<source_loc>3143</source_loc>
 			<order>52</order>
 			<instance_name>vv_add_Eqi2u10_4_6</instance_name>
 			<opcode>1</opcode>
 			<label>==</label>
 			<cycle_id>6</cycle_id>
-			<chain_time>1.1420</chain_time>
+			<chain_time>2.2160</chain_time>
 			<guard>TRUE</guard>
 		</op>
 		<op>
-			<id>3397</id>
-			<source_loc>3149</source_loc>
+			<id>3392</id>
+			<source_loc>3144</source_loc>
 			<order>53</order>
 			<instance_name>vv_add_And_1U_0_4_7</instance_name>
 			<opcode>6</opcode>
 			<label>&amp;</label>
 			<cycle_id>6</cycle_id>
-			<chain_time>1.7220</chain_time>
+			<chain_time>3.3330</chain_time>
 			<guard>TRUE</guard>
 		</op>
 		<io_op>
-			<id>3414</id>
-			<source_loc>3175</source_loc>
+			<id>3409</id>
+			<source_loc>3170</source_loc>
 			<order>54</order>
 			<sig_name>mem_resp_tag_i</sig_name>
 			<label>mem_resp_tag_i:read</label>
@@ -5589,8 +5561,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3413</id>
-			<source_loc>3172</source_loc>
+			<id>3408</id>
+			<source_loc>3167</source_loc>
 			<order>55</order>
 			<sig_name>mem_resp_valid_i</sig_name>
 			<label>mem_resp_valid_i:read</label>
@@ -5600,30 +5572,30 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<op>
-			<id>3415</id>
-			<source_loc>3154</source_loc>
+			<id>3410</id>
+			<source_loc>3149</source_loc>
 			<order>56</order>
 			<instance_name>vv_add_Eqi3u10_4_8</instance_name>
 			<opcode>2</opcode>
 			<label>==</label>
 			<cycle_id>7</cycle_id>
-			<chain_time>1.1420</chain_time>
+			<chain_time>2.2160</chain_time>
 			<guard>TRUE</guard>
 		</op>
 		<op>
-			<id>3416</id>
-			<source_loc>3155</source_loc>
+			<id>3411</id>
+			<source_loc>3150</source_loc>
 			<order>57</order>
 			<instance_name>vv_add_And_1U_0_4_9</instance_name>
 			<opcode>6</opcode>
 			<label>&amp;</label>
 			<cycle_id>7</cycle_id>
-			<chain_time>1.7220</chain_time>
+			<chain_time>3.3330</chain_time>
 			<guard>TRUE</guard>
 		</op>
 		<io_op>
-			<id>3399</id>
-			<source_loc>3098</source_loc>
+			<id>3394</id>
+			<source_loc>3093</source_loc>
 			<order>58</order>
 			<sig_name>mem_resp_store_data_i</sig_name>
 			<label>mem_resp_store_data_i:read</label>
@@ -5634,8 +5606,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3418</id>
-			<source_loc>3099</source_loc>
+			<id>3413</id>
+			<source_loc>3094</source_loc>
 			<order>59</order>
 			<sig_name>mem_resp_data_i</sig_name>
 			<label>mem_resp_data_i:read</label>
@@ -5646,67 +5618,67 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<source_loc>
-			<id>3348</id>
+			<id>3343</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>7473,7344,7368,7388,3160</sub_loc>
+			<sub_loc>7473,7344,7368,7388,3155</sub_loc>
 		</source_loc>
 		<source_loc>
-			<id>3349</id>
+			<id>3344</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>pm</loc_map_kind>
 			<opcode>0</opcode>
-			<sub_loc>7473,7344,7368,7388,3160</sub_loc>
+			<sub_loc>7473,7344,7368,7388,3155</sub_loc>
 		</source_loc>
 		<wire_op>
-			<id>3350</id>
-			<source_loc>3349</source_loc>
+			<id>3345</id>
+			<source_loc>3344</source_loc>
 			<order>60</order>
 			<sig_name>result_64</sig_name>
 			<label>result_64:wire</label>
 			<datatype W="64">sc_uint</datatype>
 			<cycle_id>3</cycle_id>
-			<chain_time>0.2490</chain_time>
+			<chain_time>0.7860</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3466</id>
-			<source_loc>3349</source_loc>
+			<id>3461</id>
+			<source_loc>3344</source_loc>
 			<order>61</order>
 			<sig_name>result_64</sig_name>
 			<label>result_64:wire</label>
 			<datatype W="64">sc_uint</datatype>
 			<cycle_id>3</cycle_id>
-			<chain_time>0.2490</chain_time>
-			<original_op>3350</original_op>
+			<chain_time>0.7860</chain_time>
+			<original_op>3345</original_op>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3468</id>
-			<source_loc>3349</source_loc>
+			<id>3463</id>
+			<source_loc>3344</source_loc>
 			<order>62</order>
 			<sig_name>result_64</sig_name>
 			<label>result_64:wire</label>
 			<datatype W="64">sc_uint</datatype>
 			<cycle_id>8</cycle_id>
-			<chain_time>0.2490</chain_time>
-			<original_op>3350</original_op>
+			<chain_time>0.7860</chain_time>
+			<original_op>3345</original_op>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3470</id>
-			<source_loc>3349</source_loc>
+			<id>3465</id>
+			<source_loc>3344</source_loc>
 			<order>63</order>
 			<sig_name>result_64</sig_name>
 			<label>result_64:wire</label>
 			<datatype W="64">sc_uint</datatype>
 			<cycle_id>9</cycle_id>
-			<chain_time>0.2490</chain_time>
-			<original_op>3350</original_op>
+			<chain_time>0.7860</chain_time>
+			<original_op>3345</original_op>
 			<guard>TRUE</guard>
 		</wire_op>
 		<io_op>
-			<id>3419</id>
-			<source_loc>3134</source_loc>
+			<id>3414</id>
+			<source_loc>3129</source_loc>
 			<order>64</order>
 			<sig_name>core_resp_valid_o</sig_name>
 			<label>core_resp_valid_o:write</label>
@@ -5715,12 +5687,12 @@
 			<cycle_id>3</cycle_id>
 			<cycle_id>8</cycle_id>
 			<cycle_id>9</cycle_id>
-			<chain_time>0.7860</chain_time>
+			<chain_time>1.3230</chain_time>
 			<guard>{[(69!=0)]}</guard>
 		</io_op>
 		<io_op>
-			<id>3420</id>
-			<source_loc>3135</source_loc>
+			<id>3415</id>
+			<source_loc>3130</source_loc>
 			<order>65</order>
 			<sig_name>core_resp_rd_o</sig_name>
 			<label>core_resp_rd_o:write</label>
@@ -5729,12 +5701,12 @@
 			<cycle_id>3</cycle_id>
 			<cycle_id>8</cycle_id>
 			<cycle_id>9</cycle_id>
-			<chain_time>0.7860</chain_time>
+			<chain_time>1.3230</chain_time>
 			<guard>{[(70!=0)]}</guard>
 		</io_op>
 		<io_op>
-			<id>3421</id>
-			<source_loc>3136</source_loc>
+			<id>3416</id>
+			<source_loc>3131</source_loc>
 			<order>66</order>
 			<sig_name>core_resp_data_o</sig_name>
 			<label>core_resp_data_o:write</label>
@@ -5743,12 +5715,12 @@
 			<cycle_id>3</cycle_id>
 			<cycle_id>8</cycle_id>
 			<cycle_id>9</cycle_id>
-			<chain_time>0.7860</chain_time>
+			<chain_time>1.3230</chain_time>
 			<guard>{[(71!=0)]}</guard>
 		</io_op>
 		<io_op>
-			<id>3423</id>
-			<source_loc>3100</source_loc>
+			<id>3418</id>
+			<source_loc>3095</source_loc>
 			<order>67</order>
 			<sig_name>core_resp_ready_i</sig_name>
 			<label>core_resp_ready_i:read</label>
@@ -5758,8 +5730,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3425</id>
-			<source_loc>3137</source_loc>
+			<id>3420</id>
+			<source_loc>3132</source_loc>
 			<order>68</order>
 			<sig_name>cc_busy_o</sig_name>
 			<label>cc_busy_o:write</label>
@@ -5773,8 +5745,8 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<io_op>
-			<id>3426</id>
-			<source_loc>3138</source_loc>
+			<id>3421</id>
+			<source_loc>3133</source_loc>
 			<order>69</order>
 			<sig_name>core_resp_valid_o</sig_name>
 			<label>core_resp_valid_o:write</label>
@@ -5788,106 +5760,106 @@
 			<guard>TRUE</guard>
 		</io_op>
 		<wire_op>
-			<id>3368</id>
+			<id>3363</id>
 			<source_loc>7465</source_loc>
 			<order>70</order>
 			<sig_name/>
 			<label>:wire</label>
 			<datatype W="64">sc_int</datatype>
 			<cycle_id>1</cycle_id>
-			<chain_time>0.2490</chain_time>
+			<chain_time>0.7860</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3370</id>
+			<id>3365</id>
 			<source_loc>7461</source_loc>
 			<order>71</order>
 			<sig_name/>
 			<label>:wire</label>
 			<datatype W="64">sc_int</datatype>
 			<cycle_id>2</cycle_id>
-			<chain_time>0.2490</chain_time>
+			<chain_time>0.7860</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3378</id>
+			<id>3373</id>
 			<source_loc>7473</source_loc>
 			<order>72</order>
 			<sig_name/>
 			<label>:wire</label>
 			<datatype W="64">sc_int</datatype>
 			<cycle_id>3</cycle_id>
-			<chain_time>0.2490</chain_time>
+			<chain_time>0.7860</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3387</id>
+			<id>3382</id>
 			<source_loc>7478</source_loc>
 			<order>73</order>
 			<sig_name/>
 			<label>:wire</label>
 			<datatype W="64">sc_int</datatype>
 			<cycle_id>4</cycle_id>
-			<chain_time>0.2490</chain_time>
+			<chain_time>0.7860</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3406</id>
+			<id>3401</id>
 			<source_loc>7495</source_loc>
 			<order>74</order>
 			<sig_name/>
 			<label>:wire</label>
 			<datatype W="64">sc_int</datatype>
 			<cycle_id>5</cycle_id>
-			<chain_time>0.2490</chain_time>
+			<chain_time>0.7860</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3393</id>
+			<id>3388</id>
 			<source_loc>7487</source_loc>
 			<order>75</order>
 			<sig_name/>
 			<label>:wire</label>
 			<datatype W="64">sc_int</datatype>
 			<cycle_id>4</cycle_id>
-			<chain_time>1.7220</chain_time>
+			<chain_time>3.3330</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3412</id>
+			<id>3407</id>
 			<source_loc>7504</source_loc>
 			<order>76</order>
 			<sig_name/>
 			<label>:wire</label>
 			<datatype W="64">sc_int</datatype>
 			<cycle_id>5</cycle_id>
-			<chain_time>1.7220</chain_time>
+			<chain_time>3.3330</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3398</id>
+			<id>3393</id>
 			<source_loc>7482</source_loc>
 			<order>77</order>
 			<sig_name/>
 			<label>:wire</label>
 			<datatype W="64">sc_int</datatype>
 			<cycle_id>6</cycle_id>
-			<chain_time>1.7220</chain_time>
+			<chain_time>3.3330</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3417</id>
+			<id>3412</id>
 			<source_loc>7499</source_loc>
 			<order>78</order>
 			<sig_name/>
 			<label>:wire</label>
 			<datatype W="64">sc_int</datatype>
 			<cycle_id>7</cycle_id>
-			<chain_time>1.7220</chain_time>
+			<chain_time>3.3330</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3422</id>
+			<id>3417</id>
 			<source_loc>7515</source_loc>
 			<order>79</order>
 			<sig_name/>
@@ -5896,18 +5868,18 @@
 			<cycle_id>3</cycle_id>
 			<cycle_id>8</cycle_id>
 			<cycle_id>9</cycle_id>
-			<chain_time>0.2490</chain_time>
+			<chain_time>0.7860</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 		<wire_op>
-			<id>3424</id>
+			<id>3419</id>
 			<source_loc>7514</source_loc>
 			<order>80</order>
 			<sig_name/>
 			<label>:wire</label>
 			<datatype W="64">sc_int</datatype>
 			<cycle_id>10</cycle_id>
-			<chain_time>0.2490</chain_time>
+			<chain_time>0.7860</chain_time>
 			<guard>TRUE</guard>
 		</wire_op>
 	</sched_ops>
@@ -5924,7 +5896,7 @@
 			<thread>vv_addThread</thread>
 			<path_node>
 				<node_kind>REG</node_kind>
-				<delay>0.2490</delay>
+				<delay>0.7860</delay>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
@@ -5933,32 +5905,32 @@
 			</path_node>
 			<path_node>
 				<node_kind>SCHED_OP</node_kind>
-				<delay>1.7690</delay>
+				<delay>2.3060</delay>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
-				<delay>0.5800</delay>
+				<delay>1.1170</delay>
 				<number_inputs>4</number_inputs>
 				<state>15</state>
-				<source_loc>3350</source_loc>
+				<source_loc>3345</source_loc>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
 				<delay>0.0000</delay>
 				<number_inputs>1</number_inputs>
 				<state>43</state>
-				<source_loc>3421</source_loc>
+				<source_loc>3416</source_loc>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
-				<delay>0.5800</delay>
+				<delay>1.1170</delay>
 				<number_inputs>2</number_inputs>
 			</path_node>
 			<path_node>
 				<node_kind>REG</node_kind>
 				<delay>0.5370</delay>
 			</path_node>
-			<delay>3.7150</delay>
+			<delay>5.8630</delay>
 		</timing_path>
 		<timing_path>
 			<name>vv_addThread_2</name>
@@ -5966,7 +5938,7 @@
 			<thread>vv_addThread</thread>
 			<path_node>
 				<node_kind>REG</node_kind>
-				<delay>0.2490</delay>
+				<delay>0.7860</delay>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
@@ -5975,32 +5947,32 @@
 			</path_node>
 			<path_node>
 				<node_kind>SCHED_OP</node_kind>
-				<delay>1.7690</delay>
+				<delay>2.3060</delay>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
-				<delay>0.5800</delay>
+				<delay>1.1170</delay>
 				<number_inputs>4</number_inputs>
 				<state>15</state>
-				<source_loc>3350</source_loc>
+				<source_loc>3345</source_loc>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
 				<delay>0.0000</delay>
 				<number_inputs>1</number_inputs>
 				<state>43</state>
-				<source_loc>3421</source_loc>
+				<source_loc>3416</source_loc>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
-				<delay>0.5800</delay>
+				<delay>1.1170</delay>
 				<number_inputs>2</number_inputs>
 			</path_node>
 			<path_node>
 				<node_kind>REG</node_kind>
 				<delay>0.5370</delay>
 			</path_node>
-			<delay>3.7150</delay>
+			<delay>5.8630</delay>
 		</timing_path>
 	</timing_paths>
 	<timing_paths>
@@ -6011,7 +5983,7 @@
 			<thread>vv_addThread</thread>
 			<path_node>
 				<node_kind>REG</node_kind>
-				<delay>0.2490</delay>
+				<delay>0.7860</delay>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
@@ -6020,12 +5992,12 @@
 			</path_node>
 			<path_node>
 				<node_kind>PORT</node_kind>
-				<delay>1.7690</delay>
+				<delay>2.3060</delay>
 				<instance_name>vv_add_Add_64U_3_4_1</instance_name>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
-				<delay>0.5800</delay>
+				<delay>1.1170</delay>
 				<number_inputs>2</number_inputs>
 			</path_node>
 			<path_node>
@@ -6035,14 +6007,14 @@
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
-				<delay>0.5800</delay>
+				<delay>1.1170</delay>
 				<number_inputs>2</number_inputs>
 			</path_node>
 			<path_node>
 				<node_kind>REG</node_kind>
 				<delay>0.5370</delay>
 			</path_node>
-			<delay>3.7150</delay>
+			<delay>5.8630</delay>
 		</timing_path>
 		<timing_path>
 			<name>vv_addThread_2</name>
@@ -6050,7 +6022,7 @@
 			<thread>vv_addThread</thread>
 			<path_node>
 				<node_kind>REG</node_kind>
-				<delay>0.2490</delay>
+				<delay>0.7860</delay>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
@@ -6059,12 +6031,12 @@
 			</path_node>
 			<path_node>
 				<node_kind>PORT</node_kind>
-				<delay>1.7690</delay>
+				<delay>2.3060</delay>
 				<instance_name>vv_add_Add_64U_3_4_1</instance_name>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
-				<delay>0.5800</delay>
+				<delay>1.1170</delay>
 				<number_inputs>2</number_inputs>
 			</path_node>
 			<path_node>
@@ -6074,21 +6046,21 @@
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
-				<delay>0.5800</delay>
+				<delay>1.1170</delay>
 				<number_inputs>2</number_inputs>
 			</path_node>
 			<path_node>
 				<node_kind>REG</node_kind>
 				<delay>0.5370</delay>
 			</path_node>
-			<delay>3.7150</delay>
+			<delay>5.8630</delay>
 		</timing_path>
 	</timing_paths>
 	<reg_ops>
 		<thread>vv_addThread</thread>
 		<reg_op>
-			<id>3508</id>
-			<source_loc>3352</source_loc>
+			<id>3503</id>
+			<source_loc>3347</source_loc>
 			<name>cc_busy_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>1,2,12</livein>
@@ -6097,8 +6069,8 @@
 			<instance_name>cc_busy_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3509</id>
-			<source_loc>3376</source_loc>
+			<id>3504</id>
+			<source_loc>3371</source_loc>
 			<name>cc_busy_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>3,4,5,8,9,10</livein>
@@ -6107,8 +6079,8 @@
 			<instance_name>cc_busy_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3510</id>
-			<source_loc>3425</source_loc>
+			<id>3505</id>
+			<source_loc>3420</source_loc>
 			<name>cc_busy_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>11,12</livein>
@@ -6117,8 +6089,8 @@
 			<instance_name>cc_busy_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3511</id>
-			<source_loc>3353</source_loc>
+			<id>3506</id>
+			<source_loc>3348</source_loc>
 			<name>cc_interrupt_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>1,2,3,12</livein>
@@ -6127,8 +6099,8 @@
 			<instance_name>cc_interrupt_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3512</id>
-			<source_loc>3354</source_loc>
+			<id>3507</id>
+			<source_loc>3349</source_loc>
 			<name>core_cmd_ready_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>1,12</livein>
@@ -6137,8 +6109,8 @@
 			<instance_name>core_cmd_ready_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3513</id>
-			<source_loc>3366</source_loc>
+			<id>3508</id>
+			<source_loc>3361</source_loc>
 			<name>core_cmd_ready_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>1,2,3,12</livein>
@@ -6147,8 +6119,8 @@
 			<instance_name>core_cmd_ready_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3514</id>
-			<source_loc>3377</source_loc>
+			<id>3509</id>
+			<source_loc>3372</source_loc>
 			<name>core_cmd_ready_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>3,4,5,6,7,8,9,10,11,12</livein>
@@ -6157,8 +6129,8 @@
 			<instance_name>core_cmd_ready_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3515</id>
-			<source_loc>3357</source_loc>
+			<id>3510</id>
+			<source_loc>3352</source_loc>
 			<name>core_resp_data_o</name>
 			<datatype W="64">sc_uint</datatype>
 			<livein>1,2,3,12</livein>
@@ -6167,8 +6139,8 @@
 			<instance_name>core_resp_data_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3516</id>
-			<source_loc>3421</source_loc>
+			<id>3511</id>
+			<source_loc>3416</source_loc>
 			<name>core_resp_data_o</name>
 			<datatype W="64">sc_uint</datatype>
 			<livein>3,8,9,10,11,12</livein>
@@ -6177,8 +6149,8 @@
 			<instance_name>core_resp_data_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3517</id>
-			<source_loc>3356</source_loc>
+			<id>3512</id>
+			<source_loc>3351</source_loc>
 			<name>core_resp_rd_o</name>
 			<datatype W="5">sc_uint</datatype>
 			<livein>1,2,3,12</livein>
@@ -6187,8 +6159,8 @@
 			<instance_name>core_resp_rd_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3518</id>
-			<source_loc>3420</source_loc>
+			<id>3513</id>
+			<source_loc>3415</source_loc>
 			<name>core_resp_rd_o</name>
 			<datatype W="5">sc_uint</datatype>
 			<livein>3,8,9,10,11,12</livein>
@@ -6197,8 +6169,8 @@
 			<instance_name>core_resp_rd_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3519</id>
-			<source_loc>3355</source_loc>
+			<id>3514</id>
+			<source_loc>3350</source_loc>
 			<name>core_resp_valid_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>1,2,3,12</livein>
@@ -6207,8 +6179,8 @@
 			<instance_name>core_resp_valid_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3520</id>
-			<source_loc>3419</source_loc>
+			<id>3515</id>
+			<source_loc>3414</source_loc>
 			<name>core_resp_valid_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>3,8,9,10</livein>
@@ -6217,8 +6189,8 @@
 			<instance_name>core_resp_valid_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3521</id>
-			<source_loc>3426</source_loc>
+			<id>3516</id>
+			<source_loc>3421</source_loc>
 			<name>core_resp_valid_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>11,12</livein>
@@ -6227,88 +6199,88 @@
 			<instance_name>core_resp_valid_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3522</id>
-			<source_loc>3359</source_loc>
+			<id>3517</id>
+			<source_loc>3354</source_loc>
 			<name>mem_req_addr_o</name>
 			<datatype W="40">sc_uint</datatype>
 			<livein>1,2,3,12</livein>
 			<liveout>1,2,12</liveout>
 			<reg_deffed/>
 			<instance_name>mem_req_addr_o</instance_name>
+		</reg_op>
+		<reg_op>
+			<id>3518</id>
+			<source_loc>3375</source_loc>
+			<name>mem_req_addr_o</name>
+			<datatype W="40">sc_uint</datatype>
+			<livein>3,4,6,8</livein>
+			<liveout>3,4,6</liveout>
+			<reg_deffed>3</reg_deffed>
+			<instance_name>mem_req_addr_o</instance_name>
+		</reg_op>
+		<reg_op>
+			<id>3519</id>
+			<source_loc>3395</source_loc>
+			<name>mem_req_addr_o</name>
+			<datatype W="40">sc_uint</datatype>
+			<livein>3,5,7,9</livein>
+			<liveout>3,5,7</liveout>
+			<reg_deffed>3</reg_deffed>
+			<instance_name>mem_req_addr_o</instance_name>
+		</reg_op>
+		<reg_op>
+			<id>3520</id>
+			<source_loc>3356</source_loc>
+			<name>mem_req_cmd_o</name>
+			<datatype W="5">sc_uint</datatype>
+			<livein>1,2,3,12</livein>
+			<liveout>1,2,12</liveout>
+			<reg_deffed/>
+			<instance_name>mem_req_cmd_o</instance_name>
+		</reg_op>
+		<reg_op>
+			<id>3521</id>
+			<source_loc>3377</source_loc>
+			<name>mem_req_cmd_o</name>
+			<datatype W="5">sc_uint</datatype>
+			<livein>3,4,6,8</livein>
+			<liveout>3,4,6</liveout>
+			<reg_deffed>3</reg_deffed>
+			<instance_name>mem_req_cmd_o</instance_name>
+		</reg_op>
+		<reg_op>
+			<id>3522</id>
+			<source_loc>3397</source_loc>
+			<name>mem_req_cmd_o</name>
+			<datatype W="5">sc_uint</datatype>
+			<livein>3,5,7,9</livein>
+			<liveout>3,5,7</liveout>
+			<reg_deffed>3</reg_deffed>
+			<instance_name>mem_req_cmd_o</instance_name>
 		</reg_op>
 		<reg_op>
 			<id>3523</id>
-			<source_loc>3380</source_loc>
-			<name>mem_req_addr_o</name>
-			<datatype W="40">sc_uint</datatype>
-			<livein>3,4,6,8</livein>
-			<liveout>3,4,6</liveout>
-			<reg_deffed>3</reg_deffed>
-			<instance_name>mem_req_addr_o</instance_name>
+			<source_loc>3359</source_loc>
+			<name>mem_req_data_o</name>
+			<datatype W="64">sc_uint</datatype>
+			<livein>1,2,3,12</livein>
+			<liveout>1,2,12</liveout>
+			<reg_deffed/>
+			<instance_name>mem_req_data_o</instance_name>
 		</reg_op>
 		<reg_op>
 			<id>3524</id>
-			<source_loc>3400</source_loc>
-			<name>mem_req_addr_o</name>
-			<datatype W="40">sc_uint</datatype>
-			<livein>3,5,7,9</livein>
-			<liveout>3,5,7</liveout>
+			<source_loc>3380</source_loc>
+			<name>mem_req_data_o</name>
+			<datatype W="64">sc_uint</datatype>
+			<livein>3,4,6,8</livein>
+			<liveout>3,4,6</liveout>
 			<reg_deffed>3</reg_deffed>
-			<instance_name>mem_req_addr_o</instance_name>
+			<instance_name>mem_req_data_o</instance_name>
 		</reg_op>
 		<reg_op>
 			<id>3525</id>
-			<source_loc>3361</source_loc>
-			<name>mem_req_cmd_o</name>
-			<datatype W="5">sc_uint</datatype>
-			<livein>1,2,3,12</livein>
-			<liveout>1,2,12</liveout>
-			<reg_deffed/>
-			<instance_name>mem_req_cmd_o</instance_name>
-		</reg_op>
-		<reg_op>
-			<id>3526</id>
-			<source_loc>3382</source_loc>
-			<name>mem_req_cmd_o</name>
-			<datatype W="5">sc_uint</datatype>
-			<livein>3,4,6,8</livein>
-			<liveout>3,4,6</liveout>
-			<reg_deffed>3</reg_deffed>
-			<instance_name>mem_req_cmd_o</instance_name>
-		</reg_op>
-		<reg_op>
-			<id>3527</id>
-			<source_loc>3402</source_loc>
-			<name>mem_req_cmd_o</name>
-			<datatype W="5">sc_uint</datatype>
-			<livein>3,5,7,9</livein>
-			<liveout>3,5,7</liveout>
-			<reg_deffed>3</reg_deffed>
-			<instance_name>mem_req_cmd_o</instance_name>
-		</reg_op>
-		<reg_op>
-			<id>3528</id>
-			<source_loc>3364</source_loc>
-			<name>mem_req_data_o</name>
-			<datatype W="64">sc_uint</datatype>
-			<livein>1,2,3,12</livein>
-			<liveout>1,2,12</liveout>
-			<reg_deffed/>
-			<instance_name>mem_req_data_o</instance_name>
-		</reg_op>
-		<reg_op>
-			<id>3529</id>
-			<source_loc>3385</source_loc>
-			<name>mem_req_data_o</name>
-			<datatype W="64">sc_uint</datatype>
-			<livein>3,4,6,8</livein>
-			<liveout>3,4,6</liveout>
-			<reg_deffed>3</reg_deffed>
-			<instance_name>mem_req_data_o</instance_name>
-		</reg_op>
-		<reg_op>
-			<id>3530</id>
-			<source_loc>3363</source_loc>
+			<source_loc>3358</source_loc>
 			<name>mem_req_phys_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>1,2,3,12</livein>
@@ -6317,68 +6289,68 @@
 			<instance_name>mem_req_phys_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3531</id>
-			<source_loc>3360</source_loc>
+			<id>3526</id>
+			<source_loc>3355</source_loc>
 			<name>mem_req_tag_o</name>
 			<datatype W="10">sc_uint</datatype>
 			<livein>1,2,3,12</livein>
 			<liveout>1,2,12</liveout>
 			<reg_deffed/>
 			<instance_name>mem_req_tag_o</instance_name>
+		</reg_op>
+		<reg_op>
+			<id>3527</id>
+			<source_loc>3379</source_loc>
+			<name>mem_req_tag_o</name>
+			<datatype W="10">sc_uint</datatype>
+			<livein>3,4,6,8</livein>
+			<liveout>3,4,6</liveout>
+			<reg_deffed>3</reg_deffed>
+			<instance_name>mem_req_tag_o</instance_name>
+		</reg_op>
+		<reg_op>
+			<id>3528</id>
+			<source_loc>3399</source_loc>
+			<name>mem_req_tag_o</name>
+			<datatype W="10">sc_uint</datatype>
+			<livein>3,5,7,9</livein>
+			<liveout>3,5,7</liveout>
+			<reg_deffed>3</reg_deffed>
+			<instance_name>mem_req_tag_o</instance_name>
+		</reg_op>
+		<reg_op>
+			<id>3529</id>
+			<source_loc>3357</source_loc>
+			<name>mem_req_typ_o</name>
+			<datatype W="3">sc_uint</datatype>
+			<livein>1,2,3,12</livein>
+			<liveout>1,2,12</liveout>
+			<reg_deffed/>
+			<instance_name>mem_req_typ_o</instance_name>
+		</reg_op>
+		<reg_op>
+			<id>3530</id>
+			<source_loc>3378</source_loc>
+			<name>mem_req_typ_o</name>
+			<datatype W="3">sc_uint</datatype>
+			<livein>3,4,6,8</livein>
+			<liveout>3,4,6</liveout>
+			<reg_deffed>3</reg_deffed>
+			<instance_name>mem_req_typ_o</instance_name>
+		</reg_op>
+		<reg_op>
+			<id>3531</id>
+			<source_loc>3398</source_loc>
+			<name>mem_req_typ_o</name>
+			<datatype W="3">sc_uint</datatype>
+			<livein>3,5,7,9</livein>
+			<liveout>3,5,7</liveout>
+			<reg_deffed>3</reg_deffed>
+			<instance_name>mem_req_typ_o</instance_name>
 		</reg_op>
 		<reg_op>
 			<id>3532</id>
-			<source_loc>3384</source_loc>
-			<name>mem_req_tag_o</name>
-			<datatype W="10">sc_uint</datatype>
-			<livein>3,4,6,8</livein>
-			<liveout>3,4,6</liveout>
-			<reg_deffed>3</reg_deffed>
-			<instance_name>mem_req_tag_o</instance_name>
-		</reg_op>
-		<reg_op>
-			<id>3533</id>
-			<source_loc>3404</source_loc>
-			<name>mem_req_tag_o</name>
-			<datatype W="10">sc_uint</datatype>
-			<livein>3,5,7,9</livein>
-			<liveout>3,5,7</liveout>
-			<reg_deffed>3</reg_deffed>
-			<instance_name>mem_req_tag_o</instance_name>
-		</reg_op>
-		<reg_op>
-			<id>3534</id>
-			<source_loc>3362</source_loc>
-			<name>mem_req_typ_o</name>
-			<datatype W="3">sc_uint</datatype>
-			<livein>1,2,3,12</livein>
-			<liveout>1,2,12</liveout>
-			<reg_deffed/>
-			<instance_name>mem_req_typ_o</instance_name>
-		</reg_op>
-		<reg_op>
-			<id>3535</id>
-			<source_loc>3383</source_loc>
-			<name>mem_req_typ_o</name>
-			<datatype W="3">sc_uint</datatype>
-			<livein>3,4,6,8</livein>
-			<liveout>3,4,6</liveout>
-			<reg_deffed>3</reg_deffed>
-			<instance_name>mem_req_typ_o</instance_name>
-		</reg_op>
-		<reg_op>
-			<id>3536</id>
-			<source_loc>3403</source_loc>
-			<name>mem_req_typ_o</name>
-			<datatype W="3">sc_uint</datatype>
-			<livein>3,5,7,9</livein>
-			<liveout>3,5,7</liveout>
-			<reg_deffed>3</reg_deffed>
-			<instance_name>mem_req_typ_o</instance_name>
-		</reg_op>
-		<reg_op>
-			<id>3537</id>
-			<source_loc>3358</source_loc>
+			<source_loc>3353</source_loc>
 			<name>mem_req_valid_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>1,2,3,12</livein>
@@ -6387,8 +6359,8 @@
 			<instance_name>mem_req_valid_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3538</id>
-			<source_loc>3381</source_loc>
+			<id>3533</id>
+			<source_loc>3376</source_loc>
 			<name>mem_req_valid_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>3,4</livein>
@@ -6397,8 +6369,8 @@
 			<instance_name>mem_req_valid_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3539</id>
-			<source_loc>3388</source_loc>
+			<id>3534</id>
+			<source_loc>3383</source_loc>
 			<name>mem_req_valid_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>3,4,6,8,9,10,11</livein>
@@ -6407,8 +6379,8 @@
 			<instance_name>mem_req_valid_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3540</id>
-			<source_loc>3401</source_loc>
+			<id>3535</id>
+			<source_loc>3396</source_loc>
 			<name>mem_req_valid_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>3,5</livein>
@@ -6417,8 +6389,8 @@
 			<instance_name>mem_req_valid_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3541</id>
-			<source_loc>3407</source_loc>
+			<id>3536</id>
+			<source_loc>3402</source_loc>
 			<name>mem_req_valid_o</name>
 			<datatype W="1">bool</datatype>
 			<livein>3,5,7,8,9,10,11</livein>
@@ -6427,8 +6399,8 @@
 			<instance_name>mem_req_valid_o</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3542</id>
-			<source_loc>3365</source_loc>
+			<id>3537</id>
+			<source_loc>3360</source_loc>
 			<name>result_64_mi4</name>
 			<datatype W="64">sc_uint</datatype>
 			<livein>1,2,3,12</livein>
@@ -6437,8 +6409,8 @@
 			<instance_name>s_reg_12</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3543</id>
-			<source_loc>3399</source_loc>
+			<id>3538</id>
+			<source_loc>3394</source_loc>
 			<name>result_64_mi28</name>
 			<datatype W="64">sc_uint</datatype>
 			<livein>8</livein>
@@ -6447,8 +6419,8 @@
 			<instance_name>s_reg_12</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3545</id>
-			<source_loc>3418</source_loc>
+			<id>3540</id>
+			<source_loc>3413</source_loc>
 			<name>result_64_mi41</name>
 			<datatype W="64">sc_uint</datatype>
 			<livein>9</livein>
@@ -6457,9 +6429,9 @@
 			<instance_name>s_reg_12</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3546</id>
-			<source_loc>3371</source_loc>
-			<name>opcode</name>
+			<id>3541</id>
+			<source_loc>3366</source_loc>
+			<name>funct</name>
 			<datatype W="7">sc_uint</datatype>
 			<livein>3,4,5,6,7,8,9</livein>
 			<liveout>1,2,3,4,5,6,7,12</liveout>
@@ -6467,8 +6439,8 @@
 			<instance_name>s_reg_13</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3547</id>
-			<source_loc>3375</source_loc>
+			<id>3542</id>
+			<source_loc>3370</source_loc>
 			<name>xd</name>
 			<datatype W="1">bool</datatype>
 			<livein>3,4,5,6,7,8,9</livein>
@@ -6477,8 +6449,8 @@
 			<instance_name>s_reg_14</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3548</id>
-			<source_loc>3372</source_loc>
+			<id>3543</id>
+			<source_loc>3367</source_loc>
 			<name>din1_64</name>
 			<datatype W="64">sc_uint</datatype>
 			<livein>3</livein>
@@ -6487,8 +6459,8 @@
 			<instance_name>s_reg_15</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3549</id>
-			<source_loc>3373</source_loc>
+			<id>3544</id>
+			<source_loc>3368</source_loc>
 			<name>din2_64</name>
 			<datatype W="64">sc_uint</datatype>
 			<livein>3</livein>
@@ -6497,8 +6469,8 @@
 			<instance_name>s_reg_16</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3550</id>
-			<source_loc>3374</source_loc>
+			<id>3545</id>
+			<source_loc>3369</source_loc>
 			<name>ds</name>
 			<datatype W="5">sc_uint</datatype>
 			<livein>3,4,5,6,7,8,9</livein>
@@ -6507,8 +6479,8 @@
 			<instance_name>s_reg_17</instance_name>
 		</reg_op>
 		<reg_op>
-			<id>3551</id>
-			<source_loc>3350</source_loc>
+			<id>3546</id>
+			<source_loc>3345</source_loc>
 			<name>result_64_mux</name>
 			<datatype W="64">sc_uint</datatype>
 			<livein>3,8,9,10,11,12</livein>
@@ -6630,31 +6602,31 @@
 			<name>vv_addThread_1</name>
 			<path_kind>OldSchedLong</path_kind>
 			<thread>vv_addThread</thread>
-			<delay>3.1350</delay>
+			<delay>4.7460</delay>
 			<path_node>
 				<node_kind>REG</node_kind>
-				<delay>0.2490</delay>
+				<delay>0.7860</delay>
 			</path_node>
 			<path_node>
 				<node_kind>SCHED_OP</node_kind>
-				<delay>1.7690</delay>
-				<source_loc>3379</source_loc>
+				<delay>2.3060</delay>
+				<source_loc>3374</source_loc>
 				<state>16</state>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3466</source_loc>
+				<source_loc>3461</source_loc>
 				<state>16</state>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
-				<delay>0.5800</delay>
+				<delay>1.1170</delay>
 			</path_node>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.5370</delay>
-				<source_loc>3516</source_loc>
+				<source_loc>3511</source_loc>
 				<state>43</state>
 			</path_node>
 		</timing_path>
@@ -6662,29 +6634,29 @@
 			<name>vv_addThread_2</name>
 			<path_kind>OldSchedLong</path_kind>
 			<thread>vv_addThread</thread>
-			<delay>2.2130</delay>
+			<delay>3.8240</delay>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3390</source_loc>
+				<source_loc>3385</source_loc>
 				<state>21</state>
 			</path_node>
 			<path_node>
 				<node_kind>SCHED_OP</node_kind>
-				<delay>0.8470</delay>
-				<source_loc>3391</source_loc>
+				<delay>1.3840</delay>
+				<source_loc>3386</source_loc>
 				<state>21</state>
 			</path_node>
 			<path_node>
 				<node_kind>SCHED_OP</node_kind>
-				<delay>0.5800</delay>
-				<source_loc>3392</source_loc>
+				<delay>1.1170</delay>
+				<source_loc>3387</source_loc>
 				<state>21</state>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3393</source_loc>
+				<source_loc>3388</source_loc>
 				<state>0</state>
 			</path_node>
 			<path_node>
@@ -6696,35 +6668,35 @@
 			<name>vv_addThread_3</name>
 			<path_kind>OldSchedLong</path_kind>
 			<thread>vv_addThread</thread>
-			<delay>2.2130</delay>
+			<delay>3.8240</delay>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3395</source_loc>
+				<source_loc>3390</source_loc>
 				<state>25</state>
 			</path_node>
 			<path_node>
 				<node_kind>SCHED_OP</node_kind>
-				<delay>0.8470</delay>
-				<source_loc>3396</source_loc>
+				<delay>1.3840</delay>
+				<source_loc>3391</source_loc>
 				<state>25</state>
 			</path_node>
 			<path_node>
 				<node_kind>SCHED_OP</node_kind>
-				<delay>0.5800</delay>
-				<source_loc>3397</source_loc>
+				<delay>1.1170</delay>
+				<source_loc>3392</source_loc>
 				<state>25</state>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3398</source_loc>
+				<source_loc>3393</source_loc>
 				<state>0</state>
 			</path_node>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3543</source_loc>
+				<source_loc>3538</source_loc>
 				<state>28</state>
 			</path_node>
 			<path_node>
@@ -6736,29 +6708,29 @@
 			<name>vv_addThread_4</name>
 			<path_kind>OldSchedLong</path_kind>
 			<thread>vv_addThread</thread>
-			<delay>2.2130</delay>
+			<delay>3.8240</delay>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3409</source_loc>
+				<source_loc>3404</source_loc>
 				<state>34</state>
 			</path_node>
 			<path_node>
 				<node_kind>SCHED_OP</node_kind>
-				<delay>0.8470</delay>
-				<source_loc>3410</source_loc>
+				<delay>1.3840</delay>
+				<source_loc>3405</source_loc>
 				<state>34</state>
 			</path_node>
 			<path_node>
 				<node_kind>SCHED_OP</node_kind>
-				<delay>0.5800</delay>
-				<source_loc>3411</source_loc>
+				<delay>1.1170</delay>
+				<source_loc>3406</source_loc>
 				<state>34</state>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3412</source_loc>
+				<source_loc>3407</source_loc>
 				<state>0</state>
 			</path_node>
 			<path_node>
@@ -6770,35 +6742,35 @@
 			<name>vv_addThread_5</name>
 			<path_kind>OldSchedLong</path_kind>
 			<thread>vv_addThread</thread>
-			<delay>2.2130</delay>
+			<delay>3.8240</delay>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3414</source_loc>
+				<source_loc>3409</source_loc>
 				<state>38</state>
 			</path_node>
 			<path_node>
 				<node_kind>SCHED_OP</node_kind>
-				<delay>0.8470</delay>
-				<source_loc>3415</source_loc>
+				<delay>1.3840</delay>
+				<source_loc>3410</source_loc>
 				<state>38</state>
 			</path_node>
 			<path_node>
 				<node_kind>SCHED_OP</node_kind>
-				<delay>0.5800</delay>
-				<source_loc>3416</source_loc>
+				<delay>1.1170</delay>
+				<source_loc>3411</source_loc>
 				<state>38</state>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3417</source_loc>
+				<source_loc>3412</source_loc>
 				<state>0</state>
 			</path_node>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3545</source_loc>
+				<source_loc>3540</source_loc>
 				<state>41</state>
 			</path_node>
 			<path_node>
@@ -6810,15 +6782,15 @@
 			<name>vv_addThread_6</name>
 			<path_kind>OldSchedLong</path_kind>
 			<thread>vv_addThread</thread>
-			<delay>0.7860</delay>
+			<delay>1.3230</delay>
 			<path_node>
 				<node_kind>REG</node_kind>
-				<delay>0.2490</delay>
+				<delay>0.7860</delay>
 			</path_node>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.5370</delay>
-				<source_loc>3520</source_loc>
+				<source_loc>3515</source_loc>
 				<state>43</state>
 			</path_node>
 		</timing_path>
@@ -6826,15 +6798,15 @@
 			<name>vv_addThread_7</name>
 			<path_kind>OldSchedLong</path_kind>
 			<thread>vv_addThread</thread>
-			<delay>0.7860</delay>
+			<delay>1.3230</delay>
 			<path_node>
 				<node_kind>REG</node_kind>
-				<delay>0.2490</delay>
+				<delay>0.7860</delay>
 			</path_node>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.5370</delay>
-				<source_loc>3518</source_loc>
+				<source_loc>3513</source_loc>
 				<state>43</state>
 			</path_node>
 		</timing_path>
@@ -6842,72 +6814,78 @@
 			<name>vv_addThread_8</name>
 			<path_kind>OldSchedLong</path_kind>
 			<thread>vv_addThread</thread>
-			<delay>0.5370</delay>
+			<delay>1.3230</delay>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3386</source_loc>
-				<state>19</state>
+				<source_loc>3362</source_loc>
+				<state>5</state>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3387</source_loc>
+				<source_loc>3363</source_loc>
 				<state>0</state>
 			</path_node>
 			<path_node>
-				<node_kind>IO</node_kind>
+				<node_kind>REG</node_kind>
 				<delay>0.5370</delay>
-				<source_loc>3539</source_loc>
-				<state>21</state>
 			</path_node>
 		</timing_path>
 		<timing_path>
 			<name>vv_addThread_9</name>
 			<path_kind>OldSchedLong</path_kind>
 			<thread>vv_addThread</thread>
-			<delay>0.5370</delay>
+			<delay>1.3230</delay>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3405</source_loc>
-				<state>32</state>
+				<source_loc>3364</source_loc>
+				<state>9</state>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3406</source_loc>
+				<source_loc>3365</source_loc>
 				<state>0</state>
 			</path_node>
 			<path_node>
 				<node_kind>IO</node_kind>
+				<delay>0.0000</delay>
+				<source_loc>3543</source_loc>
+				<state>12</state>
+			</path_node>
+			<path_node>
+				<node_kind>REG</node_kind>
 				<delay>0.5370</delay>
-				<source_loc>3541</source_loc>
-				<state>34</state>
 			</path_node>
 		</timing_path>
 		<timing_path>
 			<name>vv_addThread_10</name>
 			<path_kind>OldSchedLong</path_kind>
 			<thread>vv_addThread</thread>
-			<delay>0.5370</delay>
+			<delay>1.3230</delay>
 			<path_node>
 				<node_kind>IO</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3423</source_loc>
-				<state>47</state>
+				<source_loc>3364</source_loc>
+				<state>9</state>
 			</path_node>
 			<path_node>
 				<node_kind>MUX</node_kind>
 				<delay>0.0000</delay>
-				<source_loc>3424</source_loc>
+				<source_loc>3365</source_loc>
 				<state>0</state>
 			</path_node>
 			<path_node>
 				<node_kind>IO</node_kind>
+				<delay>0.0000</delay>
+				<source_loc>3544</source_loc>
+				<state>12</state>
+			</path_node>
+			<path_node>
+				<node_kind>REG</node_kind>
 				<delay>0.5370</delay>
-				<source_loc>3521</source_loc>
-				<state>50</state>
 			</path_node>
 		</timing_path>
 	</timing_paths>
@@ -7045,23 +7023,23 @@
 	</loop>
 	<stable_time>
 		<name>cc_busy_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>cc_interrupt_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>core_cmd_ready_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>core_resp_valid_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>core_resp_rd_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>core_cmd_inst_rd_i</name>
@@ -7069,42 +7047,42 @@
 	</stable_time>
 	<stable_time>
 		<name>core_resp_data_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>mem_req_valid_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>mem_req_addr_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>mem_req_tag_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>mem_req_cmd_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>mem_req_typ_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>mem_req_phys_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>mem_req_data_o</name>
-		<time> 0.249</time>
+		<time> 0.786</time>
 	</stable_time>
 	<stable_time>
 		<name>core_cmd_valid_i</name>
 		<time> 9.463</time>
 	</stable_time>
 	<stable_time>
-		<name>core_cmd_inst_opcode_i</name>
+		<name>core_cmd_inst_funct_i</name>
 		<time> 9.463</time>
 	</stable_time>
 	<stable_time>
@@ -7125,11 +7103,11 @@
 	</stable_time>
 	<stable_time>
 		<name>mem_resp_valid_i</name>
-		<time> 9.420</time>
+		<time> 8.883</time>
 	</stable_time>
 	<stable_time>
 		<name>mem_resp_tag_i</name>
-		<time> 8.573</time>
+		<time> 7.499</time>
 	</stable_time>
 	<stable_time>
 		<name>mem_resp_store_data_i</name>
@@ -7217,7 +7195,7 @@
 			<seq_area>1.0000</seq_area>
 			<ded_mults>0</ded_mults>
 			<latency>1</latency>
-			<delay>0.249</delay>
+			<delay>0.786</delay>
 			<setup_time>0.537</setup_time>
 		</resource>
 		<mux_area>453.1429</mux_area>
@@ -7436,11 +7414,11 @@
 		<seq_area>1.0000</seq_area>
 		<ded_mults>0</ded_mults>
 		<latency>1</latency>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.537</setup_time>
 	</resource>
 	<mux_area>203.0000</mux_area>
-	<control_area>69.8875</control_area>
+	<control_area>69.5875</control_area>
 	<total_area>1251.0000</total_area>
 	<comb_area>797.0000</comb_area>
 	<seq_area>454.0000</seq_area>
@@ -7465,26 +7443,26 @@
 			<source_loc>445</source_loc>
 		</port>
 		<source_loc>
-			<id>3495</id>
+			<id>3490</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3352,3376,3425,3508,3509,3510</sub_loc>
+			<sub_loc>3347,3371,3420,3503,3504,3505</sub_loc>
 		</source_loc>
 		<port>
 			<direction>out</direction>
 			<name>cc_busy_o</name>
 			<datatype W="1">bool</datatype>
-			<source_loc>3495</source_loc>
+			<source_loc>3490</source_loc>
 			<area>2.0000</area>
 			<comb_area>1.0000</comb_area>
 			<seq_area>1.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</port>
 		<port>
 			<direction>out</direction>
 			<name>cc_interrupt_o</name>
 			<datatype W="1">bool</datatype>
-			<source_loc>3511</source_loc>
+			<source_loc>3506</source_loc>
 		</port>
 		<source_loc>
 			<id>443</id>
@@ -7529,45 +7507,37 @@
 			<source_loc>449</source_loc>
 		</port>
 		<source_loc>
-			<id>3493</id>
+			<id>3488</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3354,3366,3377,3512,3513,3514</sub_loc>
+			<sub_loc>3349,3361,3372,3507,3508,3509</sub_loc>
 		</source_loc>
 		<port>
 			<direction>out</direction>
 			<name>core_cmd_ready_o</name>
 			<datatype W="1">bool</datatype>
-			<source_loc>3493</source_loc>
+			<source_loc>3488</source_loc>
 			<area>2.0000</area>
 			<comb_area>1.0000</comb_area>
 			<seq_area>1.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</port>
 		<source_loc>
-			<id>3494</id>
+			<id>3489</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3367,3369</sub_loc>
+			<sub_loc>3362,3364</sub_loc>
 		</source_loc>
 		<port>
 			<direction>in</direction>
 			<name>core_cmd_valid_i</name>
 			<datatype W="1">bool</datatype>
-			<source_loc>3494</source_loc>
+			<source_loc>3489</source_loc>
 		</port>
-		<source_loc>
-			<id>487</id>
-			<loc_kind>DECL</loc_kind>
-			<label>core_cmd_inst_funct_i</label>
-			<file_id>2</file_id>
-			<line>30</line>
-			<col>24</col>
-		</source_loc>
 		<port>
 			<direction>in</direction>
 			<name>core_cmd_inst_funct_i</name>
 			<datatype W="7">sc_uint</datatype>
-			<source_loc>487</source_loc>
+			<source_loc>3366</source_loc>
 		</port>
 		<source_loc>
 			<id>509</id>
@@ -7601,7 +7571,7 @@
 			<direction>in</direction>
 			<name>core_cmd_inst_xd_i</name>
 			<datatype W="1">bool</datatype>
-			<source_loc>3375</source_loc>
+			<source_loc>3370</source_loc>
 		</port>
 		<source_loc>
 			<id>512</id>
@@ -7635,188 +7605,196 @@
 			<direction>in</direction>
 			<name>core_cmd_inst_rd_i</name>
 			<datatype W="5">sc_uint</datatype>
-			<source_loc>3374</source_loc>
+			<source_loc>3369</source_loc>
 		</port>
+		<source_loc>
+			<id>515</id>
+			<loc_kind>DECL</loc_kind>
+			<label>core_cmd_inst_opcode_i</label>
+			<file_id>2</file_id>
+			<line>38</line>
+			<col>23</col>
+		</source_loc>
 		<port>
 			<direction>in</direction>
 			<name>core_cmd_inst_opcode_i</name>
 			<datatype W="7">sc_uint</datatype>
-			<source_loc>3371</source_loc>
+			<source_loc>515</source_loc>
 		</port>
 		<port>
 			<direction>in</direction>
 			<name>core_cmd_rs1_i</name>
 			<datatype W="64">sc_uint</datatype>
-			<source_loc>3372</source_loc>
+			<source_loc>3367</source_loc>
 		</port>
 		<port>
 			<direction>in</direction>
 			<name>core_cmd_rs2_i</name>
 			<datatype W="64">sc_uint</datatype>
-			<source_loc>3373</source_loc>
+			<source_loc>3368</source_loc>
 		</port>
 		<port>
 			<direction>in</direction>
 			<name>core_resp_ready_i</name>
 			<datatype W="1">bool</datatype>
-			<source_loc>3423</source_loc>
+			<source_loc>3418</source_loc>
 		</port>
 		<source_loc>
-			<id>3505</id>
+			<id>3500</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3355,3419,3426,3519,3520,3521</sub_loc>
+			<sub_loc>3350,3414,3421,3514,3515,3516</sub_loc>
 		</source_loc>
 		<port>
 			<direction>out</direction>
 			<name>core_resp_valid_o</name>
 			<datatype W="1">bool</datatype>
-			<source_loc>3505</source_loc>
+			<source_loc>3500</source_loc>
 			<area>2.0000</area>
 			<comb_area>1.0000</comb_area>
 			<seq_area>1.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</port>
 		<source_loc>
-			<id>3506</id>
+			<id>3501</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3356,3420,3517,3518</sub_loc>
+			<sub_loc>3351,3415,3512,3513</sub_loc>
 		</source_loc>
 		<port>
 			<direction>out</direction>
 			<name>core_resp_rd_o</name>
 			<datatype W="5">sc_uint</datatype>
-			<source_loc>3506</source_loc>
+			<source_loc>3501</source_loc>
 			<area>10.0000</area>
 			<comb_area>5.0000</comb_area>
 			<seq_area>5.0000</seq_area>
-			<delay>0.2490</delay>
-			<setup_time>0.5370</setup_time>
-		</port>
-		<source_loc>
-			<id>3507</id>
-			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3357,3421,3515,3516</sub_loc>
-		</source_loc>
-		<port>
-			<direction>out</direction>
-			<name>core_resp_data_o</name>
-			<datatype W="64">sc_uint</datatype>
-			<source_loc>3507</source_loc>
-			<area>128.0000</area>
-			<comb_area>64.0000</comb_area>
-			<seq_area>64.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</port>
 		<source_loc>
 			<id>3502</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3386,3405</sub_loc>
+			<sub_loc>3352,3416,3510,3511</sub_loc>
+		</source_loc>
+		<port>
+			<direction>out</direction>
+			<name>core_resp_data_o</name>
+			<datatype W="64">sc_uint</datatype>
+			<source_loc>3502</source_loc>
+			<area>128.0000</area>
+			<comb_area>64.0000</comb_area>
+			<seq_area>64.0000</seq_area>
+			<delay>0.7860</delay>
+			<setup_time>0.5370</setup_time>
+		</port>
+		<source_loc>
+			<id>3497</id>
+			<loc_kind>ARRAY</loc_kind>
+			<sub_loc>3381,3400</sub_loc>
 		</source_loc>
 		<port>
 			<direction>in</direction>
 			<name>mem_req_ready_i</name>
 			<datatype W="1">bool</datatype>
-			<source_loc>3502</source_loc>
+			<source_loc>3497</source_loc>
 		</port>
 		<source_loc>
-			<id>3497</id>
+			<id>3492</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3358,3381,3401,3388,3407,3537,3538,3539,3540,3541</sub_loc>
+			<sub_loc>3353,3376,3396,3383,3402,3532,3533,3534,3535,3536</sub_loc>
 		</source_loc>
 		<port>
 			<direction>out</direction>
 			<name>mem_req_valid_o</name>
 			<datatype W="1">bool</datatype>
-			<source_loc>3497</source_loc>
+			<source_loc>3492</source_loc>
 			<area>2.0000</area>
 			<comb_area>1.0000</comb_area>
 			<seq_area>1.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</port>
 		<source_loc>
-			<id>3496</id>
+			<id>3491</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3359,3380,3400,3522,3523,3524</sub_loc>
+			<sub_loc>3354,3375,3395,3517,3518,3519</sub_loc>
 		</source_loc>
 		<port>
 			<direction>out</direction>
 			<name>mem_req_addr_o</name>
 			<datatype W="40">sc_uint</datatype>
-			<source_loc>3496</source_loc>
+			<source_loc>3491</source_loc>
 			<area>80.0000</area>
 			<comb_area>40.0000</comb_area>
 			<seq_area>40.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</port>
 		<source_loc>
-			<id>3500</id>
+			<id>3495</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3360,3384,3404,3531,3532,3533</sub_loc>
+			<sub_loc>3355,3379,3399,3526,3527,3528</sub_loc>
 		</source_loc>
 		<port>
 			<direction>out</direction>
 			<name>mem_req_tag_o</name>
 			<datatype W="10">sc_uint</datatype>
-			<source_loc>3500</source_loc>
+			<source_loc>3495</source_loc>
 		</port>
 		<source_loc>
-			<id>3498</id>
+			<id>3493</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3361,3382,3402,3525,3526,3527</sub_loc>
+			<sub_loc>3356,3377,3397,3520,3521,3522</sub_loc>
 		</source_loc>
 		<port>
 			<direction>out</direction>
 			<name>mem_req_cmd_o</name>
 			<datatype W="5">sc_uint</datatype>
-			<source_loc>3498</source_loc>
+			<source_loc>3493</source_loc>
 		</port>
 		<source_loc>
-			<id>3499</id>
+			<id>3494</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3362,3383,3403,3534,3535,3536</sub_loc>
+			<sub_loc>3357,3378,3398,3529,3530,3531</sub_loc>
 		</source_loc>
 		<port>
 			<direction>out</direction>
 			<name>mem_req_typ_o</name>
 			<datatype W="3">sc_uint</datatype>
-			<source_loc>3499</source_loc>
+			<source_loc>3494</source_loc>
 		</port>
 		<port>
 			<direction>out</direction>
 			<name>mem_req_phys_o</name>
 			<datatype W="1">bool</datatype>
-			<source_loc>3530</source_loc>
+			<source_loc>3525</source_loc>
 		</port>
 		<source_loc>
-			<id>3501</id>
+			<id>3496</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3364,3385,3528,3529</sub_loc>
+			<sub_loc>3359,3380,3523,3524</sub_loc>
 		</source_loc>
 		<port>
 			<direction>out</direction>
 			<name>mem_req_data_o</name>
 			<datatype W="64">sc_uint</datatype>
-			<source_loc>3501</source_loc>
+			<source_loc>3496</source_loc>
 			<area>128.0000</area>
 			<comb_area>64.0000</comb_area>
 			<seq_area>64.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</port>
 		<source_loc>
-			<id>3504</id>
+			<id>3499</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3389,3408,3394,3413</sub_loc>
+			<sub_loc>3384,3403,3389,3408</sub_loc>
 		</source_loc>
 		<port>
 			<direction>in</direction>
 			<name>mem_resp_valid_i</name>
 			<datatype W="1">bool</datatype>
-			<source_loc>3504</source_loc>
+			<source_loc>3499</source_loc>
 		</port>
 		<source_loc>
 			<id>763</id>
@@ -7833,15 +7811,15 @@
 			<source_loc>763</source_loc>
 		</port>
 		<source_loc>
-			<id>3503</id>
+			<id>3498</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3390,3409,3395,3414</sub_loc>
+			<sub_loc>3385,3404,3390,3409</sub_loc>
 		</source_loc>
 		<port>
 			<direction>in</direction>
 			<name>mem_resp_tag_i</name>
 			<datatype W="10">sc_uint</datatype>
-			<source_loc>3503</source_loc>
+			<source_loc>3498</source_loc>
 		</port>
 		<source_loc>
 			<id>780</id>
@@ -7875,7 +7853,7 @@
 			<direction>in</direction>
 			<name>mem_resp_data_i</name>
 			<datatype W="64">sc_uint</datatype>
-			<source_loc>3418</source_loc>
+			<source_loc>3413</source_loc>
 		</port>
 		<source_loc>
 			<id>798</id>
@@ -7909,7 +7887,7 @@
 			<direction>in</direction>
 			<name>mem_resp_store_data_i</name>
 			<datatype W="64">sc_uint</datatype>
-			<source_loc>3399</source_loc>
+			<source_loc>3394</source_loc>
 		</port>
 		<source_loc>
 			<id>801</id>
@@ -7947,192 +7925,192 @@
 			<state_reg/>
 		</signal>
 		<source_loc>
-			<id>3602</id>
+			<id>3597</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3411,3416</sub_loc>
+			<sub_loc>3406,3411</sub_loc>
 		</source_loc>
 		<signal>
 			<name>vv_add_And_1U_0_4_5_out1</name>
 			<datatype W="1">sc_uint</datatype>
-			<source_loc>3602</source_loc>
+			<source_loc>3597</source_loc>
 			<async/>
 		</signal>
 		<source_loc>
-			<id>3600</id>
+			<id>3595</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3410,3415</sub_loc>
+			<sub_loc>3405,3410</sub_loc>
 		</source_loc>
 		<signal>
 			<name>vv_add_Eqi3u10_4_4_out1</name>
 			<datatype W="1">sc_uint</datatype>
-			<source_loc>3600</source_loc>
+			<source_loc>3595</source_loc>
 			<async/>
 		</signal>
 		<source_loc>
-			<id>3601</id>
+			<id>3596</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3392,3397</sub_loc>
+			<sub_loc>3387,3392</sub_loc>
 		</source_loc>
 		<signal>
 			<name>vv_add_And_1U_0_4_3_out1</name>
 			<datatype W="1">sc_uint</datatype>
-			<source_loc>3601</source_loc>
+			<source_loc>3596</source_loc>
 			<async/>
 		</signal>
 		<source_loc>
-			<id>3599</id>
+			<id>3594</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3391,3396</sub_loc>
+			<sub_loc>3386,3391</sub_loc>
 		</source_loc>
 		<signal>
 			<name>vv_add_Eqi2u10_4_2_out1</name>
 			<datatype W="1">sc_uint</datatype>
-			<source_loc>3599</source_loc>
+			<source_loc>3594</source_loc>
 			<async/>
 		</signal>
 		<signal>
 			<name>s_reg_18</name>
 			<datatype W="64">sc_uint</datatype>
-			<source_loc>3551</source_loc>
+			<source_loc>3546</source_loc>
 			<area>128.0000</area>
 			<comb_area>64.0000</comb_area>
 			<seq_area>64.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</signal>
 		<signal>
 			<name>s_reg_17</name>
 			<datatype W="5">sc_uint</datatype>
-			<source_loc>3550</source_loc>
+			<source_loc>3545</source_loc>
 			<area>10.0000</area>
 			<comb_area>5.0000</comb_area>
 			<seq_area>5.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</signal>
 		<signal>
 			<name>vv_add_Add_64U_3_4_1_out1</name>
 			<datatype W="64">sc_uint</datatype>
-			<source_loc>3379</source_loc>
+			<source_loc>3374</source_loc>
 			<async/>
 		</signal>
 		<source_loc>
-			<id>3556</id>
+			<id>3551</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>3542,3545,3543</sub_loc>
+			<sub_loc>3537,3540,3538</sub_loc>
 		</source_loc>
 		<signal>
 			<name>s_reg_12</name>
 			<datatype W="64">sc_uint</datatype>
-			<source_loc>3556</source_loc>
+			<source_loc>3551</source_loc>
 			<area>128.0000</area>
 			<comb_area>64.0000</comb_area>
 			<seq_area>64.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</signal>
 		<signal>
 			<name>s_reg_14</name>
 			<datatype W="1">sc_uint</datatype>
-			<source_loc>3547</source_loc>
+			<source_loc>3542</source_loc>
 			<area>2.0000</area>
 			<comb_area>1.0000</comb_area>
 			<seq_area>1.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</signal>
 		<source_loc>
-			<id>3589</id>
+			<id>3584</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>7345,3549</sub_loc>
+			<sub_loc>7345,3544</sub_loc>
 		</source_loc>
 		<signal>
 			<name>s_reg_16</name>
 			<datatype W="64">sc_uint</datatype>
-			<source_loc>3589</source_loc>
+			<source_loc>3584</source_loc>
 			<area>128.0000</area>
 			<comb_area>64.0000</comb_area>
 			<seq_area>64.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</signal>
 		<source_loc>
-			<id>3605</id>
+			<id>3600</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>2</opcode>
 			<bits_trimmed_kind>data_bits</bits_trimmed_kind>
-			<sub_loc>3360,3384,3404,3531,3532,3533</sub_loc>
+			<sub_loc>3355,3379,3399,3526,3527,3528</sub_loc>
 		</source_loc>
 		<signal>
 			<name>mem_req_tag_o_slice</name>
 			<datatype W="2">sc_uint</datatype>
-			<source_loc>3605</source_loc>
+			<source_loc>3600</source_loc>
 			<area>4.0000</area>
 			<comb_area>2.0000</comb_area>
 			<seq_area>2.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</signal>
 		<source_loc>
-			<id>3604</id>
+			<id>3599</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
 			<bits_trimmed_kind>data_bits</bits_trimmed_kind>
-			<sub_loc>3361,3382,3402,3525,3526,3527</sub_loc>
+			<sub_loc>3356,3377,3397,3520,3521,3522</sub_loc>
 		</source_loc>
 		<signal>
 			<name>mem_req_cmd_o_slice</name>
 			<datatype W="1">sc_uint</datatype>
-			<source_loc>3604</source_loc>
+			<source_loc>3599</source_loc>
 			<area>2.0000</area>
 			<comb_area>1.0000</comb_area>
 			<seq_area>1.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</signal>
 		<source_loc>
-			<id>3603</id>
+			<id>3598</id>
 			<loc_kind>MAPPED</loc_kind>
 			<loc_map_kind>trimmed</loc_map_kind>
 			<opcode>1</opcode>
 			<bits_trimmed_kind>data_bits</bits_trimmed_kind>
-			<sub_loc>3362,3383,3403,3534,3535,3536</sub_loc>
+			<sub_loc>3357,3378,3398,3529,3530,3531</sub_loc>
 		</source_loc>
 		<signal>
 			<name>mem_req_typ_o_slice</name>
 			<datatype W="1">sc_uint</datatype>
-			<source_loc>3603</source_loc>
+			<source_loc>3598</source_loc>
 			<area>2.0000</area>
 			<comb_area>1.0000</comb_area>
 			<seq_area>1.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</signal>
 		<source_loc>
-			<id>3590</id>
+			<id>3585</id>
 			<loc_kind>ARRAY</loc_kind>
-			<sub_loc>7346,3548</sub_loc>
+			<sub_loc>7346,3543</sub_loc>
 		</source_loc>
 		<signal>
 			<name>s_reg_15</name>
 			<datatype W="64">sc_uint</datatype>
-			<source_loc>3590</source_loc>
+			<source_loc>3585</source_loc>
 			<area>128.0000</area>
 			<comb_area>64.0000</comb_area>
 			<seq_area>64.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</signal>
 		<signal>
 			<name>s_reg_13</name>
 			<datatype W="7">sc_uint</datatype>
-			<source_loc>3546</source_loc>
+			<source_loc>3541</source_loc>
 			<area>14.0000</area>
 			<comb_area>7.0000</comb_area>
 			<seq_area>7.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</signal>
 		<signal>
@@ -8143,7 +8121,7 @@
 			<area>8.0000</area>
 			<comb_area>4.0000</comb_area>
 			<seq_area>4.0000</seq_area>
-			<delay>0.2490</delay>
+			<delay>0.7860</delay>
 			<setup_time>0.5370</setup_time>
 		</signal>
 		<assign>
@@ -8233,8 +8211,8 @@
 				<polarity>0</polarity>
 			</reset>
 			<mux_area>1.0000</mux_area>
-			<mux_delay>0.5800</mux_delay>
-			<control_delay>0.5800</control_delay>
+			<mux_delay>1.1170</mux_delay>
+			<control_delay>1.1170</control_delay>
 			<rhs>
 				<value>0</value>
 			</rhs>
@@ -8258,8 +8236,8 @@
 				<polarity>0</polarity>
 			</reset>
 			<mux_area>2.0000</mux_area>
-			<mux_delay>0.5800</mux_delay>
-			<control_delay>0.5800</control_delay>
+			<mux_delay>1.1170</mux_delay>
+			<control_delay>1.1170</control_delay>
 			<rhs>
 				<value>0</value>
 			</rhs>
@@ -8308,8 +8286,8 @@
 				<polarity>0</polarity>
 			</reset>
 			<mux_area>1.0000</mux_area>
-			<mux_delay>0.5800</mux_delay>
-			<control_delay>0.5800</control_delay>
+			<mux_delay>1.1170</mux_delay>
+			<control_delay>1.1170</control_delay>
 			<rhs>
 				<value>0</value>
 			</rhs>
@@ -8334,8 +8312,8 @@
 				<polarity>0</polarity>
 			</reset>
 			<mux_area>64.0000</mux_area>
-			<mux_delay>0.5800</mux_delay>
-			<control_delay>0.5800</control_delay>
+			<mux_delay>1.1170</mux_delay>
+			<control_delay>1.1170</control_delay>
 			<rhs>
 				<value>0</value>
 			</rhs>
@@ -8386,8 +8364,8 @@
 				<polarity>0</polarity>
 			</reset>
 			<mux_area>1.0000</mux_area>
-			<mux_delay>0.5800</mux_delay>
-			<control_delay>0.5800</control_delay>
+			<mux_delay>1.1170</mux_delay>
+			<control_delay>1.1170</control_delay>
 			<rhs>
 				<value>0</value>
 			</rhs>
@@ -8413,8 +8391,8 @@
 				<polarity>0</polarity>
 			</reset>
 			<mux_area>1.0000</mux_area>
-			<mux_delay>0.5800</mux_delay>
-			<control_delay>0.5800</control_delay>
+			<mux_delay>1.1170</mux_delay>
+			<control_delay>1.1170</control_delay>
 			<rhs>
 				<value>0</value>
 			</rhs>
@@ -8437,8 +8415,8 @@
 				<polarity>0</polarity>
 			</reset>
 			<mux_area>1.0000</mux_area>
-			<mux_delay>0.5800</mux_delay>
-			<control_delay>0.5800</control_delay>
+			<mux_delay>1.1170</mux_delay>
+			<control_delay>1.1170</control_delay>
 			<rhs>
 				<value>0</value>
 			</rhs>
@@ -8465,8 +8443,8 @@
 				<polarity>0</polarity>
 			</reset>
 			<mux_area>60.0000</mux_area>
-			<mux_delay>0.5800</mux_delay>
-			<control_delay>0.5800</control_delay>
+			<mux_delay>1.1170</mux_delay>
+			<control_delay>1.1170</control_delay>
 			<rhs>
 				<value>0</value>
 			</rhs>
@@ -8495,7 +8473,7 @@
 				<polarity>0</polarity>
 			</reset>
 			<rhs>
-				<name>core_cmd_inst_opcode_i</name>
+				<name>core_cmd_inst_funct_i</name>
 			</rhs>
 			<lhs>
 				<name>s_reg_13</name>
@@ -8585,8 +8563,8 @@
 				<polarity>0</polarity>
 			</reset>
 			<mux_area>64.0000</mux_area>
-			<mux_delay>0.5800</mux_delay>
-			<control_delay>0.5800</control_delay>
+			<mux_delay>1.1170</mux_delay>
+			<control_delay>1.1170</control_delay>
 			<rhs>
 				<name>s_reg_12</name>
 			</rhs>
@@ -8712,8 +8690,8 @@
 				<polarity>0</polarity>
 			</reset>
 			<mux_area>8.0000</mux_area>
-			<mux_delay>0.7177</mux_delay>
-			<control_delay>0.7177</control_delay>
+			<mux_delay>1.2547</mux_delay>
+			<control_delay>1.2547</control_delay>
 			<rhs>
 				<value>1</value>
 				<name>global_state</name>
@@ -8863,7 +8841,7 @@
 			<module_name>vv_add_Add_64U_3_4</module_name>
 			<name>vv_add_Add_64U_3_4_1</name>
 			<instance_name>vv_add_Add_64U_3_4_1</instance_name>
-			<source_loc>3379</source_loc>
+			<source_loc>3374</source_loc>
 			<thread>vv_addThread</thread>
 			<dissolved_to>vv_add_Add_64U_3_4_1</dissolved_to>
 		</module_inst>
@@ -8871,7 +8849,7 @@
 			<module_name>vv_add_And_1U_0_4</module_name>
 			<name>vv_add_And_1U_0_4_3</name>
 			<instance_name>vv_add_And_1U_0_4_3</instance_name>
-			<source_loc>3392</source_loc>
+			<source_loc>3387</source_loc>
 			<thread>vv_addThread</thread>
 			<dissolved_to>vv_add_And_1U_0_4_3</dissolved_to>
 		</module_inst>
@@ -8879,7 +8857,7 @@
 			<module_name>vv_add_And_1U_0_4</module_name>
 			<name>vv_add_And_1U_0_4_5</name>
 			<instance_name>vv_add_And_1U_0_4_5</instance_name>
-			<source_loc>3411</source_loc>
+			<source_loc>3406</source_loc>
 			<thread>vv_addThread</thread>
 			<dissolved_to>vv_add_And_1U_0_4_5</dissolved_to>
 		</module_inst>
@@ -8887,7 +8865,7 @@
 			<module_name>vv_add_Eqi2u10_4</module_name>
 			<name>vv_add_Eqi2u10_4_2</name>
 			<instance_name>vv_add_Eqi2u10_4_2</instance_name>
-			<source_loc>3391</source_loc>
+			<source_loc>3386</source_loc>
 			<thread>vv_addThread</thread>
 			<dissolved_to>vv_add_Eqi2u10_4_2</dissolved_to>
 		</module_inst>
@@ -8895,7 +8873,7 @@
 			<module_name>vv_add_Eqi3u10_4</module_name>
 			<name>vv_add_Eqi3u10_4_4</name>
 			<instance_name>vv_add_Eqi3u10_4_4</instance_name>
-			<source_loc>3410</source_loc>
+			<source_loc>3405</source_loc>
 			<thread>vv_addThread</thread>
 			<dissolved_to>vv_add_Eqi3u10_4_4</dissolved_to>
 		</module_inst>
@@ -8958,11 +8936,11 @@
 			<count>1</count>
 		</message_count>
 		<message_count>
-			<code_num>3065</code_num>
-			<count>1</count>
+			<code_num>2776</code_num>
+			<count>2</count>
 		</message_count>
 		<message_count>
-			<code_num>1797</code_num>
+			<code_num>3065</code_num>
 			<count>1</count>
 		</message_count>
 		<message_count>
@@ -9182,8 +9160,8 @@
 			<count>1</count>
 		</message_count>
 		<message_count>
-			<code_num>2788</code_num>
-			<count>13</count>
+			<code_num>2723</code_num>
+			<count>11</count>
 		</message_count>
 		<message_count>
 			<code_num>2831</code_num>
@@ -9210,11 +9188,11 @@
 			<count>1</count>
 		</message_count>
 	</message_counts>
-	<end_time>Thu Aug  4 21:31:12 2016</end_time>
+	<end_time>Thu Aug  4 23:07:54 2016</end_time>
 	<timers>
 		<phase>
 			<name>front_end</name>
-			<real_time>1</real_time>
+			<real_time>101</real_time>
 			<cpu_time>1</cpu_time>
 		</phase>
 		<phase>
@@ -9225,11 +9203,11 @@
 		<phase>
 			<name>part_characterization</name>
 			<real_time>0</real_time>
-			<cpu_time>6</cpu_time>
+			<cpu_time>7</cpu_time>
 		</phase>
 		<phase>
 			<name>pattern_matching</name>
-			<real_time>0</real_time>
+			<real_time>137</real_time>
 			<cpu_time>0</cpu_time>
 		</phase>
 		<phase>
@@ -9249,12 +9227,12 @@
 		</phase>
 		<phase>
 			<name>post_allocation</name>
-			<real_time>1470360669</real_time>
+			<real_time>1470366398</real_time>
 			<cpu_time>2</cpu_time>
 		</phase>
 		<phase>
 			<name>cleanup</name>
-			<real_time>1</real_time>
+			<real_time>74</real_time>
 			<cpu_time>0</cpu_time>
 		</phase>
 		<phase>
@@ -9269,16 +9247,16 @@
 		</phase>
 		<phase>
 			<name>cynth</name>
-			<real_time>5</real_time>
+			<real_time>315</real_time>
 			<cpu_time>2</cpu_time>
 		</phase>
 		<phase>
 			<name>total</name>
-			<real_time>5</real_time>
-			<cpu_time>8</cpu_time>
+			<real_time>315</real_time>
+			<cpu_time>9</cpu_time>
 		</phase>
 	</timers>
-	<footprint>335612</footprint>
+	<footprint>409724</footprint>
 	<subprocess_footprint>0</subprocess_footprint>
 	<exit_status>0</exit_status>
 </tool_log>

@@ -25,6 +25,7 @@ void tb::mem()
     sc_uint<5> cmd;
     sc_uint<3> type;
     sc_uint<64> value;
+    sc_uint<64> din;
     //reset logic
     {
         HLS_DEFINE_PROTOCOL("mem reset");
@@ -57,6 +58,7 @@ void tb::mem()
             cmd = mem_req_cmd_o.read();
             tag = mem_req_tag_o.read();
             type = mem_req_typ_o.read();
+            din = mem_req_data_o.read();
 
             wait();
             mem_req_ready_i.write(0);
@@ -64,22 +66,53 @@ void tb::mem()
 
         }
         // get data from the training_data array
-        int i =(int)(Addr-address0) / TRAINING_SIZE;
-        int j= (int)(Addr-address0) - i* TRAINING_SIZE;
-        value = training_data[i][j];
 
-        //send resp back
+
+
+
+
+        switch (cmd)
         {
-            HLS_DEFINE_PROTOCOL("mem response");
-            mem_resp_addr_i.write(Addr);
-            mem_resp_cmd_i.write(cmd);
-            mem_resp_tag_i.write(tag);
-            mem_resp_typ_i.write(type);
-            mem_resp_data_i.write(value);
-            mem_resp_valid_i.write(1);
+        case 0:
+        {
+            memory[Addr]=din;
+            cout<< "store mem[ "<<Addr<<"] = "<<din<<endl;
+            {
+                HLS_DEFINE_PROTOCOL("mem response for store ");
+                mem_resp_addr_i.write(Addr);
+                mem_resp_cmd_i.write(cmd);
+                mem_resp_tag_i.write(tag);
+                mem_resp_typ_i.write(type);
+                mem_resp_data_i.write(value);
+                mem_resp_valid_i.write(1);
+                mem_resp_store_data_i.write(din);
 
-            wait();
+                wait();
+            }
         }
+        case 1:
+        {
+            value = memory[Addr];
+            cout<< "load mem[ "<<Addr<<"] = "<<value<<endl;
+            {
+                HLS_DEFINE_PROTOCOL("mem response for load");
+                mem_resp_addr_i.write(Addr);
+                mem_resp_cmd_i.write(cmd);
+                mem_resp_tag_i.write(tag);
+                mem_resp_typ_i.write(type);
+                mem_resp_data_i.write(value);
+                mem_resp_valid_i.write(1);
+
+                wait();
+            }
+
+
+            break;
+        }
+        }
+
+
+
     }
 
 }
@@ -170,6 +203,86 @@ void tb::source()
             }
 
         }
+
+        sc_uint <64> store3 = read_stimulus_value(eof);
+        //cout << "source value = " << value << endl;
+        if (!eof)
+        {
+            {
+                HLS_DEFINE_PROTOCOL("Input 2");
+                // have to wait until the cc_busy turn to be 0
+                while(cc_busy_o){
+
+                    wait();
+                }
+                //set cmd valid to 1
+                core_cmd_valid_i.write(1);
+                // set cmd funct to 0x1 (defined myself)
+                core_cmd_inst_funct_i.write(0x2);
+                //set register id (defined myself)
+                core_cmd_inst_rs1_i.write(0x55);
+                core_cmd_inst_rs2_i.write(0x25);
+
+
+                core_cmd_inst_xd_i.write(1);     //set if destination reg exist
+                core_cmd_inst_xs1_i.write(1);    //set if resource rs1 reg exist, only use rs1 this time
+                core_cmd_inst_xs2_i.write(1);    //set if resource rs2 reg exist
+                core_cmd_inst_rd_i.write(0x69);
+                core_cmd_inst_opcode_i.write(0x1);     //custom instruction opcode may be used for several accerlerations
+                core_cmd_rs1_i.write( store3 );
+                core_cmd_rs2_i.write( address0 );
+
+                do{
+
+                    wait();
+
+                }while(!core_cmd_ready_o);
+                core_cmd_valid_i.write(0);
+                wait();
+            }
+
+        }
+
+        //cout << "source value = " << value << endl;
+        if (!eof)
+        {
+            {
+                HLS_DEFINE_PROTOCOL("Input 2");
+                // have to wait until the cc_busy turn to be 0
+                while(cc_busy_o){
+
+                    wait();
+                }
+                //set cmd valid to 1
+                core_cmd_valid_i.write(1);
+                // set cmd funct to 0x1 (defined myself)
+                core_cmd_inst_funct_i.write(0x3);
+                //set register id (defined myself)
+
+                core_cmd_inst_rs2_i.write(0x25);
+
+
+                core_cmd_inst_xd_i.write(1);     //set if destination reg exist
+                core_cmd_inst_xs1_i.write(0);    //set if resource rs1 reg exist, only use rs1 this time
+                core_cmd_inst_xs2_i.write(1);    //set if resource rs2 reg exist
+                core_cmd_inst_rd_i.write(0x49);
+                core_cmd_inst_opcode_i.write(0x1);     //custom instruction opcode may be used for several accerlerations
+
+                core_cmd_rs2_i.write( address0 );
+
+                do{
+
+                    wait();
+
+                }while(!core_cmd_ready_o);
+                core_cmd_valid_i.write(0);
+                wait();
+            }
+
+        }
+
+
+
     }
 
     cout << "Finished reading all values" << endl;

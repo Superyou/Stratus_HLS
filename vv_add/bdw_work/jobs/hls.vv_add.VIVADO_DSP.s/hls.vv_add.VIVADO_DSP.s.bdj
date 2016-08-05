@@ -1,11 +1,11 @@
-11685
-11694
+1857
+1869
 zhang-01.ece.cornell.edu
 bdw_work/trace/hls.vv_add.VIVADO_DSP.s.trace
 2
 0
 0
 0
-1470360645
-1470360672
+1470366112
+1470366474
 /opt/cadence/STRATUS152/bin/stratus_hls --logfile=stratus_hls.log -I. -Ibdw_work/wrappers -I/opt/cadence/STRATUS152/share/stratus/include --tl=/opt/cadence/STRATUS152/share/stratus/techlibs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v2_basicCells.lib -DCLOCK_PERIOD=10 --clock_period=10.000 --default_input_delay=0.000 --dpopt_auto=all --message_detail=3 -DVIVADO_DSP=1 -DBDW_RTL_vv_add_VIVADO_DSP=1 -DioConfig_PIN -D_p_ioConfig_PIN -DioConfig=PIN -D_wrap_ioConfig=PIN -DUSE_DSP --fpga_part=xc7vx485tffg1158-2 --fpga_tool=Vivado --fpga_use_dsp=on -d bdw_work/modules/vv_add/VIVADO_DSP -o vv_add_rtl.cc --hls_module=vv_add --hls_config=VIVADO_DSP --project=project.tcl vv_add.cc

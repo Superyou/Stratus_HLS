@@ -23,7 +23,7 @@ void vv_add::vv_addThread(){
 
   sc_uint <40> Addr;
   sc_uint <5> ds;
-  sc_uint <7>  opcode;
+  sc_uint <7>  funct;
 
   sc_uint <64> result_64; // the response gonna to send back to cocket chip
   bool xd; //set 1 if the destination reg exist
@@ -74,8 +74,8 @@ void vv_add::vv_addThread(){
           //assert(core_cmd_inst_opcode_i == 0x1);
           //assert(core_cmd_inst_funct_i==0x1);  //to be defined
 
-          // store the num of the opcode
-          opcode = core_cmd_inst_opcode_i.read();
+          // store the num of the funct
+          funct = core_cmd_inst_funct_i.read();
           //read the input data from the register rs1 rs2
           din1_64 = core_cmd_rs1_i.read();
           din2_64 = core_cmd_rs2_i.read();
@@ -93,9 +93,9 @@ void vv_add::vv_addThread(){
     }
 
 
-    sc_uint<10> op_10 = (sc_uint<10> )opcode;
+    sc_uint<7> funct_7 = (sc_uint<7> )funct;
 
-    switch (opcode)
+    switch (funct_7)
     {
         // to do the knn training using training_set
 
@@ -115,7 +115,7 @@ void vv_add::vv_addThread(){
             mem_req_valid_o.write(1);
             mem_req_cmd_o.write(0x0001); //for store
             mem_req_typ_o.write(0x011);
-            mem_req_tag_o.write(op_10);
+            mem_req_tag_o.write(funct_7);
             mem_req_data_o.write(din1_64); //write din1_64 to mem
             do {
                 wait();
@@ -124,7 +124,7 @@ void vv_add::vv_addThread(){
             mem_req_valid_o.write(0);
 
             // check whether the tag is correct
-            while((!mem_resp_valid_i || !(mem_resp_tag_i == op_10) ))
+            while((!mem_resp_valid_i || !(mem_resp_tag_i == funct_7) ))
             {
                 wait();
             }
@@ -146,7 +146,7 @@ void vv_add::vv_addThread(){
             mem_req_valid_o.write(1);
             mem_req_cmd_o.write(0x0000);
             mem_req_typ_o.write(0x011);
-            mem_req_tag_o.write(op_10);
+            mem_req_tag_o.write(funct_7);
 
             do {
                 wait();
@@ -155,7 +155,7 @@ void vv_add::vv_addThread(){
             mem_req_valid_o.write(0);
 
             // check whether the tag is correct
-            while((!mem_resp_valid_i || !(mem_resp_tag_i == op_10) ))
+            while((!mem_resp_valid_i || !(mem_resp_tag_i == funct_7) ))
             {
                 wait();
             }

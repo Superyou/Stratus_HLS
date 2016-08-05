@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <lib_catalogue>
-	<name>VIVADO_DSP</name>
 	
-	<reg_clk_to_q>0.249</reg_clk_to_q>
-	<reg_stall_clk_to_q>0.249</reg_stall_clk_to_q>
+	<name>VIVADO_DSP</name>
+	<version>15.21-p100  (11111647)</version>
+	<time_units>ns</time_units>
+	
+	<reg_clk_to_q>0.786</reg_clk_to_q>
+	<reg_stall_clk_to_q>0.786</reg_stall_clk_to_q>
 	<reg_setup_time>0.537</reg_setup_time>
 	<reg_stall_setup_time>0.537</reg_stall_setup_time>
 	<disable_gen_beh/>
@@ -157,7 +160,7 @@
 		</build_actual>
 		<build_actual>
 			<name>dpopt_ver</name>
-			<value>2015.1.01.79042014.2</value>
+			<value>2015.1.01.79042015.4</value>
 		</build_actual>
 		<build_actual>
 			<name>pname</name>
@@ -933,15 +936,15 @@
 		</build_actual>
 		<build_actual>
 			<name>input_delay</name>
-			<value>0.249000</value>
+			<value>0.786000</value>
 		</build_actual>
 		<build_actual>
 			<name>output_delay_targ</name>
-			<value>9.214000</value>
+			<value>8.677000</value>
 		</build_actual>
 		<build_actual>
 			<name>output_delay_max</name>
-			<value>9.214000</value>
+			<value>8.677000</value>
 		</build_actual>
 		<build_actual>
 			<name>latency</name>
@@ -996,6 +999,7 @@
 		<impermanent/>
 		<build_formal_list>0 1 2 3 4 5 6</build_formal_list>
 		<build_actual_list>0 1 2 3 4 5 6</build_actual_list>
+		<cache_module_name>cyn_reg_estimate_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr</name>
@@ -1004,7 +1008,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>1</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.537</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1018,6 +1022,7 @@
 		<build_realized/>
 		<build_actual_list>7</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_ac</name>
@@ -1026,7 +1031,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>1</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.537</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1040,6 +1045,7 @@
 		<build_realized/>
 		<build_actual_list>8</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_as</name>
@@ -1048,7 +1054,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>1</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.537</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1062,6 +1068,7 @@
 		<build_realized/>
 		<build_actual_list>9</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_as_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_as_ac</name>
@@ -1070,7 +1077,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>5</area>
-		<delay>0.799</delay>
+		<delay>1.336</delay>
 		<setup_time>0.537</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1084,6 +1091,7 @@
 		<build_realized/>
 		<build_actual_list>10</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_as_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_sc</name>
@@ -1092,7 +1100,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.537</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1106,6 +1114,7 @@
 		<build_realized/>
 		<build_actual_list>11</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_sc_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_sc_ac</name>
@@ -1114,7 +1123,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1128,6 +1137,7 @@
 		<build_realized/>
 		<build_actual_list>12</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_sc_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_sc_as</name>
@@ -1136,7 +1146,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1150,6 +1160,7 @@
 		<build_realized/>
 		<build_actual_list>13</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_sc_as_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_sc_as_ac</name>
@@ -1158,7 +1169,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.799</delay>
+		<delay>1.336</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1172,6 +1183,7 @@
 		<build_realized/>
 		<build_actual_list>14</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_sc_as_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_ss</name>
@@ -1180,7 +1192,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.537</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1194,6 +1206,7 @@
 		<build_realized/>
 		<build_actual_list>15</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_ss_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_ss_ac</name>
@@ -1202,7 +1215,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1216,6 +1229,7 @@
 		<build_realized/>
 		<build_actual_list>16</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_ss_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_ss_as</name>
@@ -1224,7 +1238,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1238,6 +1252,7 @@
 		<build_realized/>
 		<build_actual_list>17</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_ss_as_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_ss_as_ac</name>
@@ -1246,7 +1261,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.799</delay>
+		<delay>1.336</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1260,6 +1275,7 @@
 		<build_realized/>
 		<build_actual_list>18</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_ss_as_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_ss_sc</name>
@@ -1268,7 +1284,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.537</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1282,6 +1298,7 @@
 		<build_realized/>
 		<build_actual_list>19</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_ss_sc_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_ss_sc_ac</name>
@@ -1290,7 +1307,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1304,6 +1321,7 @@
 		<build_realized/>
 		<build_actual_list>20</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_ss_sc_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_ss_sc_as</name>
@@ -1312,7 +1330,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1326,6 +1344,7 @@
 		<build_realized/>
 		<build_actual_list>21</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_ss_sc_as_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_ss_sc_as_ac</name>
@@ -1334,7 +1353,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.799</delay>
+		<delay>1.336</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1348,6 +1367,7 @@
 		<build_realized/>
 		<build_actual_list>22</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_ss_sc_as_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en</name>
@@ -1356,7 +1376,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.537</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1370,6 +1390,7 @@
 		<build_realized/>
 		<build_actual_list>23</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_ac</name>
@@ -1378,7 +1399,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1392,6 +1413,7 @@
 		<build_realized/>
 		<build_actual_list>24</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_as</name>
@@ -1400,7 +1422,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1414,6 +1436,7 @@
 		<build_realized/>
 		<build_actual_list>25</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_as_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_as_ac</name>
@@ -1422,7 +1445,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>5</area>
-		<delay>0.81</delay>
+		<delay>1.347</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1436,6 +1459,7 @@
 		<build_realized/>
 		<build_actual_list>26</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_as_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_sc</name>
@@ -1444,7 +1468,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.537</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1458,6 +1482,7 @@
 		<build_realized/>
 		<build_actual_list>27</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_sc_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_sc_ac</name>
@@ -1466,7 +1491,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1480,6 +1505,7 @@
 		<build_realized/>
 		<build_actual_list>28</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_sc_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_sc_as</name>
@@ -1488,7 +1514,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1502,6 +1528,7 @@
 		<build_realized/>
 		<build_actual_list>29</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_sc_as_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_sc_as_ac</name>
@@ -1510,7 +1537,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>5</area>
-		<delay>0.81</delay>
+		<delay>1.347</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1524,6 +1551,7 @@
 		<build_realized/>
 		<build_actual_list>30</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_sc_as_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_ss</name>
@@ -1532,7 +1560,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.537</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1546,6 +1574,7 @@
 		<build_realized/>
 		<build_actual_list>31</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_ss_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_ss_ac</name>
@@ -1554,7 +1583,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1568,6 +1597,7 @@
 		<build_realized/>
 		<build_actual_list>32</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_ss_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_ss_as</name>
@@ -1576,7 +1606,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1590,6 +1620,7 @@
 		<build_realized/>
 		<build_actual_list>33</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_ss_as_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_ss_as_ac</name>
@@ -1598,7 +1629,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>5</area>
-		<delay>0.81</delay>
+		<delay>1.347</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1612,6 +1643,7 @@
 		<build_realized/>
 		<build_actual_list>34</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_ss_as_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_ss_sc</name>
@@ -1620,7 +1652,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.537</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1634,6 +1666,7 @@
 		<build_realized/>
 		<build_actual_list>35</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_ss_sc_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_ss_sc_ac</name>
@@ -1642,7 +1675,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1656,6 +1689,7 @@
 		<build_realized/>
 		<build_actual_list>36</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_ss_sc_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_ss_sc_as</name>
@@ -1664,7 +1698,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.249</delay>
+		<delay>0.786</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1678,6 +1712,7 @@
 		<build_realized/>
 		<build_actual_list>37</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_ss_sc_as_0</cache_module_name>
 	</module>
 	<module>
 		<name>regr_en_ss_sc_as_ac</name>
@@ -1686,7 +1721,7 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>5</area>
-		<delay>0.81</delay>
+		<delay>1.347</delay>
 		<setup_time>0.58</setup_time>
 		<slack>0</slack>
 		<latency>1</latency>
@@ -1700,6 +1735,7 @@
 		<build_realized/>
 		<build_actual_list>38</build_actual_list>
 		<parent_module>cyn_reg_estimate</parent_module>
+		<cache_module_name>regr_en_ss_sc_as_ac_0</cache_module_name>
 	</module>
 	<module>
 		<name>cyn_mux_estimate</name>
@@ -1709,6 +1745,7 @@
 		<impermanent/>
 		<build_formal_list>0 1 2 3 4 5 6 7 8</build_formal_list>
 		<build_actual_list>39 1 2 3 4 5 6 40 41</build_actual_list>
+		<cache_module_name>cyn_mux_estimate_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_1_2</name>
@@ -1717,9 +1754,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>1</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1733,6 +1770,7 @@
 		<build_realized/>
 		<build_actual_list>42 43 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_1_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_1_3</name>
@@ -1741,9 +1779,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>1</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1757,6 +1795,7 @@
 		<build_realized/>
 		<build_actual_list>45 46 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_1_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_1_4</name>
@@ -1765,9 +1804,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>1</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1781,6 +1820,7 @@
 		<build_realized/>
 		<build_actual_list>47 48 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_1_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_1_5</name>
@@ -1789,9 +1829,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>1</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1805,6 +1845,7 @@
 		<build_realized/>
 		<build_actual_list>49 50 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_1_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_1_8</name>
@@ -1813,9 +1854,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1829,6 +1870,7 @@
 		<build_realized/>
 		<build_actual_list>51 52 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_1_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_1_9</name>
@@ -1837,9 +1879,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1853,6 +1895,7 @@
 		<build_realized/>
 		<build_actual_list>53 54 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_1_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_1_16</name>
@@ -1861,9 +1904,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>3</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1877,6 +1920,7 @@
 		<build_realized/>
 		<build_actual_list>55 56 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_1_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_1_17</name>
@@ -1885,9 +1929,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>3</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1901,6 +1945,7 @@
 		<build_realized/>
 		<build_actual_list>57 58 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_1_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_1_32</name>
@@ -1909,9 +1954,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>3</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1925,6 +1970,7 @@
 		<build_realized/>
 		<build_actual_list>59 60 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_1_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_1_33</name>
@@ -1933,9 +1979,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>3</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1949,6 +1995,7 @@
 		<build_realized/>
 		<build_actual_list>61 40 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_1_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_2_2</name>
@@ -1957,9 +2004,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1973,6 +2020,7 @@
 		<build_realized/>
 		<build_actual_list>62 43 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_2_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_2_3</name>
@@ -1981,9 +2029,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -1997,6 +2045,7 @@
 		<build_realized/>
 		<build_actual_list>64 46 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_2_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_2_4</name>
@@ -2005,9 +2054,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2021,6 +2070,7 @@
 		<build_realized/>
 		<build_actual_list>65 48 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_2_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_2_5</name>
@@ -2029,9 +2079,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2045,6 +2095,7 @@
 		<build_realized/>
 		<build_actual_list>66 50 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_2_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_2_8</name>
@@ -2053,9 +2104,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2069,6 +2120,7 @@
 		<build_realized/>
 		<build_actual_list>67 52 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_2_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_2_9</name>
@@ -2077,9 +2129,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2093,6 +2145,7 @@
 		<build_realized/>
 		<build_actual_list>68 54 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_2_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_2_16</name>
@@ -2101,9 +2154,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>6</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2117,6 +2170,7 @@
 		<build_realized/>
 		<build_actual_list>69 56 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_2_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_2_17</name>
@@ -2125,9 +2179,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>6</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2141,6 +2195,7 @@
 		<build_realized/>
 		<build_actual_list>70 58 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_2_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_2_32</name>
@@ -2149,9 +2204,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>6</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2165,6 +2220,7 @@
 		<build_realized/>
 		<build_actual_list>71 60 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_2_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_2_33</name>
@@ -2173,9 +2229,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>6</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2189,6 +2245,7 @@
 		<build_realized/>
 		<build_actual_list>72 40 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_2_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_4_2</name>
@@ -2197,9 +2254,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2213,6 +2270,7 @@
 		<build_realized/>
 		<build_actual_list>73 43 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_4_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_4_3</name>
@@ -2221,9 +2279,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2237,6 +2295,7 @@
 		<build_realized/>
 		<build_actual_list>75 46 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_4_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_4_4</name>
@@ -2245,9 +2304,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2261,6 +2320,7 @@
 		<build_realized/>
 		<build_actual_list>76 48 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_4_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_4_5</name>
@@ -2269,9 +2329,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2285,6 +2345,7 @@
 		<build_realized/>
 		<build_actual_list>77 50 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_4_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_4_8</name>
@@ -2293,9 +2354,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2309,6 +2370,7 @@
 		<build_realized/>
 		<build_actual_list>78 52 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_4_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_4_9</name>
@@ -2317,9 +2379,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2333,6 +2395,7 @@
 		<build_realized/>
 		<build_actual_list>79 54 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_4_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_4_16</name>
@@ -2341,9 +2404,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>12</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2357,6 +2420,7 @@
 		<build_realized/>
 		<build_actual_list>80 56 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_4_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_4_17</name>
@@ -2365,9 +2429,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>12</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2381,6 +2445,7 @@
 		<build_realized/>
 		<build_actual_list>81 58 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_4_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_4_32</name>
@@ -2389,9 +2454,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>12</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2405,6 +2470,7 @@
 		<build_realized/>
 		<build_actual_list>82 60 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_4_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_4_33</name>
@@ -2413,9 +2479,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>12</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2429,6 +2495,7 @@
 		<build_realized/>
 		<build_actual_list>83 40 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_4_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_8_2</name>
@@ -2437,9 +2504,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2453,6 +2520,7 @@
 		<build_realized/>
 		<build_actual_list>84 43 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_8_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_8_3</name>
@@ -2461,9 +2529,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2477,6 +2545,7 @@
 		<build_realized/>
 		<build_actual_list>86 46 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_8_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_8_4</name>
@@ -2485,9 +2554,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2501,6 +2570,7 @@
 		<build_realized/>
 		<build_actual_list>87 48 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_8_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_8_5</name>
@@ -2509,9 +2579,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2525,6 +2595,7 @@
 		<build_realized/>
 		<build_actual_list>88 50 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_8_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_8_8</name>
@@ -2533,9 +2604,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2549,6 +2620,7 @@
 		<build_realized/>
 		<build_actual_list>89 52 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_8_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_8_9</name>
@@ -2557,9 +2629,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2573,6 +2645,7 @@
 		<build_realized/>
 		<build_actual_list>90 54 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_8_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_8_16</name>
@@ -2581,9 +2654,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>24</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2597,6 +2670,7 @@
 		<build_realized/>
 		<build_actual_list>91 56 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_8_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_8_17</name>
@@ -2605,9 +2679,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>24</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2621,6 +2695,7 @@
 		<build_realized/>
 		<build_actual_list>92 58 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_8_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_8_32</name>
@@ -2629,9 +2704,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>24</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2645,6 +2720,7 @@
 		<build_realized/>
 		<build_actual_list>93 60 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_8_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_8_33</name>
@@ -2653,9 +2729,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>24</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2669,6 +2745,7 @@
 		<build_realized/>
 		<build_actual_list>94 40 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_8_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_16_2</name>
@@ -2677,9 +2754,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2693,6 +2770,7 @@
 		<build_realized/>
 		<build_actual_list>95 43 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_16_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_16_3</name>
@@ -2701,9 +2779,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2717,6 +2795,7 @@
 		<build_realized/>
 		<build_actual_list>97 46 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_16_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_16_4</name>
@@ -2725,9 +2804,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2741,6 +2820,7 @@
 		<build_realized/>
 		<build_actual_list>98 48 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_16_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_16_5</name>
@@ -2749,9 +2829,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2765,6 +2845,7 @@
 		<build_realized/>
 		<build_actual_list>99 50 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_16_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_16_8</name>
@@ -2773,9 +2854,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2789,6 +2870,7 @@
 		<build_realized/>
 		<build_actual_list>100 52 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_16_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_16_9</name>
@@ -2797,9 +2879,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2813,6 +2895,7 @@
 		<build_realized/>
 		<build_actual_list>101 54 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_16_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_16_16</name>
@@ -2821,9 +2904,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>48</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2837,6 +2920,7 @@
 		<build_realized/>
 		<build_actual_list>102 56 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_16_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_16_17</name>
@@ -2845,9 +2929,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>48</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2861,6 +2945,7 @@
 		<build_realized/>
 		<build_actual_list>103 58 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_16_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_16_32</name>
@@ -2869,9 +2954,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>48</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2885,6 +2970,7 @@
 		<build_realized/>
 		<build_actual_list>104 60 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_16_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_16_33</name>
@@ -2893,9 +2979,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>48</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2909,6 +2995,7 @@
 		<build_realized/>
 		<build_actual_list>105 40 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_16_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_32_2</name>
@@ -2917,9 +3004,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2933,6 +3020,7 @@
 		<build_realized/>
 		<build_actual_list>106 43 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_32_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_32_3</name>
@@ -2941,9 +3029,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2957,6 +3045,7 @@
 		<build_realized/>
 		<build_actual_list>108 46 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_32_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_32_4</name>
@@ -2965,9 +3054,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -2981,6 +3070,7 @@
 		<build_realized/>
 		<build_actual_list>109 48 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_32_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_32_5</name>
@@ -2989,9 +3079,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3005,6 +3095,7 @@
 		<build_realized/>
 		<build_actual_list>110 50 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_32_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_32_8</name>
@@ -3013,9 +3104,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3029,6 +3120,7 @@
 		<build_realized/>
 		<build_actual_list>111 52 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_32_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_32_9</name>
@@ -3037,9 +3129,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3053,6 +3145,7 @@
 		<build_realized/>
 		<build_actual_list>112 54 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_32_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_32_16</name>
@@ -3061,9 +3154,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>96</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3077,6 +3170,7 @@
 		<build_realized/>
 		<build_actual_list>113 56 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_32_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_32_17</name>
@@ -3085,9 +3179,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>96</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3101,6 +3195,7 @@
 		<build_realized/>
 		<build_actual_list>114 58 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_32_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_32_32</name>
@@ -3109,9 +3204,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>96</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3125,6 +3220,7 @@
 		<build_realized/>
 		<build_actual_list>115 60 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_32_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_32_33</name>
@@ -3133,9 +3229,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>96</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3149,6 +3245,7 @@
 		<build_realized/>
 		<build_actual_list>116 40 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_32_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_64_2</name>
@@ -3157,9 +3254,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3173,6 +3270,7 @@
 		<build_realized/>
 		<build_actual_list>117 43 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_64_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_64_3</name>
@@ -3181,9 +3279,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3197,6 +3295,7 @@
 		<build_realized/>
 		<build_actual_list>119 46 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_64_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_64_4</name>
@@ -3205,9 +3304,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3221,6 +3320,7 @@
 		<build_realized/>
 		<build_actual_list>120 48 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_64_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_64_5</name>
@@ -3229,9 +3329,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3245,6 +3345,7 @@
 		<build_realized/>
 		<build_actual_list>121 50 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_64_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_64_8</name>
@@ -3253,9 +3354,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>128</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3269,6 +3370,7 @@
 		<build_realized/>
 		<build_actual_list>122 52 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_64_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_64_9</name>
@@ -3277,9 +3379,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>128</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3293,6 +3395,7 @@
 		<build_realized/>
 		<build_actual_list>123 54 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_64_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_64_16</name>
@@ -3301,9 +3404,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>192</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3317,6 +3420,7 @@
 		<build_realized/>
 		<build_actual_list>124 56 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_64_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_64_17</name>
@@ -3325,9 +3429,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>192</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3341,6 +3445,7 @@
 		<build_realized/>
 		<build_actual_list>125 58 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_64_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_64_32</name>
@@ -3349,9 +3454,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>192</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3365,6 +3470,7 @@
 		<build_realized/>
 		<build_actual_list>126 60 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_64_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>mux_64_33</name>
@@ -3373,9 +3479,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>192</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3389,6 +3495,7 @@
 		<build_realized/>
 		<build_actual_list>127 40 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>mux_64_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_1_2</name>
@@ -3397,9 +3504,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>1</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3413,6 +3520,7 @@
 		<build_realized/>
 		<build_actual_list>128 43 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_1_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_1_3</name>
@@ -3421,9 +3529,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>1</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3437,6 +3545,7 @@
 		<build_realized/>
 		<build_actual_list>129 46 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_1_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_1_4</name>
@@ -3445,9 +3554,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>1</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3461,6 +3570,7 @@
 		<build_realized/>
 		<build_actual_list>130 48 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_1_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_1_5</name>
@@ -3469,9 +3579,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>1</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3485,6 +3595,7 @@
 		<build_realized/>
 		<build_actual_list>131 50 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_1_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_1_8</name>
@@ -3493,9 +3604,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3509,6 +3620,7 @@
 		<build_realized/>
 		<build_actual_list>132 52 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_1_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_1_9</name>
@@ -3517,9 +3629,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3533,6 +3645,7 @@
 		<build_realized/>
 		<build_actual_list>133 54 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_1_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_1_16</name>
@@ -3541,9 +3654,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>3</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3557,6 +3670,7 @@
 		<build_realized/>
 		<build_actual_list>134 56 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_1_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_1_17</name>
@@ -3565,9 +3679,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>3</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3581,6 +3695,7 @@
 		<build_realized/>
 		<build_actual_list>135 58 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_1_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_1_32</name>
@@ -3589,9 +3704,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>3</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3605,6 +3720,7 @@
 		<build_realized/>
 		<build_actual_list>136 60 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_1_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_1_33</name>
@@ -3613,9 +3729,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>3</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3629,6 +3745,7 @@
 		<build_realized/>
 		<build_actual_list>137 40 44</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_1_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_2_2</name>
@@ -3637,9 +3754,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3653,6 +3770,7 @@
 		<build_realized/>
 		<build_actual_list>138 43 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_2_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_2_3</name>
@@ -3661,9 +3779,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3677,6 +3795,7 @@
 		<build_realized/>
 		<build_actual_list>139 46 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_2_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_2_4</name>
@@ -3685,9 +3804,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3701,6 +3820,7 @@
 		<build_realized/>
 		<build_actual_list>140 48 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_2_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_2_5</name>
@@ -3709,9 +3829,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>2</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3725,6 +3845,7 @@
 		<build_realized/>
 		<build_actual_list>141 50 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_2_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_2_8</name>
@@ -3733,9 +3854,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3749,6 +3870,7 @@
 		<build_realized/>
 		<build_actual_list>142 52 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_2_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_2_9</name>
@@ -3757,9 +3879,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3773,6 +3895,7 @@
 		<build_realized/>
 		<build_actual_list>143 54 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_2_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_2_16</name>
@@ -3781,9 +3904,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>6</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3797,6 +3920,7 @@
 		<build_realized/>
 		<build_actual_list>144 56 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_2_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_2_17</name>
@@ -3805,9 +3929,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>6</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3821,6 +3945,7 @@
 		<build_realized/>
 		<build_actual_list>145 58 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_2_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_2_32</name>
@@ -3829,9 +3954,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>6</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3845,6 +3970,7 @@
 		<build_realized/>
 		<build_actual_list>146 60 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_2_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_2_33</name>
@@ -3853,9 +3979,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>6</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3869,6 +3995,7 @@
 		<build_realized/>
 		<build_actual_list>147 40 63</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_2_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_4_2</name>
@@ -3877,9 +4004,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3893,6 +4020,7 @@
 		<build_realized/>
 		<build_actual_list>148 43 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_4_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_4_3</name>
@@ -3901,9 +4029,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3917,6 +4045,7 @@
 		<build_realized/>
 		<build_actual_list>149 46 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_4_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_4_4</name>
@@ -3925,9 +4054,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3941,6 +4070,7 @@
 		<build_realized/>
 		<build_actual_list>150 48 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_4_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_4_5</name>
@@ -3949,9 +4079,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>4</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3965,6 +4095,7 @@
 		<build_realized/>
 		<build_actual_list>151 50 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_4_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_4_8</name>
@@ -3973,9 +4104,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -3989,6 +4120,7 @@
 		<build_realized/>
 		<build_actual_list>152 52 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_4_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_4_9</name>
@@ -3997,9 +4129,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4013,6 +4145,7 @@
 		<build_realized/>
 		<build_actual_list>153 54 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_4_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_4_16</name>
@@ -4021,9 +4154,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>12</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4037,6 +4170,7 @@
 		<build_realized/>
 		<build_actual_list>154 56 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_4_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_4_17</name>
@@ -4045,9 +4179,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>12</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4061,6 +4195,7 @@
 		<build_realized/>
 		<build_actual_list>155 58 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_4_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_4_32</name>
@@ -4069,9 +4204,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>12</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4085,6 +4220,7 @@
 		<build_realized/>
 		<build_actual_list>156 60 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_4_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_4_33</name>
@@ -4093,9 +4229,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>12</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4109,6 +4245,7 @@
 		<build_realized/>
 		<build_actual_list>157 40 74</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_4_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_8_2</name>
@@ -4117,9 +4254,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4133,6 +4270,7 @@
 		<build_realized/>
 		<build_actual_list>158 43 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_8_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_8_3</name>
@@ -4141,9 +4279,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4157,6 +4295,7 @@
 		<build_realized/>
 		<build_actual_list>159 46 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_8_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_8_4</name>
@@ -4165,9 +4304,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4181,6 +4320,7 @@
 		<build_realized/>
 		<build_actual_list>160 48 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_8_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_8_5</name>
@@ -4189,9 +4329,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>8</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4205,6 +4345,7 @@
 		<build_realized/>
 		<build_actual_list>161 50 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_8_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_8_8</name>
@@ -4213,9 +4354,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4229,6 +4370,7 @@
 		<build_realized/>
 		<build_actual_list>162 52 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_8_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_8_9</name>
@@ -4237,9 +4379,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4253,6 +4395,7 @@
 		<build_realized/>
 		<build_actual_list>163 54 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_8_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_8_16</name>
@@ -4261,9 +4404,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>24</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4277,6 +4420,7 @@
 		<build_realized/>
 		<build_actual_list>164 56 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_8_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_8_17</name>
@@ -4285,9 +4429,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>24</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4301,6 +4445,7 @@
 		<build_realized/>
 		<build_actual_list>165 58 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_8_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_8_32</name>
@@ -4309,9 +4454,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>24</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4325,6 +4470,7 @@
 		<build_realized/>
 		<build_actual_list>166 60 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_8_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_8_33</name>
@@ -4333,9 +4479,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>24</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4349,6 +4495,7 @@
 		<build_realized/>
 		<build_actual_list>167 40 85</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_8_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_16_2</name>
@@ -4357,9 +4504,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4373,6 +4520,7 @@
 		<build_realized/>
 		<build_actual_list>168 43 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_16_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_16_3</name>
@@ -4381,9 +4529,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4397,6 +4545,7 @@
 		<build_realized/>
 		<build_actual_list>169 46 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_16_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_16_4</name>
@@ -4405,9 +4554,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4421,6 +4570,7 @@
 		<build_realized/>
 		<build_actual_list>170 48 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_16_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_16_5</name>
@@ -4429,9 +4579,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>16</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4445,6 +4595,7 @@
 		<build_realized/>
 		<build_actual_list>171 50 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_16_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_16_8</name>
@@ -4453,9 +4604,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4469,6 +4620,7 @@
 		<build_realized/>
 		<build_actual_list>172 52 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_16_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_16_9</name>
@@ -4477,9 +4629,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4493,6 +4645,7 @@
 		<build_realized/>
 		<build_actual_list>173 54 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_16_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_16_16</name>
@@ -4501,9 +4654,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>48</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4517,6 +4670,7 @@
 		<build_realized/>
 		<build_actual_list>174 56 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_16_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_16_17</name>
@@ -4525,9 +4679,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>48</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4541,6 +4695,7 @@
 		<build_realized/>
 		<build_actual_list>175 58 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_16_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_16_32</name>
@@ -4549,9 +4704,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>48</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4565,6 +4720,7 @@
 		<build_realized/>
 		<build_actual_list>176 60 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_16_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_16_33</name>
@@ -4573,9 +4729,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>48</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4589,6 +4745,7 @@
 		<build_realized/>
 		<build_actual_list>177 40 96</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_16_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_32_2</name>
@@ -4597,9 +4754,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4613,6 +4770,7 @@
 		<build_realized/>
 		<build_actual_list>178 43 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_32_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_32_3</name>
@@ -4621,9 +4779,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4637,6 +4795,7 @@
 		<build_realized/>
 		<build_actual_list>179 46 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_32_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_32_4</name>
@@ -4645,9 +4804,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4661,6 +4820,7 @@
 		<build_realized/>
 		<build_actual_list>180 48 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_32_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_32_5</name>
@@ -4669,9 +4829,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>32</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4685,6 +4845,7 @@
 		<build_realized/>
 		<build_actual_list>181 50 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_32_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_32_8</name>
@@ -4693,9 +4854,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4709,6 +4870,7 @@
 		<build_realized/>
 		<build_actual_list>182 52 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_32_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_32_9</name>
@@ -4717,9 +4879,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4733,6 +4895,7 @@
 		<build_realized/>
 		<build_actual_list>183 54 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_32_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_32_16</name>
@@ -4741,9 +4904,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>96</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4757,6 +4920,7 @@
 		<build_realized/>
 		<build_actual_list>184 56 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_32_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_32_17</name>
@@ -4765,9 +4929,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>96</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4781,6 +4945,7 @@
 		<build_realized/>
 		<build_actual_list>185 58 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_32_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_32_32</name>
@@ -4789,9 +4954,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>96</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4805,6 +4970,7 @@
 		<build_realized/>
 		<build_actual_list>186 60 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_32_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_32_33</name>
@@ -4813,9 +4979,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>96</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4829,6 +4995,7 @@
 		<build_realized/>
 		<build_actual_list>187 40 107</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_32_33_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_64_2</name>
@@ -4837,9 +5004,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4853,6 +5020,7 @@
 		<build_realized/>
 		<build_actual_list>188 43 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_64_2_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_64_3</name>
@@ -4861,9 +5029,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4877,6 +5045,7 @@
 		<build_realized/>
 		<build_actual_list>189 46 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_64_3_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_64_4</name>
@@ -4885,9 +5054,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4901,6 +5070,7 @@
 		<build_realized/>
 		<build_actual_list>190 48 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_64_4_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_64_5</name>
@@ -4909,9 +5079,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>64</area>
-		<delay>0.58</delay>
-		<control_delay>0.58</control_delay>
-		<data_delay>0.58</data_delay>
+		<delay>1.117</delay>
+		<control_delay>1.117</control_delay>
+		<data_delay>1.117</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4925,6 +5095,7 @@
 		<build_realized/>
 		<build_actual_list>191 50 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_64_5_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_64_8</name>
@@ -4933,9 +5104,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>128</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4949,6 +5120,7 @@
 		<build_realized/>
 		<build_actual_list>192 52 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_64_8_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_64_9</name>
@@ -4957,9 +5129,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>128</area>
-		<delay>0.702</delay>
-		<control_delay>0.702</control_delay>
-		<data_delay>0.702</data_delay>
+		<delay>1.239</delay>
+		<control_delay>1.239</control_delay>
+		<data_delay>1.239</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4973,6 +5145,7 @@
 		<build_realized/>
 		<build_actual_list>193 54 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_64_9_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_64_16</name>
@@ -4981,9 +5154,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>192</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -4997,6 +5170,7 @@
 		<build_realized/>
 		<build_actual_list>194 56 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_64_16_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_64_17</name>
@@ -5005,9 +5179,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>192</area>
-		<delay>0.747</delay>
-		<control_delay>0.747</control_delay>
-		<data_delay>0.747</data_delay>
+		<delay>1.284</delay>
+		<control_delay>1.284</control_delay>
+		<data_delay>1.284</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -5021,6 +5195,7 @@
 		<build_realized/>
 		<build_actual_list>195 58 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_64_17_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_64_32</name>
@@ -5029,9 +5204,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>192</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -5045,6 +5220,7 @@
 		<build_realized/>
 		<build_actual_list>196 60 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_64_32_0</cache_module_name>
 	</module>
 	<module>
 		<name>oneHotMux_64_33</name>
@@ -5053,9 +5229,9 @@
 		<module_origin>ESTIMATE</module_origin>
 		<impermanent/>
 		<area>192</area>
-		<delay>1.356</delay>
-		<control_delay>1.356</control_delay>
-		<data_delay>1.356</data_delay>
+		<delay>1.768</delay>
+		<control_delay>1.768</control_delay>
+		<data_delay>1.768</data_delay>
 		<setup_time>0</setup_time>
 		<slack>0</slack>
 		<latency>0</latency>
@@ -5069,13 +5245,14 @@
 		<build_realized/>
 		<build_actual_list>197 40 118</build_actual_list>
 		<parent_module>cyn_mux_estimate</parent_module>
+		<cache_module_name>oneHotMux_64_33_0</cache_module_name>
 	</module>
 
 	<lib_type>COMBO</lib_type>
 	<tool_log>
 		<tool_kind>BehavioralSynthesis</tool_kind>
 		<tool_name>stratus_hls</tool_name>
-		<gen_time>Thu Aug  4 21:30:46 2016</gen_time>
+		<gen_time>Thu Aug  4 23:01:53 2016</gen_time>
 		<version>15.21-p100  (11111647)</version>
 		<hostname>zhang-01.ece.cornell.edu</hostname>
 		<uname>Linux zhang-01.ece.cornell.edu 2.6.32-573.22.1.el6.x86_64 #1 SMP Wed Mar 23 03:35:39 UTC 2016 x86_64</uname>
@@ -5093,6 +5270,72 @@
 	</tool_log>
 	<time_units>ns</time_units>
 	<cycle_time>10.0000</cycle_time>
+	<source_file>
+		<path>bdw_work/modules/vv_add/VIVADO_DSP/v_gates/vv_add_Equal_10Ux2U_1U_4.v</path>
+		<module_name>vv_add_Equal_10Ux2U_1U_4</module_name>
+		<file_kind>GATES_V</file_kind>
+		<impermanent/>
+	</source_file>
+	<source_file>
+		<path>bdw_work/modules/vv_add/VIVADO_DSP/v_gates/vv_add_And_1U_0_4.v</path>
+		<module_name>vv_add_And_1U_0_4</module_name>
+		<file_kind>GATES_V</file_kind>
+		<impermanent/>
+	</source_file>
+	<source_file>
+		<path>bdw_work/modules/vv_add/VIVADO_DSP/v_gates/vv_add_Add_64U_3_4.v</path>
+		<module_name>vv_add_Add_64U_3_4</module_name>
+		<file_kind>GATES_V</file_kind>
+		<impermanent/>
+	</source_file>
+	<source_file>
+		<path>bdw_work/modules/vv_add/VIVADO_DSP/v_gates/vv_add_Eqi3u10_4.v</path>
+		<module_name>vv_add_Eqi3u10_4</module_name>
+		<file_kind>GATES_V</file_kind>
+		<impermanent/>
+	</source_file>
+	<source_file>
+		<path>bdw_work/modules/vv_add/VIVADO_DSP/v_gates/vv_add_Eqi2u10_4.v</path>
+		<module_name>vv_add_Eqi2u10_4</module_name>
+		<file_kind>GATES_V</file_kind>
+		<impermanent/>
+	</source_file>
+	<source_file>
+		<path>bdw_work/modules/vv_add/VIVADO_DSP/v_gates/vv_add_DECODE_128U_9_4.v</path>
+		<module_name>vv_add_DECODE_128U_9_4</module_name>
+		<file_kind>GATES_V</file_kind>
+		<impermanent/>
+	</source_file>
+	<source_file>
+		<path>bdw_work/modules/vv_add/VIVADO_DSP/v_gates/vv_add_DECODE_16U_8_4.v</path>
+		<module_name>vv_add_DECODE_16U_8_4</module_name>
+		<file_kind>GATES_V</file_kind>
+		<impermanent/>
+	</source_file>
+	<source_file>
+		<path>bdw_work/modules/vv_add/VIVADO_DSP/v_gates/vv_add_NotBit_1U_7_4.v</path>
+		<module_name>vv_add_NotBit_1U_7_4</module_name>
+		<file_kind>GATES_V</file_kind>
+		<impermanent/>
+	</source_file>
+	<source_file>
+		<path>bdw_work/modules/vv_add/VIVADO_DSP/v_gates/vv_add_Add_4U_6_4.v</path>
+		<module_name>vv_add_Add_4U_6_4</module_name>
+		<file_kind>GATES_V</file_kind>
+		<impermanent/>
+	</source_file>
+	<source_file>
+		<path>bdw_work/modules/vv_add/VIVADO_DSP/v_gates/vv_add_Equal_1U_5_4.v</path>
+		<module_name>vv_add_Equal_1U_5_4</module_name>
+		<file_kind>GATES_V</file_kind>
+		<impermanent/>
+	</source_file>
+	<source_file>
+		<path>bdw_work/modules/vv_add/VIVADO_DSP/v_gates/vv_add_Or_1U_4_4.v</path>
+		<module_name>vv_add_Or_1U_4_4</module_name>
+		<file_kind>GATES_V</file_kind>
+		<impermanent/>
+	</source_file>
 	<module>
 		<name>vv_add_Add_64U_3_4</name>
 		<impermanent/>
@@ -5104,10 +5347,10 @@
 		<total_bits>0</total_bits>
 		<ded_mults>0</ded_mults>
 		<latency>0</latency>
-		<delay>1.7690</delay>
+		<delay>2.3060</delay>
 		<stallable>0</stallable>
 		<pipelined>0</pipelined>
-		<cache_module_name>vv_add_Add_64U_2_4</cache_module_name>
+		<cache_module_name>vv_add_Add_64U_3_4</cache_module_name>
 		<port>
 			<name>in2</name>
 			<direction>in</direction>
@@ -5137,10 +5380,10 @@
 		<total_bits>0</total_bits>
 		<ded_mults>0</ded_mults>
 		<latency>0</latency>
-		<delay>0.8930</delay>
+		<delay>1.4300</delay>
 		<stallable>0</stallable>
 		<pipelined>0</pipelined>
-		<cache_module_name>vv_add_Eqi2u10_4</cache_module_name>
+		<cache_module_name>vv_add_Eqi2u10_4_0</cache_module_name>
 		<port>
 			<name>in1</name>
 			<direction>in</direction>
@@ -5164,10 +5407,10 @@
 		<total_bits>0</total_bits>
 		<ded_mults>0</ded_mults>
 		<latency>0</latency>
-		<delay>0.5800</delay>
+		<delay>1.1170</delay>
 		<stallable>0</stallable>
 		<pipelined>0</pipelined>
-		<cache_module_name>vv_add_And_1U_0_4</cache_module_name>
+		<cache_module_name>vv_add_And_1U_0_4_0</cache_module_name>
 		<port>
 			<name>in2</name>
 			<direction>in</direction>
@@ -5197,10 +5440,10 @@
 		<total_bits>0</total_bits>
 		<ded_mults>0</ded_mults>
 		<latency>0</latency>
-		<delay>0.8930</delay>
+		<delay>1.4300</delay>
 		<stallable>0</stallable>
 		<pipelined>0</pipelined>
-		<cache_module_name>vv_add_Eqi3u10_4</cache_module_name>
+		<cache_module_name>vv_add_Eqi3u10_4_0</cache_module_name>
 		<port>
 			<name>in1</name>
 			<direction>in</direction>

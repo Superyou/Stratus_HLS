@@ -1,4 +1,8 @@
-Generating dependencies for system config PIN of tb.cc
+Generating dependencies for vv_add.cc 
+/opt/cadence/STRATUS152/bin/bdw_wrapgen -project project.tcl -module vv_add "-Ibdw_work/wrappers   -DCLOCK_PERIOD=10 "
+/opt/cadence/STRATUS152/bin/bdw_tracegen -module vv_add -vcd 
+Generating dependencies for HLS config PIN of vv_add.cc
+/opt/cadence/STRATUS152/tools.lnx86/stratus/gcc/4.4/bin/g++  -Ibdw_work/modules/vv_add/PIN -I./ -I./ -Ibdw_work/wrappers  -DBDW_CC_SPEC=1 -Ibdw_work/modules/vv_add/PIN/c_parts  -DioConfig_PIN -D_p_ioConfig_PIN -DioConfig=PIN -D_wrap_ioConfig=PIN    -c -DCLOCK_PERIOD=10   -DSC_FX_EXCLUDE_OTHER -fPIC  -I/opt/cadence/STRATUS152/share/stratus/include -I/opt/cadence/STRATUS152/tools.lnx86/stratus/systemc/2.3/include  -DBDW_HUB=1    -DBDW_USE_SCV=0 -o bdw_work/modules/vv_add/PIN/vv_add.o  bdw_work/wrappers/vv_add_wrap.cc
 /opt/cadence/STRATUS152/tools.lnx86/stratus/gcc/4.4/bin/g++  -Ibdw_work/modules/tb/PIN -I./ -I./ -Ibdw_work/wrappers    -DioConfig_PIN -D_p_ioConfig_PIN -DioConfig=PIN -D_wrap_ioConfig=PIN  -c -DCLOCK_PERIOD=10   -DSC_FX_EXCLUDE_OTHER -fPIC  -I/opt/cadence/STRATUS152/share/stratus/include -I/opt/cadence/STRATUS152/tools.lnx86/stratus/systemc/2.3/include  -DBDW_HUB=1    -DBDW_USE_SCV=0 -o bdw_work/modules/tb/PIN/tb.o  tb.cc
 /opt/cadence/STRATUS152/tools.lnx86/stratus/gcc/4.4/bin/g++ -Wl,--export-dynamic   \
         -Wl,-rpath,/opt/cadence/STRATUS152/tools.lnx86/stratus/lib/64bit -Wl,-rpath,/opt/cadence/STRATUS152/tools.lnx86/lib/64bit \
@@ -27,24 +31,28 @@ for xd =1
 we pass result =484291644416 to the rocket chip!
 IN tb, we got result = 484291644416
 Latency for sample 0 is 4
-din1 =138529604608 +  din2 = 277042300416  =  result = 415571905024
 for xd =1
-we pass result =415571905024 to the rocket chip!
-IN tb, we got result = 415571905024
-Latency for sample 1 is 8
-din1 =414481255424 +  din2 = 140677089280  =  result = 555158344704
-for xd =1
-we pass result =555158344704 to the rocket chip!
-IN tb, we got result = 555158344704
+we pass result =0 to the rocket chip!
+IN tb, we got result = 0
+Latency for sample 1 is 12
 Finished reading all values
-Latency for sample 2 is 12
+for xd =1
+we pass result =0 to the rocket chip!
+IN tb, we got result = 0
+Latency for sample 2 is 20
 Testbench sink thread read 3 values.
 
 Info: /OSCI/SystemC: Simulation stopped by user.
 BDW_SIM_CONFIG_DIR=bdw_work/sims/B make cmp_result 2>&1 | tee -a bdw_work/sims/B/bdw_sim.log
 ****************************************
-Thu Aug 4 21:26:42 EDT 2016
+Thu Aug 4 23:01:34 EDT 2016
 Performing Simulation Results Comparison
 for B Simulation...
-  B: SIMULATION PASSED
+2,3c2,3
+< 0x00000000000000000
+< 0x00000000000000000
+---
+> 0x00000002041020400
+> 0x00000002041020400
+  B: SIMULATION FAILED
 ****************************************
