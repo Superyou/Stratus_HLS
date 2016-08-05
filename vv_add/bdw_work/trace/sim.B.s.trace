@@ -1,0 +1,30 @@
+
+             SystemC 2.3.0-ASI --- Jun  1 2015 16:14:33
+        Copyright (c) 1996-2012 by all Contributors,
+        ALL RIGHTS RESERVED
+
+NOTE: Cadence Design Systems Hub Simulation Platform : version 15.21-p100
+Note: VCD trace timescale unit is set by user to 1.000000e-12 sec.
+Sink reading all expected values from the design.
+Sink reading all expected values from the design.
+Sink reading all expected values from the design.
+There are 3 samples
+din1 =207249344512 +  din2 = 277042299904  =  result = 484291644416
+for xd =1
+we pass result =484291644416 to the rocket chip!
+IN tb, we got result = 484291644416
+Latency for sample 0 is 4
+din1 =138529604608 +  din2 = 277042300416  =  result = 415571905024
+for xd =1
+we pass result =415571905024 to the rocket chip!
+IN tb, we got result = 415571905024
+Latency for sample 1 is 8
+din1 =414481255424 +  din2 = 140677089280  =  result = 555158344704
+for xd =1
+we pass result =555158344704 to the rocket chip!
+IN tb, we got result = 555158344704
+Finished reading all values
+Latency for sample 2 is 12
+Testbench sink thread read 3 values.
+
+Info: /OSCI/SystemC: Simulation stopped by user.

@@ -1,0 +1,16 @@
+[tree]
+Selection=vv_add, Modules, vv_add, DPOPT
+OpenTopLevel=Modules, Sim Configs
+OpenModules=vv_add
+OpenLibTypes=Resources
+OpenLibs=cachelib
+
+[analysis]
+default\NIL\context=(nil)
+vv_add%3A%3ASim%20Configs%3A%3AB\context=vv_add::Sim Configs::B
+vv_add%3A%3ASim%20Configs%3A%3AB\curFile=0
+vv_add%3A%3ASim%20Configs%3A%3AB\scrollPos=0
+vv_add%3A%3ASim%20Configs%3A%3AB\selStart=0
+vv_add%3A%3ASim%20Configs%3A%3AB\selEnd=0
+vv_add%3A%3ASim%20Configs%3A%3AB\finderVis=false
+vv_add%3A%3ASim%20Configs%3A%3AB\finderText=

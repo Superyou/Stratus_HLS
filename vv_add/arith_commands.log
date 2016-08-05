@@ -1,0 +1,4 @@
+# Cynthesizer DpOpt 2015.1.01  run by yw777 on Thu Aug  4 21:27:19 2016
+# Running global startup /opt/cadence/STRATUS152/tools.lnx86/cellmath/etc/cm_startup.tcl
+# Running script /opt/cadence/STRATUS152/share/stratus/tcl/bdw_cmd_shell.tcl
+# Running commands bdw_server_start
