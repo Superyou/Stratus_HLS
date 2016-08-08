@@ -150,7 +150,7 @@ public:
     SC_CTHREAD(mem, clk.pos());
     // Declare the sink thread
     SC_CTHREAD(sink, clk.pos());
-    reset_signal_is(rst_in, 0); // active low
+    reset_signal_is(rst_in, 1); // active low
 
     // Connect the rst_in port to the rst_out port
     rst_in(rst_out);

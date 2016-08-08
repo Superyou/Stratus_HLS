@@ -49,6 +49,8 @@ void vv_add::vv_addThread(){
     mem_req_typ_o.write(0);
     mem_req_phys_o.write(1);
     mem_req_data_o.write(0);
+    io_autl_acquire_valid_o.write(0);
+    io_in_1_acquire_ready_o.write(0);
 
     wait();
   }
@@ -84,7 +86,7 @@ void vv_add::vv_addThread(){
           // store whether destination teg exist
           xd = core_cmd_inst_xd_i.read();
           // set cc_busy to 1 to prevent sending other cmd from rocket chip
-          cc_busy_o.write(1);
+          //cc_busy_o.write(1);
 
           wait();
 
@@ -169,8 +171,8 @@ void vv_add::vv_addThread(){
         }
         break;
     }
-    }
 
+    }
 
     cout<<"for xd ="<<xd<<endl;
 
@@ -188,7 +190,7 @@ void vv_add::vv_addThread(){
               }while(!core_resp_ready_i);
           }
           // set cc_busy to 0 to start the next cmd
-          cc_busy_o.write(0);
+          //cc_busy_o.write(0);
           core_resp_valid_o = 0;
           wait(2);
 

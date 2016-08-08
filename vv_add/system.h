@@ -48,6 +48,9 @@ public:
     sc_signal <bool> core_resp_valid_chan;
     sc_signal <sc_uint<5> >   core_resp_rd_chan;
     sc_signal <sc_uint<64> >  core_resp_data_chan;
+    sc_signal <bool> io_autl_acquire_valid_chan;
+    sc_signal <bool> io_in_1_acquire_ready_chan;
+
 
     //memory mode
     //for reqest
@@ -139,6 +142,10 @@ public:
 , mem_resp_nack_chan("mem_resp_nack_chan")  //unknow
 , mem_resp_replay_chan("mem_resp_replay_chan") //unknow
 
+
+      , io_autl_acquire_valid_chan("io_autl_acquire_valid_chan")
+      ,io_in_1_acquire_ready_chan("io_in_1_acquire_ready_chan")
+
     {
         m_vv_add = new vv_add_wrapper("vv_add_wrapper");
 
@@ -194,6 +201,10 @@ m_vv_add-> mem_resp_store_data_i(mem_resp_store_data_chan);        //return the 
 
 m_vv_add-> mem_resp_nack_i(mem_resp_nack_chan);  //unknow
 m_vv_add-> mem_resp_replay_i(mem_resp_replay_chan); //unknow
+
+m_vv_add->io_autl_acquire_valid_o(io_autl_acquire_valid_chan);
+m_vv_add->io_in_1_acquire_ready_o(io_in_1_acquire_ready_chan);
+
 
 
 
