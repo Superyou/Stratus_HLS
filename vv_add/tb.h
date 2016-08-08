@@ -85,6 +85,9 @@ public:
   sc_out <bool> mem_resp_replay_i; //unknow
 
 
+  sc_in <bool> io_autl_acquire_valid_o;
+  sc_in <bool> io_in_1_acquire_ready_o;
+
 
 
 
@@ -143,6 +146,8 @@ public:
 
 , mem_resp_nack_i("mem_resp_nack_i")  //unknow
 , mem_resp_replay_i("mem_resp_replay_i") //unknow
+    , io_autl_acquire_valid_o("io_autl_acquire_valid_o")
+    ,io_in_1_acquire_ready_o("io_in_1_acquire_ready_o")
   {
     // Declare the source thread. Since it drives the reset signal,
     // no reset_signal_is() is needed for the source thread

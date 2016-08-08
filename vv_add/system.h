@@ -263,6 +263,8 @@ m_vv_add->io_in_1_acquire_ready_o(io_in_1_acquire_ready_chan);
 
         m_tb-> mem_resp_nack_i(mem_resp_nack_chan);  //unknow
         m_tb-> mem_resp_replay_i(mem_resp_replay_chan); //unknow
+        m_tb->io_autl_acquire_valid_o(io_autl_acquire_valid_chan);
+        m_tb->io_in_1_acquire_ready_o(io_in_1_acquire_ready_chan);
     }
 
     ~System()
