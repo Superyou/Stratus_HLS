@@ -83,6 +83,9 @@ public:
   sc_out <bool> mem_resp_nack_i;  //unknow
   sc_out <bool> mem_resp_replay_i; //unknow
 
+  sc_in <bool> io_autl_acquire_valid_o;
+  sc_in <bool> io_in_1_acquire_ready_o;
+
 
 
 
@@ -142,6 +145,8 @@ public:
 
 , mem_resp_nack_i("mem_resp_nack_i")  //unknow
 , mem_resp_replay_i("mem_resp_replay_i") //unknow
+    , io_autl_acquire_valid_o("io_autl_acquire_valid_o")
+    ,io_in_1_acquire_ready_o("io_in_1_acquire_ready_o")
   {
     // Declare the source thread. Since it drives the reset signal,
     // no reset_signal_is() is needed for the source thread
@@ -149,7 +154,7 @@ public:
     SC_CTHREAD(mem, clk.pos());
     // Declare the sink thread
     SC_CTHREAD(sink, clk.pos());
-    reset_signal_is(rst_in, 0); // active low
+    reset_signal_is(rst_in, 1); // active low
 
     // Connect the rst_in port to the rst_out port
     rst_in(rst_out);
@@ -168,12 +173,12 @@ private:
 
   // Utility functions for managing the stimulus file
   void open_stimulus_file(const char *_name = NULL);
-  input_t read_stimulus_value(bool & eof);
+  sc_uint<64> read_stimulus_value(bool & eof);
   void close_stimulus_file();
 
   // Utility functions for managing the response file
   void open_response_file(const char *_name = NULL);
-  void write_response_value(output_t);
+  void write_response_value(sc_uint<64>);
   void close_response_file();
 
   // Utility function for managing the golden file

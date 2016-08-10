@@ -85,6 +85,8 @@ public:
   sc_in<bool> mem_resp_nack_i;  //unknow
   sc_in<bool> mem_resp_replay_i; //unknow
 
+  sc_out <bool> io_autl_acquire_valid_o;
+  sc_out <bool> io_in_1_acquire_ready_o;
 
   // Declare the input port and the output port.
   // The template specializations <input_t or output_t> configure the
@@ -140,11 +142,13 @@ public:
 
     , mem_resp_nack_i("mem_resp_nack_i")  //unknow
     , mem_resp_replay_i("mem_resp_replay_i") //unknow
+    , io_autl_acquire_valid_o("io_autl_acquire_valid_o")
+    ,io_in_1_acquire_ready_o("io_in_1_acquire_ready_o")
 
   {
 
       SC_CTHREAD(DigitrecThread, clk.pos());
-      reset_signal_is(rst, 0);
+      reset_signal_is(rst, 1);
 
       // Connect the clk and rst signals to the modular interface ports
   }

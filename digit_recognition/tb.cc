@@ -96,7 +96,7 @@ void tb::source()
     {
         HLS_DEFINE_PROTOCOL("reset");
 
-        rst_out.write(0);
+        rst_out.write(1);
 
         cc_status_i.write(0);
         cc_exception_i.write(0);
@@ -118,7 +118,7 @@ void tb::source()
 
         wait(2);
     }
-    rst_out.write(1);
+    rst_out.write(0);
     wait();
              // assert reset (active low)
 
@@ -126,19 +126,19 @@ void tb::source()
     sample_sent_time = sc_time_stamp();
 
     // only use this protocol if running the using memory interface version
-
+/*
     //set opcode =2  to let the accelerator store those parameter from training_data to training_set first
     {
         HLS_DEFINE_PROTOCOL("First pass the Addr to the Accelerator");
 
         // have to wait until the cc_busy turn to be 0
-        while(cc_busy_o){
+        while(!cc_busy_o){
             wait();
         }
         //set cmd valid to 1
         core_cmd_valid_i.write(1);
         // set cmd funct to 0x1 (defined myself)
-        core_cmd_inst_funct_i.write(0x1);
+        core_cmd_inst_funct_i.write(0x2);
         //set register id (defined myself)
         core_cmd_inst_rs1_i.write(0x5);
 
@@ -148,7 +148,7 @@ void tb::source()
         core_cmd_inst_xs2_i.write(0);    //set if resource rs2 reg exist
 
         //set opcode to 0x2 to prefetch the parameters
-        core_cmd_inst_opcode_i.write(0x2);     //custom instruction opcode may be used for several accerlerations
+        core_cmd_inst_opcode_i.write(0x1);     //custom instruction opcode may be used for several accerlerations
         core_cmd_rs1_i.write(address0);
 
 
@@ -161,7 +161,7 @@ void tb::source()
         wait();
     }
 
-
+*/
     cout<<"finish Addr"<<endl;
 
 
@@ -171,8 +171,8 @@ void tb::source()
     bool eof = false;
     while (eof == false)
     {
-        input_t value = read_stimulus_value(eof);
-        sc_uint <64> vv = (sc_uint<64>) value;
+        sc_uint <64> value = read_stimulus_value(eof);
+        // vv = (sc_uint<64>) value;
         //cout << "source value = " << value << endl;
         if (!eof)
         {
@@ -196,7 +196,7 @@ void tb::source()
                 core_cmd_inst_xs2_i.write(0);    //set if resource rs2 reg exist
                 core_cmd_inst_rd_i.write(0x9);
                 core_cmd_inst_opcode_i.write(0x1);     //custom instruction opcode may be used for several accerlerations
-                core_cmd_rs1_i.write(vv);
+                core_cmd_rs1_i.write(value);
 
                 do{
 
@@ -224,7 +224,7 @@ void tb::source()
 
 void tb::sink()
 {
-    output_t result;
+    sc_uint<64> result;
     cout << "Sink reading all expected values from the design." << endl;
     //reset for the output
     core_resp_ready_i.write(0);
@@ -243,7 +243,7 @@ void tb::sink()
             HLS_DEFINE_PROTOCOL("read response");
             core_resp_ready_i.write(1);
 
-            while(!core_resp_valid_o)
+            while(cc_busy_o)
             {
                 wait();
             }
@@ -283,9 +283,9 @@ void tb::open_stimulus_file(const char *_name)
 // Read the next value from the stimulus file
 // Set eof = true if there are no more values in the file
 ////
-input_t tb::read_stimulus_value(bool & eof)
+sc_uint<64> tb::read_stimulus_value(bool & eof)
 {
-    input_t value;
+    sc_uint<64> value;
     stim_file >> std::ws;
     eof = stim_file.eof();
     if (!eof)
@@ -326,7 +326,7 @@ void tb::open_response_file(const char *_name)
 ////
 // Write a value to the response file
 ////
-void tb::write_response_value(output_t value)
+void tb::write_response_value(sc_uint<64> value)
 {
     resp_file << value << endl;
 }
@@ -347,7 +347,7 @@ int tb::count_golden_file(const char *_name)
     const char *name = (_name == NULL ? "golden.dat" : _name);
     ifstream golden_file;       // File stream containing expected values
     unsigned long i;
-    output_t value;
+    sc_uint<64> value;
 
     golden_file.open(name);
     if (golden_file.fail())

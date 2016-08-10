@@ -19,11 +19,12 @@ void digitrec::DigitrecThread(){
 
   //variable for storing the address of training_data[0][0], assuming that the array are saved continuously in the cache
   sc_uint <64> din_64; //the data read from the rocket chip
+  sc_uint <64> din2_64;
   input_t sample;
   output_t result;
   sc_uint <40> Addr;
   sc_uint <5> ds;
-  sc_uint <7>  opcode;
+  sc_uint <7>  funct;
   sc_uint <64> result_64; // the response gonna to send back to cocket chip
   bool xd; //set 1 if the destination reg exist
 
@@ -48,6 +49,9 @@ void digitrec::DigitrecThread(){
     mem_req_typ_o.write(0);
     mem_req_phys_o.write(1);
     mem_req_data_o.write(0);
+
+    io_autl_acquire_valid_o.write(0);
+    io_in_1_acquire_ready_o.write(0);
 
     wait();
   }
@@ -74,9 +78,10 @@ void digitrec::DigitrecThread(){
           //assert(core_cmd_inst_funct_i==0x1);  //to be defined
 
           // store the num of the opcode
-          opcode = core_cmd_inst_opcode_i.read();
+          funct = core_cmd_inst_funct_i.read();
           //read the input data from the register rs1
           din_64 = core_cmd_rs1_i.read();
+          din2_64 = core_cmd_rs1_i.read();
           // store the destination register id if exist
           ds = core_cmd_inst_rd_i.read();
           // store whether destination teg exist
@@ -95,7 +100,7 @@ void digitrec::DigitrecThread(){
     // defined in the digitrec.h
     HLS_SEPARATE_ARRAY(training_set);
 
-    switch (opcode)
+    switch (funct)
     {
         // to do the knn training using training_set
         case 1: {
@@ -174,15 +179,16 @@ void digitrec::DigitrecThread(){
                     digit instance;
                     sc_uint <10> jj=j;
                     // culcate the addr for training_data[j][i]
-                    now_Addr = Addr + j*TRAINING_SIZE +i;
+                    now_Addr = Addr + (j*TRAINING_SIZE +i)*8;
 
-                    HLS_DEFINE_PROTOCOL("Send request & Load data from the Cache for 1800*10 times");
+
                     {
+                        HLS_DEFINE_PROTOCOL("Send request & Load data from the Cache for 1800*10 times");
                         //read param from the memory using mem interface
                         mem_req_addr_o.write(now_Addr);
                         mem_req_valid_o.write(1);
                         mem_req_cmd_o.write(0x0000);
-                        mem_req_typ_o.write(0x011);
+                        mem_req_typ_o.write(3);
                         mem_req_tag_o.write(jj);
 
                         do {
@@ -218,7 +224,54 @@ void digitrec::DigitrecThread(){
 
             break;
         }
+/*
+        case 3: {
+        // to prefetch sequentially
 
+        //cout<<"It is case 2 : opcode ="<<opcode<<endl;
+
+        digit instance;
+        Addr = (sc_uint<40>) din_64;
+        int x = (int) din2_64;
+        int i =x/TRAINING_SIZE;
+        int j = x-i*TRAINING_SIZE;
+        sc_uint<10> jj=(sc_uint<10>)j;
+        {
+            HLS_DEFINE_PROTOCOL("Send request & Load data from the Cache for 1800*10 times");
+            //read param from the memory using mem interface
+            mem_req_addr_o.write(Addr);
+            mem_req_valid_o.write(1);
+            mem_req_cmd_o.write(0x0000);
+            mem_req_typ_o.write(3);
+            mem_req_tag_o.write(jj);
+
+            do {
+                wait();
+            }while(!mem_req_ready_i);
+
+            mem_req_valid_o.write(0);
+
+            // check whether the tag is correct
+            while(!mem_resp_valid_i || !(mem_resp_tag_i == jj))
+            {
+                wait();
+            }
+
+            instance = mem_resp_data_i.read();
+
+            wait();
+            //cout << "training_set["<<j<<"]["<<i<<"] = "<<instance<<endl;
+
+        }
+
+        training_set[i][j] = instance;
+
+
+        //cout<<"end of case 2"<<endl;
+
+        break;
+        }
+*/
     }
 
 
@@ -310,7 +363,7 @@ void digitrec::update_knn(digit test_inst, digit train_inst,
 //-----------------------------------------------------------------------
 // knn_vote function
 //-----------------------------------------------------------------------
-// Given 10xK minimum distance values, this function 
+// Given 10xK minimum distance values, this function
 // finds the actual K nearest neighbors and determines the
 // final output based on the most common digit represented by 
 // these nearest neighbors (i.e., a vote among KNNs). 

@@ -21,8 +21,12 @@ void digitrec::DigitrecThread(){
   input_t sample;
   output_t result;
   //variable for storing the address of training_data[0][0], assuming that the array are saved continuously in the cache
-  sc_uint <40> Addr;
+
   sc_uint <5> ds;
+  sc_uint<64> din_64;
+  sc_uint<64> din2_64;
+  sc_uint<64> result_64;
+  sc_uint<7> funct;
 
 
   // reset logic
@@ -45,6 +49,9 @@ void digitrec::DigitrecThread(){
     mem_req_typ_o.write(0);
     mem_req_phys_o.write(1);
     mem_req_data_o.write(0);
+
+    io_autl_acquire_valid_o.write(0);
+    io_in_1_acquire_ready_o.write(0);
 
     wait();
   }
@@ -71,8 +78,10 @@ void digitrec::DigitrecThread(){
           //assert(core_cmd_inst_opcode_i == 0x1);
           //assert(core_cmd_inst_funct_i==0x1);  //to be defined
 
+          funct = core_cmd_inst_funct_i.read();
           //read the input data from the register rs1
-          sample = core_cmd_rs1_i.read();
+          din_64= core_cmd_rs1_i.read();
+          din2_64=core_cmd_rs2_i.read();
           // store the destination register id if exist
           ds = core_cmd_inst_rd_i.read();
           // set cc_busy to 1 to prevent sending other cmd from rocket chip
@@ -92,8 +101,11 @@ void digitrec::DigitrecThread(){
     HLS_SEPARATE_ARRAY(training_data);
 
 
+    switch(funct)
+    {
 
-
+    case 1:{
+    sample = (input_t) din_64;
     // This array stores K minimum distances per training set
     bit6 knn_set[10][K_CONST];
 
@@ -107,7 +119,7 @@ void digitrec::DigitrecThread(){
 
 
     for ( int i = 0; i < TRAINING_SIZE; ++i ) {
-      HLS_PIPELINE_LOOP(HARD_STALL, 2, "pipeline_image_input");
+      HLS_PIPELINE_LOOP(HARD_STALL, 1, "pipeline_image_input");
       for ( int j = 0; j < 10; j++ ) {
 
         // UNROLL pragma with user-defined macro
@@ -124,20 +136,32 @@ void digitrec::DigitrecThread(){
     // Compute the final output
     result = knn_vote( knn_set );
 
+    result_64 =(sc_uint<64>) result;
+    break;
+    }
+    case 3:
+    {
+        //int addr=(int) din_64;
+        int i = (int)din_64;
+        int j = (int)din2_64 ;
+        result_64 = (sc_uint<64>)training_data[i][j];
+        break;
+    }
+    }
 
     //write back to the rocket chip
     {
           HLS_DEFINE_PROTOCOL("Write to the Rocket_chip");
           core_resp_valid_o = 1;
           core_resp_rd_o.write(ds);
-          core_resp_data_o.write(result);
+          core_resp_data_o.write(result_64);
 
           do {
               wait();
           }while(!core_resp_ready_i);
           cc_busy_o.write(0);
           core_resp_valid_o = 0;
-          wait(2);
+          wait();
 
     }
 
