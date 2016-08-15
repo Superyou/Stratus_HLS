@@ -1,26 +1,31 @@
 //==========================================================================
 //vv_add.cpp
 //==========================================================================
-// @brief: A k-nearest-neighbor implementation for digit recognition
+// @brief: A simple vector-vector-add design
 
 #include "vv_add.h"
-
-#ifndef UNROLL_FACTOR
-#define UNROLL_FACTOR 10
-#endif
 
 //----------------------------------------------------------
 // Top function
 //----------------------------------------------------------
-// @param[in] : input - the testing instance
-// @return : the recognized digit (0~9)
+// In this design, the vv_add module has 3 functions: Add, Store and Load.
+// Add Operation : Read input from both the core_cmd_rs1_i and core_cmd_rs2_i.
+//              Add them and send the result back to the response.
+// Store Operation : Read the core_cmd_rs1_i as the data to be stored and
+//              read the core_cmd_rs2_i as the memory address. The accelerator will
+//              send mem_req to the rocketchip and store the data in the specific
+//              address through a cache. The storage message will send back to the
+//              accelerator through the mem_resp signals. Finally send the storage data to the core_response.
+// Load Operation : Only read the core_cmd_rs2_i as the load address and load data through sending the mem_req.
+//              The data loading from the cache will be sent through the mem_resp. At last,
+//              the response sent to the rocket core will be the loading result.
 
 void vv_add::vv_addThread(){
 
   //variable for storing the address of training_data[0][0], assuming that the array are saved continuously in the cache
   sc_uint <64> din1_64; //the data read from the rocket chip
   sc_uint <64> din2_64; //the data read from the rocket chip
-  sc_uint <64> tmp[1000];
+  sc_uint <64> tmp[1000]; // a temporary array to check whether the accelerator can load continuously from the cache
   sc_uint <40 > Addr;
   sc_uint <5> ds;
   sc_uint <7>  funct;
@@ -34,7 +39,6 @@ void vv_add::vv_addThread(){
     // single-cycle reset behavior
     tmp_write.cc_busy_o=0;
     tmp_write.cc_interrupt_o = 0;
-    //rocc_out->cc_interrupt_o.write(0);
     tmp_write.core_cmd_ready_o = 0;
     tmp_write.core_resp_valid_o = 0;
     tmp_write.core_resp_rd_o = rocc_in.read().core_cmd_inst_rd_i;
@@ -66,10 +70,9 @@ void vv_add::vv_addThread(){
     //HLS_DEFINE_PROTOCOL for each interface
     {
           HLS_DEFINE_PROTOCOL("Read from Rocket_chip");
-          //rocc_out->core_cmd_ready_o.write(1);
           tmp_write.core_cmd_ready_o = 1;
           rocc_out.write(tmp_write);
-          cout<<"begin to wait for cmd"<<endl;
+          //cout<<"begin to wait for cmd"<<endl;
           while (!rocc_in.read().core_cmd_valid_i)
           {
               wait();
@@ -91,8 +94,6 @@ void vv_add::vv_addThread(){
           xd = rocc_in.read().core_cmd_inst_xd_i;
 
           // set cc_busy to 1 to prevent sending other cmd from rocket chip
-          //rocc_out->cc_busy_o.write(1);
-          //rocc_out->core_cmd_ready_o.write(0);
           tmp_write.cc_busy_o = 1;
           tmp_write.core_cmd_ready_o = 0;
           rocc_out.write(tmp_write);
@@ -102,12 +103,12 @@ void vv_add::vv_addThread(){
 
 
     }
-      cout<<"din1_= "<<din1_64<<" din2 = "<<din2_64<<endl;
+      //cout<<"din1_= "<<din1_64<<" din2 = "<<din2_64<<endl;
 
 
     switch (funct)
     {
-        // to do the knn training using training_set
+        // to do Add, Store or Load operation
 
     case 1: { //for add option
         cout<<"case 1"<<endl;
@@ -133,8 +134,8 @@ void vv_add::vv_addThread(){
             do {
                 wait();
             }while(!mem_resp.read().mem_req_ready_i);
-            cout <<"send store req with "<<din1_64<<endl;
-            //rocc_in->mem_req_valid_o.write(0);
+            //cout <<"send store req with "<<din1_64<<endl;
+
             mem_write.mem_req_valid_o = 0;
             mem_req.write(mem_write);
             // check whether the tag is correct
@@ -157,6 +158,8 @@ void vv_add::vv_addThread(){
         sc_uint<64> instance;
         for (int i=0;i<50;++i)
         {
+            // use the HLS_PIPELINE pragma to realize sending continuiously mem_request
+            HLS_PIPELINE_LOOP(HARD_STALL,1,"mem pipe");
             sc_uint<64> xx = i+din2_64;
             {
                 HLS_DEFINE_PROTOCOL("Send request & Load data from the Cache");
@@ -187,7 +190,7 @@ void vv_add::vv_addThread(){
                 instance = mem_resp.read().mem_resp_data_i;
                 cout<<"load result ="<<instance<<endl;
                 //wait();
-                //cout << "training_set["<<j<<"]["<<i<<"] = "<<instance<<endl;
+
 
             }
             tmp[i] = instance;
@@ -198,32 +201,22 @@ void vv_add::vv_addThread(){
 
     }
 
-    cout<<"for xd ="<<xd<<endl;
+    //cout<<"for xd ="<<xd<<endl;
 
     {
           HLS_DEFINE_PROTOCOL("Write to the Rocket_chip");
           if (xd) {
-              /*
-              // send resp_valid to 1
-              rocc_out->core_resp_valid_o.write(1);
-              // send result back to the destination reg
-              rocc_out->core_resp_rd_o.write(ds);
-              rocc_out->core_resp_data_o.write(result_64);
-*/
 
               tmp_write.core_resp_valid_o = 1;
               tmp_write.core_resp_rd_o = ds;
               tmp_write.core_resp_data_o = result_64;
               rocc_out.write(tmp_write);
-              cout<< "we pass result ="<<result_64<<" to the rocket chip!"<<endl;
+              //cout<< "we pass result ="<<result_64<<" to the rocket chip!"<<endl;
               do {
                   wait();
               }while(!sink_in.read().core_resp_ready_i);
           }
           // set cc_busy to 0 to start the next cmd
-          //rocc_out->cc_busy_o.write(0);
-          //rocc_out->core_resp_valid_o.write(0);
-
           tmp_write.cc_busy_o = 0;
           tmp_write.core_resp_valid_o = 0;
           rocc_out.write(tmp_write);

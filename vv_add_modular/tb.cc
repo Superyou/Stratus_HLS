@@ -74,14 +74,6 @@ void tb::mem()
             //wait();
 
 
-
-
-        // get data from the training_data array
-
-
-
-
-
         switch (cmd)
         {
         case 1:
@@ -170,9 +162,10 @@ void tb::source()
 
         wait();
     }
-    rst_out.write(0);
+    rst_out.write(0);   // assert reset (active high)
     wait(2);
-             // assert reset (active low)
+
+    // initialize the data in the memory
     for (int i=0;i<1000;++i)
         memory[i]=i;
     // store the time the first value was sent
@@ -193,7 +186,7 @@ void tb::source()
         {
             cout<<"sending v1= "<<value1<<" v2= "<<value2<<endl;
             {
-                HLS_DEFINE_PROTOCOL("Input");
+                HLS_DEFINE_PROTOCOL("cmd for the add operation");
                 // have to wait until the cc_busy turn to be 0
                 while(rocc_out.read().cc_busy_o){
 
@@ -230,8 +223,6 @@ void tb::source()
         }
 
 
-
-
     //cout << "source value = " << value << endl;
 
         sc_uint <64> store3 = read_stimulus_value(eof);
@@ -240,7 +231,7 @@ void tb::source()
         if (!eof)
         {
             {
-                HLS_DEFINE_PROTOCOL("Input 2");
+                HLS_DEFINE_PROTOCOL("cmd for the storage");
                 // have to wait until the cc_busy turn to be 0
                 while(rocc_out.read().cc_busy_o){
 
@@ -282,7 +273,7 @@ void tb::source()
     }
     cout<< "finish storage"<<endl;
     {
-        HLS_DEFINE_PROTOCOL("Input 2");
+        HLS_DEFINE_PROTOCOL("cmd fot the continuously load operation");
         // have to wait until the cc_busy turn to be 0
         while(rocc_out.read().cc_busy_o){
 
