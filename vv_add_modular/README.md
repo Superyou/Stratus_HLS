@@ -6,9 +6,9 @@ This directory use a simple vector-vector-add design to illustrate how to make t
 
 In this design, the vv_add module has 3 functions: Add, Store and Load. 
 
-* Add operation: Read input from both the `core_cmd_rs1_i` and `core_cmd_rs2_i`. Add them and send the result back to the response.
-* Store operation : Read the `core_cmd_rs1_i` as the data to be stored and read the `core_cmd_rs2_i` as the memory address. The accelerator will send `mem_req` to the rocketchip and store the data in the specific address through a cache. The storage message will send back to the accelerator through the `mem_resp` signals. Finally send the storage data to the `core_response`.  
-* Load operation: Only read the `core_cmd_rs2_i` as the load address and load data through sending the `mem_req`. The data loading from the cache will be sent through the `mem_resp`. At last, the response sent to the rocket core will be the loading result.
+* *Add Operation*: Read input from both the `core_cmd_rs1_i` and `core_cmd_rs2_i`. Add them and send the result back to the response.
+* *Store Operation* : Read the `core_cmd_rs1_i` as the data to be stored and read the `core_cmd_rs2_i` as the memory address. The accelerator will send `mem_req` to the rocketchip and store the data in the specific address through a cache. The storage message will send back to the accelerator through the `mem_resp` signals. Finally send the storage data to the `core_response`.  
+* *Load Operation*: Only read the `core_cmd_rs2_i` as the load address and load data through sending the `mem_req`. The data loading from the cache will be sent through the `mem_resp`. At last, the response sent to the rocket core will be the loading result.
 
 ## Modular ROCC interfaces
 
