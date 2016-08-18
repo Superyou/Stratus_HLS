@@ -16,9 +16,9 @@
 #define _TB_H_
 
 #include <cynw_p2p.h>           // This also includes systemc.h etc
-#include "defines.h"            // The definitions for the ROCC interface classes
+            // The definitions for the ROCC interface classes
 
-
+#include "defines.h"
 SC_MODULE(tb)
 {
 public:
@@ -29,26 +29,20 @@ public:
     sc_in <bool> rst_in;
   // Declare the sc_in and sc_out for each rocc class
   // Note that these declearations are opposite to the declearations in the vv_add module
-    sc_out <SOURCE_TO_ACCEL> rocc_in;
-    sc_out <SINK_TO_ACCEL>   sink_in;
-    sc_in  <ACCEL_TO_ROCC>   rocc_out;
-    sc_in  <ACCEL_TO_MEM>    mem_req;
-    sc_out <MEM_TO_ACCEL>    mem_resp;
+
+    cynw_p2p <sc_uint<32> >::base_out din;
+    cynw_p2p <sc_uint<32> >::base_in dout;
+
 
     SC_CTOR(tb) :
       clk("clk"), rst_out("rst_out"), rst_in("rst_in")
-    ,rocc_in("rocc_in")
-    ,rocc_out("rocc_out")
-    ,sink_in("sink_in")
-    ,mem_req("mem_req")
-    ,mem_resp("mem_resp")
+    ,din("din")
+    ,dout("dout")
 
   {
     // Declare the source thread. Since it drives the reset signal,
     // no reset_signal_is() is needed for the source thread
     SC_CTHREAD(source, clk.pos());
-    // Declare the mem thread
-    SC_CTHREAD(mem, clk.pos());
     // Declare the sink thread
     SC_CTHREAD(sink, clk.pos());
     reset_signal_is(rst_in, 1); // active high
@@ -63,13 +57,6 @@ private:
 
   void source();
   void sink();
-  void mem();
-
-  SOURCE_TO_ACCEL tmp_write;
-  SINK_TO_ACCEL sink_write;
-  MEM_TO_ACCEL mem_write;
-
-  sc_uint<64> memory[5000];
 
   ifstream stim_file;         // File stream for reading the stimulus
   ofstream resp_file;         // File stream for writing the responses

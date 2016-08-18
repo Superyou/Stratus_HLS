@@ -1,4 +1,5 @@
-use_hls_lib "rocc"
+#use_hls_lib "iflib"
+
 #*******************************************************************************
 # Copyright 2015 Cadence Design Systems, Inc.
 # All Rights Reserved.
@@ -64,17 +65,17 @@ define_system_module tb tb.cc
 ######################################################################
 # Synthesis Module Configurations
 ######################################################################
-define_hls_module vv_add vv_add.cc
-#define_hls_module vv_add vv_add.cc
+define_hls_module simple_FIFO simple_FIFO.cc
+#define_hls_module simple_FIFO simple_FIFO.cc
 
 define_io_config * PIN
 
-define_hls_config vv_add ASIC
-define_hls_config vv_add DPOPT -     -DUSE_DPOPT
-define_hls_config vv_add VIVADO      --fpga_tool=Vivado  --fpga_part=xc7vx485tffg1158-2
-define_hls_config vv_add VIVADO_DSP  --fpga_tool=Vivado  --fpga_part=xc7vx485tffg1158-2 --fpga_use_dsp=on -DUSE_DSP
-define_hls_config vv_add QUARTUS     --fpga_tool=Quartus --fpga_part=5CGXFC3B6F23C6
-define_hls_config vv_add QUARTUS_DSP --fpga_tool=Quartus --fpga_part=5CGXFC3B6F23C6     --fpga_use_dsp=on -DUSE_DSP
+define_hls_config simple_FIFO ASIC
+define_hls_config simple_FIFO DPOPT -     -DUSE_DPOPT
+define_hls_config simple_FIFO VIVADO      --fpga_tool=Vivado  --fpga_part=xc7vx485tffg1158-2
+define_hls_config simple_FIFO VIVADO_DSP  --fpga_tool=Vivado  --fpga_part=xc7vx485tffg1158-2 --fpga_use_dsp=on -DUSE_DSP
+define_hls_config simple_FIFO QUARTUS     --fpga_tool=Quartus --fpga_part=5CGXFC3B6F23C6
+define_hls_config simple_FIFO QUARTUS_DSP --fpga_tool=Quartus --fpga_part=5CGXFC3B6F23C6     --fpga_use_dsp=on -DUSE_DSP
 
 ######################################################################
 # Simulation Configurations
@@ -84,22 +85,22 @@ enable_waveform_logging -vcd ;# to store signal transitions vcd or fsdb
 set_attr end_of_sim_command "make cmp_result"
 
 # A behavioral PIN-level configuration
-define_sim_config B {vv_add BEH}
+define_sim_config B {simple_FIFO BEH}
 
 # The following rules are TCL code to create a simulation configuration
 # for RTL_V for each hls_config defined.
 foreach config [find -hls_config *] {
   set cname [get_attr name $config]
-  define_sim_config ${cname}_V "vv_add RTL_V $cname"
+  define_sim_config ${cname}_V "simple_FIFO RTL_V $cname"
 }
 
 ######################################################################
 # RC Logic Synthesis Configurations
 ######################################################################
 
-define_logic_synthesis_config LS_ASIC        {vv_add ASIC}        -options [list BDW_LS_TECHLIB $LIB_PATH/$LIB_LEAF] {BDW_LS_CLK_GATING normal} {BDW_LS_NOGATES 1} -command bdw_runrc
-define_logic_synthesis_config LS_DPOPT       {vv_add DPOPT}       -options [list BDW_LS_TECHLIB $LIB_PATH/$LIB_LEAF] {BDW_LS_CLK_GATING normal} {BDW_LS_NOGATES 1} -command bdw_runrc
-define_logic_synthesis_config LS_VIVADO      {vv_add VIVADO}      -command bdw_runvivado
-define_logic_synthesis_config LS_VIVADO_DSP  {vv_add VIVADO_DSP}  -command bdw_runvivado
-define_logic_synthesis_config LS_QUARTUS     {vv_add QUARTUS}     -command bdw_runquartus
-define_logic_synthesis_config LS_QUARTUS_DSP {vv_add QUARTUS_DSP} -command bdw_runquartvv_add
+define_logic_synthesis_config LS_ASIC        {simple_FIFO ASIC}        -options [list BDW_LS_TECHLIB $LIB_PATH/$LIB_LEAF] {BDW_LS_CLK_GATING normal} {BDW_LS_NOGATES 1} -command bdw_runrc
+define_logic_synthesis_config LS_DPOPT       {simple_FIFO DPOPT}       -options [list BDW_LS_TECHLIB $LIB_PATH/$LIB_LEAF] {BDW_LS_CLK_GATING normal} {BDW_LS_NOGATES 1} -command bdw_runrc
+define_logic_synthesis_config LS_VIVADO      {simple_FIFO VIVADO}      -command bdw_runvivado
+define_logic_synthesis_config LS_VIVADO_DSP  {simple_FIFO VIVADO_DSP}  -command bdw_runvivado
+define_logic_synthesis_config LS_QUARTUS     {simple_FIFO QUARTUS}     -command bdw_runquartus
+define_logic_synthesis_config LS_QUARTUS_DSP {simple_FIFO QUARTUS_DSP} -command bdw_runquartsimple_FIFO
