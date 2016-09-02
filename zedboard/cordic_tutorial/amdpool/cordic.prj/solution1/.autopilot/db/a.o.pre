@@ -1,0 +1,4 @@
+#!/bin/sh
+lli=${LLVMINTERP-lli}
+exec $lli \
+    /home/staff/yw777/Xillybus/cordic_tutorial/amdpool/cordic.prj/solution1/.autopilot/db/a.o.pre.bc ${1+"$@"}

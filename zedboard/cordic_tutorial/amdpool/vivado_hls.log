@@ -1,0 +1,150 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version 2014.2
+  Build 932637 on Wed Jun 11 12:38:34 PM 2014
+  Copyright (C) 2014 Xilinx Inc. All rights reserved.
+================================================================
+@I [LIC-101] Checked out feature [HLS]
+@I [HLS-10] Running '/opt/xilinx/Vivado_HLS/2014.2/bin/unwrapped/lnx64.o/vivado_hls'
+            for user 'yw777' on host 'en-ec-zhang-01.coecis.cornell.edu' (Linux_x86_64 version 2.6.32-642.3.1.el6.x86_64) on Wed Aug 24 23:01:47 EDT 2016
+            in directory '/home/staff/yw777/Xillybus/cordic_tutorial/amdpool'
+@I [HLS-10] Opening and resetting project '/home/staff/yw777/Xillybus/cordic_tutorial/amdpool/cordic.prj'.
+@I [HLS-10] Adding design file 'cordic.cpp' to the project
+@I [HLS-10] Adding test bench file 'cordic_test.cpp' to the project
+@I [HLS-10] Opening and resetting solution '/home/staff/yw777/Xillybus/cordic_tutorial/amdpool/cordic.prj/solution1'.
+@I [HLS-10] Cleaning up the solution database.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+   Compiling ../../../../cordic_test.cpp in debug mode
+   Compiling ../../../../cordic.cpp in debug mode
+   Generating csim.exe
+ans = 1 m_an = 1
+ans = 2 m_an = 2
+ans = 2 m_an = 3
+ans = 3 m_an = 4
+ans = 3 m_an = 5
+ans = 4 m_an = 6
+ans = 4 m_an = 7
+ans = 5 m_an = 8
+ans = 5 m_an = 9
+ans = 6 m_an = 10
+ans = 6 m_an = 11
+ans = 7 m_an = 12
+ans = 7 m_an = 13
+ans = 8 m_an = 14
+ans = 8 m_an = 15
+ans = 9 m_an = 16
+ans = 9 m_an = 17
+ans = 10 m_an = 18
+ans = 10 m_an = 19
+ans = 11 m_an = 20
+ans = 11 m_an = 21
+ans = 12 m_an = 22
+ans = 12 m_an = 23
+ans = 13 m_an = 24
+ans = 13 m_an = 25
+ans = 14 m_an = 26
+ans = 14 m_an = 27
+ans = 15 m_an = 28
+ans = 15 m_an = 29
+ans = 16 m_an = 30
+ans = 16 m_an = 31
+ans = 17 m_an = 32
+ans = 17 m_an = 33
+ans = 18 m_an = 34
+ans = 18 m_an = 35
+ans = 19 m_an = 36
+ans = 19 m_an = 37
+ans = 20 m_an = 38
+ans = 20 m_an = 39
+ans = 21 m_an = 40
+ans = 21 m_an = 41
+ans = 22 m_an = 42
+ans = 22 m_an = 43
+ans = 23 m_an = 44
+ans = 23 m_an = 45
+ans = 24 m_an = 46
+ans = 24 m_an = 47
+ans = 25 m_an = 48
+ans = 25 m_an = 49
+ans = 26 m_an = 50
+ans = 26 m_an = 51
+ans = 27 m_an = 52
+ans = 27 m_an = 53
+ans = 28 m_an = 54
+ans = 28 m_an = 55
+ans = 29 m_an = 56
+ans = 29 m_an = 57
+ans = 30 m_an = 58
+ans = 30 m_an = 59
+ans = 31 m_an = 60
+ans = 31 m_an = 61
+ans = 32 m_an = 62
+ans = 32 m_an = 63
+ans = 33 m_an = 64
+ans = 33 m_an = 65
+ans = 34 m_an = 66
+ans = 34 m_an = 67
+ans = 35 m_an = 68
+ans = 35 m_an = 69
+ans = 36 m_an = 70
+ans = 36 m_an = 71
+ans = 37 m_an = 72
+ans = 37 m_an = 73
+ans = 38 m_an = 74
+ans = 38 m_an = 75
+ans = 39 m_an = 76
+ans = 39 m_an = 77
+ans = 40 m_an = 78
+ans = 40 m_an = 79
+ans = 41 m_an = 80
+ans = 41 m_an = 81
+ans = 42 m_an = 82
+ans = 42 m_an = 83
+ans = 43 m_an = 84
+ans = 43 m_an = 85
+ans = 44 m_an = 86
+ans = 44 m_an = 87
+ans = 45 m_an = 88
+ans = 45 m_an = 89
+#------------------------------------------------
+Overall_Error_Test = 46.6083
+#------------------------------------------------
+WARNING: Hls::stream 'hls::stream<ap_uint<32> >.1' contains leftover data, which may result in RTL simulation hanging.
+@I [SIM-1] CSim done with 0 errors.
+@I [HLS-10] Analyzing design file 'cordic.cpp' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Starting code transformations ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-111] Elapsed time: 3.08 seconds; current memory usage: 70.6 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'dut' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'dut' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.06 seconds; current memory usage: 70.9 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'dut' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 70.9 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'dut' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Finished creating RTL model for 'dut'.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 71 MB.
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'dut'.
+@I [WVHDL-304] Generating RTL VHDL for 'dut'.
+@I [WVLOG-307] Generating RTL Verilog for 'dut'.
+@I [HLS-112] Total elapsed time: 26.766 seconds; peak memory usage: 71 MB.
+@I [LIC-101] Checked in feature [HLS]
