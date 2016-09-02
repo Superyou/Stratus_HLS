@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorSession>
+<!-- Written by Qt Creator 2.5.1, 2016-09-01T22:09:07. -->
+<qtcreator>
+ <data>
+  <variable>EditorSettings</variable>
+  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNAAAAAEAAAB4AC8AaABvAG0AZQAvAHMAdABhAGYAZgAvAHkAdwA3ADcANwAvAFMAdAByAGEAdAB1AHMAXwBIAEwAUwAvAHMAaQBtAHAAbABlAF8ARgBJAEYATwBfAG8AdwBuAC8AcwBpAG0AcABsAGUAXwBGAEkARgBPAC4AYwBjAAAADAAAAAAYAAAAAQAAABIAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAHgALwBoAG8AbQBlAC8AcwB0AGEAZgBmAC8AeQB3ADcANwA3AC8AUwB0AHIAYQB0AHUAcwBfAEgATABTAC8AcwBpAG0AcABsAGUAXwBGAEkARgBPAF8AbwB3AG4ALwBzAGkAbQBwAGwAZQBfAEYASQBGAE8ALgBjAGMAAAAcAHMAaQBtAHAAbABlAF8ARgBJAEYATwAuAGMAYwAAABNDcHBQbHVnaW4uQysrRWRpdG9yAAAA0wAAAA1jdXJyZW50ZWRpdG9yAAAAeAAvAGgAbwBtAGUALwBzAHQAYQBmAGYALwB5AHcANwA3ADcALwBTAHQAcgBhAHQAdQBzAF8ASABMAFMALwBzAGkAbQBwAGwAZQBfAEYASQBGAE8AXwBvAHcAbgAvAHMAaQBtAHAAbABlAF8ARgBJAEYATwAuAGMAYwAAACYAQwBwAHAAUABsAHUAZwBpAG4ALgBDACsAKwBFAGQAaQB0AG8AcgAAABgAAAABAAAAEgAAAAAAAAABAAAAAAAAAAA=</value>
+ </data>
+ <data>
+  <variable>OpenEditors</variable>
+  <value type="int">1</value>
+ </data>
+ <data>
+  <variable>ProjectDependencies</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>ProjectList</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">/home/staff/yw777/Stratus_HLS/simple_FIFO_own/simple_FIFO_own.pro</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>StartupProject</variable>
+  <value type="QString">/home/staff/yw777/Stratus_HLS/simple_FIFO_own/simple_FIFO_own.pro</value>
+ </data>
+ <data>
+  <variable>value-ActiveMode</variable>
+  <value type="QString">Edit</value>
+ </data>
+ <data>
+  <variable>value-Breakpoints</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>value-DebuggerToolTips</variable>
+  <value type="QString"></value>
+ </data>
+ <data>
+  <variable>value-DefaultFormats</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>value-ProjectTree.ExpandData</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">session</value>
+   <value type="QString">/home/staff/yw777/Stratus_HLS/simple_FIFO_own/simple_FIFO_own.pro</value>
+   <value type="QString">/home/staff/yw777/Stratus_HLS/simple_FIFO_own/#1Sources</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-Watchers</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>valueKeys</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">ActiveMode</value>
+   <value type="QString">Breakpoints</value>
+   <value type="QString">DebuggerToolTips</value>
+   <value type="QString">DefaultFormats</value>
+   <value type="QString">ProjectTree.ExpandData</value>
+   <value type="QString">Watchers</value>
+  </valuelist>
+ </data>
+</qtcreator>

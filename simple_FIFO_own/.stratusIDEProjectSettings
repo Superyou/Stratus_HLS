@@ -1,0 +1,31 @@
+[tree]
+Selection=simple_FIFO_own, Modules
+OpenTopLevel=Modules, Sim Configs, Logic Synth Configs
+OpenModules=simple_FIFO
+OpenLibTypes=Resources
+OpenLibs=@Invalid()
+
+[analysis]
+default\NIL\context=(nil)
+HLSConfig\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\context=simple_FIFO::Modules::simple_FIFO::VIVADO_DSP
+HLSConfig\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\SplitterPos=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x2\0\0\x3(\xff\xff\xff\xff\x1\0\0\0\x1\x1\0\0\0\x2)
+HLSConfigSummary\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\context=simple_FIFO::Modules::simple_FIFO::VIVADO_DSP
+HLSConfigSummary\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\scrollPos=0
+Messages\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\context=simple_FIFO::Modules::simple_FIFO::VIVADO_DSP
+Messages\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\colWidths=59, 36, 700
+Messages\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\options=6
+Messages\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\scrollPos=0
+simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\context=simple_FIFO::Modules::simple_FIFO::VIVADO_DSP
+simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\curFile=0
+simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\scrollPos=0
+simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\selStart=0
+simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\selEnd=0
+simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\finderVis=false
+simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\finderText=
+HLSConfig\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\shownTabs=Summary, Messages, Log
+HLSConfig\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\tornOffTabs=@Invalid()
+HLSConfig\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\splitTabs=@Invalid()
+HLSConfig\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\selTab=Log
+HLSConfig\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\selSplitTab=0
+HLSConfig\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\TopSplitterPos=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x2\0\0\x2\x30\xff\xff\xff\xff\x1\0\0\0\b\x1\0\0\0\x1)
+HLSConfig\simple_FIFO%3A%3AModules%3A%3Asimple_FIFO%3A%3AVIVADO_DSP\TopSplitOrientation=false
